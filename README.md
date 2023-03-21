@@ -1,7 +1,7 @@
 # **Text-Analysis-Project by Charlotte**
 
 ## **Project Overview**
- I used an eBook written by my favorite author, Oscar Wilde, called The Picture of Dorian Gray from the Project Gutenberg. Another source that I use especially in finding text similarity part is The Happy Prince and Other Tales by Oscar Wilde too. The texts are pre-organized into pretty txt file so all I did is retrieve the url through urllib.request and decode it according to “utf-8”. In analyzing them, I did word frequency test, frequency test after deleting stopping words, sentiment score of each sentence, text similarity score, and text clustering. These tools help me generate a general writing habit of Oscar Wilde and linguistic patterns of that era through individual analyzing and comparison between two texts. What is the difference in tone and syntax between serious literature, like *The Picture of Dorian Gray* and Fairy Tale, like *The Happy Prince and Other Tales*. 
+ I used an eBook written by my favorite author, Oscar Wilde, called *The Picture of Dorian Gray* from the Project Gutenberg. Another source that I use especially in finding text similarity part is *The Happy Prince and Other Tales* by Oscar Wilde too. The texts are pre-organized into pretty txt file so all I did is retrieve the url through urllib.request and decode it according to “utf-8”. In analyzing them, I did word frequency test, frequency test after deleting stopping words, sentiment score of each sentence, text similarity score, and text clustering. These tools help me generate a general writing habit of Oscar Wilde and linguistic patterns of that era through individual analyzing and comparison between two texts. What is the difference in tone and syntax between serious literature, like *The Picture of Dorian Gray* and Fairy Tale, like *The Happy Prince and Other Tales*. 
  
  ### **Data Source**
  1. [*The Picture of Dorian Gray* by Oscar Wilde](http://www.gutenberg.org/ebooks/174.txt.utf-8)
@@ -77,6 +77,8 @@ The process_text function generates a dictionary to store the word frequencies, 
 
 ### [Book Analysis with NLK and NTLK](book_analysis.py)/ [Text Similarity](text_similarity.py)/[Text Clustering](text_clustering.py)
 
-The data structures in these codes includes multiple lists and tuples. "sentences" is a list of sentences gathered and split through using "sent_tokenize" to process the input text. "score" is the output in form of tuples of of each sentence and its sentiment score. 
+For [Book Analysis with NLK and NTLK](book_analysis.py), the data structures in these codes includes multiple lists and tuples. "sentences" is a list of sentences gathered and split through using "sent_tokenize" to process the input text. "score" is the output in form of tuples of of each sentence and its sentiment score. In understanding the sentiment analysis, ChatGPT helps on the choice of VADER (Valence Aware Dictionary and Sentiment Reasoner) which is a rule-based approach and machine-learning-based approach. 
 
-In understanding the sentiment analysis, ChatGPT helps on the choice of VADER (Valence Aware Dictionary and Sentiment Reasoner) which is a rule-based approach and machine-learning-based approach. 
+For [Text Similarity](text_similarity.py), the fuzz listed in the instruction does not work, so I asked ChatGPT again to debug my code while my codes output an error to retrieve an package. And instead, I find out that I should use fuzzywuzzy library. The fuzz.ratio() can calculate the text similarity score; fuzz.token_set_ratio can find the most similar words between two texts (https://medium.com/nlpgurukool/fuzzy-matching-1baac719aa25). According to https://www.geeksforgeeks.org/fuzzywuzzy-python-library/, it is based on Levenshtein distance, which is minimum number of edits required to transform one string to another. 
+
+For [Text Clustering](text_clustering.py), 
