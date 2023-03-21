@@ -1,4 +1,10 @@
 from imdb import Cinemagoer
+import nltk
+import string
+from unicodedata import category
+from nltk.corpus import stopwords
+
+nltk.download("stopwords")
 
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
@@ -6,58 +12,73 @@ ia = Cinemagoer()
 
 def get_reviews(movie_name):
     """
-    Search for movie id for the given movie and returns the first five reviews.
+    Search for movie id for the given movie and returns the list of movie reviews.
     """
     # Search for movie ids
     movie = ia.search_movie(movie_name)[0]
     movie_id = movie.movieID
 
-    # Get First 5 movie reviews
+    # Get movie reviews
     movie_reviews = ia.get_movie_reviews(movie_id)
-    movie_reviews5 = []
+    movie_reviews_list = []
 
-    for i in range(5):
+    for i in range(len(movie_reviews["data"]["reviews"])):
         movie_content = movie_reviews["data"]["reviews"][i]["content"]
-        movie_reviews5.append(movie_content)
-    return movie_reviews5
+        movie_reviews_list.append(movie_content)
+    return movie_reviews_list
 
 
-def process_reviews(movie_name):
+def process_reviews(movie_name, exclude_stopwords=False):
     """
-    Makes a dictionary that contains the frequency of words in the first five reviews.
+    Process the extracted reviews from the function above by removing stopwords and unnecessary characters.
+    Returns the cleaned review list for the given movie.
     """
-    hist = {}
+    # Add stopwords from nltk library
+    stop_words = set(stopwords.words("english"))
+
+    # Add punctuation and whitespaces
+    strippables = string.punctuation + string.whitespace
+
+    # Create a list of cleaned reviews without stopwords and strippables.
     review_list = get_reviews(movie_name)
+    cleaned_reviews = []
 
     # Split reviews into words
     for review in review_list:
         words = review.split()
 
-        # Update words in dictionary
+        cleaned_sentence = []
         for word in words:
+            if exclude_stopwords:
+                if word in stop_words:
+                    continue
+            word = word.strip(strippables)
             word = word.lower()
-            hist[word] = hist.get(word, 0) + 1
-    return hist
+            cleaned_sentence.append(word)
+
+        cleaned_reviews.append(" ".join(cleaned_sentence))
+    return cleaned_reviews
 
 
 def main():
     """
     This will be the entry function. All the test code goes here.
     """
-    # # Creed 1 
+    # # Creed 1
     # creed1 = "Creed (2015)"
-    # hist_creed = process_reviews(creed1)
-    # print(hist_creed)
+    # creed_list = process_reviews(creed1, exclude_stopwords=True)
+    # print(creed_list)
 
     # # Creed 2
     # creed2 = "Creed 2"
-    # hist_creed2 = process_reviews(creed2)
-    # print(hist_creed2)
+    # creed2_list = process_reviews(creed2, exclude_stopwords=True)
+    # print(creed2_list)
 
     # # Creed 3
     # creed3 = "Creed 3"
-    # hist_creed3 = process_reviews(creed3)
-    # print(hist_creed3)
+    # creed3_list = process_reviews(creed3, exclude_stopwords=True)
+    # print(creed3_list)
+
 
 if __name__ == "__main__":
     main()
