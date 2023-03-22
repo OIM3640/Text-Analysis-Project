@@ -86,25 +86,13 @@ The process_text function generates a dictionary to store the word frequencies, 
 For [Book Analysis with NLK and NTLK](book_analysis.py), the data structures in these codes includes multiple lists and tuples. "sentences" is a list of sentences gathered and split through using "sent_tokenize" to process the input text. "score" is the output in form of tuples of of each sentence and its sentiment score. In understanding the sentiment analysis, ChatGPT helps on the choice of VADER (Valence Aware Dictionary and Sentiment Reasoner) which is a rule-based approach and machine-learning-based approach. 
 
 For [Text Similarity](text_similarity.py), the fuzz listed in the instruction does not work, so I asked ChatGPT again to debug my code while my codes output an error to retrieve an package. And instead, I find out that I should use fuzzywuzzy library. The fuzz.ratio() can calculate the text similarity score; fuzz.token_set_ratio can find the most similar words between two texts (https://medium.com/nlpgurukool/fuzzy-matching-1baac719aa25). According to https://www.geeksforgeeks.org/fuzzywuzzy-python-library/, it is based on Levenshtein distance, which is minimum number of edits required to transform one string to another. Also, because I changed my analysis goal several times and realize that I should analyze the similarity score among many texts, so I changed my code to a function instead of a direct comparison between two books which I initially did (shown below). 
-'''
-# The Picture of Dorian Gray, by Oscar Wilde
-url = 'http://www.gutenberg.org/ebooks/174.txt.utf-8'
-with urllib.request.urlopen(url) as f:
-    text = f.read().decode('utf-8')
 
-# Text Similarity
-# The Happy Prince and Other Tales, by Oscar Wilde
-url2 = 'https://www.gutenberg.org/cache/epub/30120/pg30120.txt'
-with urllib.request.urlopen(url2) as g:
-    text2 = g.read().decode('utf-8')
-    # print(text_aih) # for testing
-# For the two text by Oscar Wilde, determine the similarity in using similar words (author's habits)
+'''
 score = fuzz.ratio(text, text2)
 print("Text similarity score:", score)
 
 words1 = set(text.split())  # create a set of words from first text
 words2 = set(text2.split())  # create another set of words from second text
-# fuzz.token_set_radio usage from https://medium.com/nlpgurukool/fuzzy-matching-1baac719aa25
 similarity_scores = [(w, fuzz.token_set_ratio(w, words2)) for w in words1]
 most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10] #Descent order to find out the top ten similar words
 
