@@ -7,7 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 
 # The Picture of Dorian Gray, by Oscar Wilde
-url = 'http://www.gutenberg.org/ebooks/174.txt.utf-8'
+url = 'https://www.gutenberg.org/cache/epub/30120/pg30120.txt'
 with urllib.request.urlopen(url) as f:
     text = f.read().decode('utf-8')
     # print(text) # for testing

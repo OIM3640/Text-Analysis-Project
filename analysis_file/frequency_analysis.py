@@ -34,7 +34,7 @@ def different_words(hist):
 
 def load_stopwords():
     """Loads a list of stopwords."""
-    with open('stopwords.txt') as f:
+    with open('data/stopwords.txt') as f:
         stopwords = f.read().split()
     return stopwords
 
@@ -105,41 +105,41 @@ if __name__ == '__main__':
 
 
 
-### Another Way I appraoch word Frequency in the beginning (both with and without stopwords considered) 
-### which I do not prefer
-url = 'http://www.gutenberg.org/ebooks/174.txt.utf-8'
-with urllib.request.urlopen(url) as f:
-    text = f.read().decode('utf-8')
+# ### Another Way I appraoch word Frequency in the beginning (both with and without stopwords considered) 
+# ### which I do not prefer
+# url = 'http://www.gutenberg.org/ebooks/174.txt.utf-8'
+# with urllib.request.urlopen(url) as f:
+#     text = f.read().decode('utf-8')
 
-words = text.split()
+# words = text.split()
 
-word_freq = {}
-for word in words:
-    if word not in word_freq:
-        word_freq[word] = 1
-    else:
-        word_freq[word] += 1
+# word_freq = {}
+# for word in words:
+#     if word not in word_freq:
+#         word_freq[word] = 1
+#     else:
+#         word_freq[word] += 1
 
-# Computing Summary Statistics
-sorted_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
-# word_freq.items is tuple, and lambda returns the second value of the tuple which is the frequency
-for word, count in sorted_freq[:10]:  # return the first 10 tuples
-    print(f'{word}: {count}')
+# # Computing Summary Statistics
+# sorted_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+# # word_freq.items is tuple, and lambda returns the second value of the tuple which is the frequency
+# for word, count in sorted_freq[:10]:  # return the first 10 tuples
+#     print(f'{word}: {count}')
 
-words = text.split()
-stop_words = {'the', 'and', 'a', 'an', 'or', 'but', 'not',
-              'at', 'in', 'on', 'to', 'of'}  # self-defined stop words
-words_without_stop_words = [
-    word for word in words if word.lower() not in stop_words]
+# words = text.split()
+# stop_words = {'the', 'and', 'a', 'an', 'or', 'but', 'not',
+#               'at', 'in', 'on', 'to', 'of'}  # self-defined stop words
+# words_without_stop_words = [
+#     word for word in words if word.lower() not in stop_words]
 
-filtered_words = [word for word in words if word.lower() not in stop_words]
+# filtered_words = [word for word in words if word.lower() not in stop_words]
 
-word_freq = {}
-for word in words_without_stop_words:
-    if word not in word_freq:
-        word_freq[word] = 0
-    word_freq[word] += 1
+# word_freq = {}
+# for word in words_without_stop_words:
+#     if word not in word_freq:
+#         word_freq[word] = 0
+#     word_freq[word] += 1
 
-sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
-for word, count in sorted_word_freq[:10]:
-    print(f'{word}: {count}')
+# sorted_word_freq = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+# for word, count in sorted_word_freq[:10]:
+#     print(f'{word}: {count}')
