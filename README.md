@@ -91,10 +91,10 @@ For [Text Similarity](text_similarity.py), the fuzz listed in the instruction do
 score = fuzz.ratio(text, text2)
 print("Text similarity score:", score)
 
-words1 = set(text.split())  # create a set of words from first text
-words2 = set(text2.split())  # create another set of words from second text
+words1 = set(text.split())  
+words2 = set(text2.split()) 
 similarity_scores = [(w, fuzz.token_set_ratio(w, words2)) for w in words1]
-most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10] #Descent order to find out the top ten similar words
+most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10] 
 
 print("Top 10 most similar words:")
 for word, score in most_similar:
