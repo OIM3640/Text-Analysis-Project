@@ -95,7 +95,6 @@ words1 = set(text.split())
 words2 = set(text2.split()) 
 similarity_scores = [(w, fuzz.token_set_ratio(w, words2)) for w in words1]
 most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10] 
-
 print("Top 10 most similar words:")
 for word, score in most_similar:
     print(f"{word}: {score}")
