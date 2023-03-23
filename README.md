@@ -116,7 +116,7 @@ def compare_texts(url1, url2):
         print(f"{word}: {score}")
 ```
 
-For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. I used chatgpt to understand more about numpy package and how to generate codes for scores of several texts. 
+For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. I used chatgpt to understand more about numpy package and how to generate codes for scores of several texts. (Pictures in links below)
 
 1. [CHATGPT Q1](images/np.array1.png)
 2. [CHATGPT Q1 CONTINUED](images/np.array2.png)
