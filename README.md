@@ -116,7 +116,19 @@ def compare_texts(url1, url2):
         print(f"{word}: {score}")
 ```
 
-For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. 
+For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. I used chatgpt to understand more about numpy package and how to generate codes for scores of several texts. 
+
+[NP ARRAY CHATGPT QUESTION 1](images/np.array1.png)
+[NP ARRAY CHATGPT QUESTION 2](images/np.array2.png)
+[NP ARRAY CHATGPT QUESTION 3](images/np.array3.png)
+
+While first running the MDS for clustering, I got several error messages. 
+[MDS ERROR](images/mds%20error%20message.png)
+And ChatGPT helps me through the problem, and explain why my codes are incorrect. 
+[MDS Explanation](images/MDS%20error.png)
+
+In intepretting the result of my scatter plot, before meeting with Professor Li, I asked ChatGPT what does it mean by the numbers and axis. 
+[CLUSTERING GRAPH](images/scatter%20plot%20interpretation.png)
 
 ## Result
 ### Book Summary Stats 
@@ -194,7 +206,8 @@ However, for the fairy tales like *The Happy Prince and Other Tales*, the sentim
 ## Text Similarity & Text Clustering
 The similarity score between *The Picture of Dorian Gray* (abbreviated to DG afterwords) and *The Happy Prince* (abbreviated to HP) is 31, with *De Profundis* (abbreviated to DP) is 32, with *The Importance of Being Earnest* (BE) is 33, with *The Gentle Art of Making Enemies* by James McNeill Whistler is 42, with *The Story of Venus and Tannhäuser* by Aubrey Beardsley is 27. It is interesting that among works of Oscar Wilde himself and friends, *The Gentle Art of Making Enemies" by James McNeill Whistler has a highest similarity score. He was a very close friend with Wilde, constantly communicating through telegrams. James McNeill Whilstler, as a painter, through the commmunications, gained a similar word choice pattern as Oscar Wilde. Instead, Wilde's work and his admirer Aubrey Beardley's works are very different as shown from the text similarity scores and scatter plot. While Victorian Era is more about revealing personal struggles, there are huge individual differences on presentation of words. 
 
-! [Scatter plot from text_clustering](https://github.com/Charlottefrid/Text-Analysis-Project/blob/main/images/Figure_1.png)
+Photo:
+[Scatter plot from text_clustering](https://github.com/Charlottefrid/Text-Analysis-Project/blob/main/images/Figure_1.png)
 
 Quotations:
 https://lewisartcafe.com/oscar-wilde-on-whistler-and-vice-a-versa/
@@ -204,3 +217,6 @@ Ten most similar words in DG and HP is "provide, dream, reason, much? is. gone, 
 
 
 ## Reflection 
+With the text retrieved from a URL, summary statistics of the text, and the first few attempts with NLTK and text clustering after learning and adapting the example code to my case, I made good progress. However, when trying to convert the messy code into clear functions and debugging errors, it took too much time without sufficient knowledge of sentiment analysis, MDS, and fuzzywuzzy. ChatGPT was very helpful in debugging, especially in interpreting the example codes line by line, explaining the error messages, and identifying the root mistake, as explained in the implementation part. The project is well-scoped in analyzing the linguistic pattern of various authors, especially Oscar Wilde and how his major writings vary in styles. My analysis focuses on word choice, sentiment, and similarity to find a pattern and trend of the era. So, the functions I wrote successfully provide enough quantitative results for that question. 
+
+I based my testing on six texts to ensure that my codes are robust and functional, and to see whether I obtain the expected output. I separated the parts into four Python files so that I could test each section individually and debug in a timely manner. I wish I had known about NLTK, tokenization, and NLP before starting this project so that I could have had more time to explore other possibilities of text analysis, such as topic modeling (identifying the topics present in a collection of texts) and syntax analysis (analyzing the grammatical structure of sentences). These methods would provide additional insights into my data, as sentiment score is not highly correlated with genres, as I had assumed. Therefore, more analysis with syntax, the number of adjectives, and descriptive language analysis would be better. 
