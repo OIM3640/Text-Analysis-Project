@@ -194,7 +194,7 @@ However, for the fairy tales like *The Happy Prince and Other Tales*, the sentim
 ## Text Similarity & Text Clustering
 The similarity score between *The Picture of Dorian Gray* (abbreviated to DG afterwords) and *The Happy Prince* (abbreviated to HP) is 31, with *De Profundis* (abbreviated to DP) is 32, with *The Importance of Being Earnest* (BE) is 33, with *The Gentle Art of Making Enemies* by James McNeill Whistler is 42, with *The Story of Venus and Tannhäuser* by Aubrey Beardsley is 27. It is interesting that among works of Oscar Wilde himself and friends, *The Gentle Art of Making Enemies" by James McNeill Whistler has a highest similarity score. He was a very close friend with Wilde, constantly communicating through telegrams. James McNeill Whilstler, as a painter, through the commmunications, gained a similar word choice pattern as Oscar Wilde. Instead, Wilde's work and his admirer Aubrey Beardley's works are very different as shown from the text similarity scores and scatter plot. While Victorian Era is more about revealing personal struggles, there are huge individual differences on presentation of words. 
 
-! [Scatter plot from text_clustering](images/Figure_1.png)
+! [Scatter plot from text_clustering](https://github.com/Charlottefrid/Text-Analysis-Project/blob/main/images/Figure_1.png)
 
 Quotations:
 https://lewisartcafe.com/oscar-wilde-on-whistler-and-vice-a-versa/
