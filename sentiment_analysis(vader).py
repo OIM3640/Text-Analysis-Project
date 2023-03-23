@@ -8,6 +8,7 @@ def movie_sentiment_vader(movie_name):
     """
     Generates the sentiment scores for the reviews extracted in file 'movie_reviews' using the VADER library.
     Creates a list with all the sentiment scores, and returns the average score for each category.
+    (Negative, Neutral, Positive, Compound)
     """
     # Generate sentiment analysis for the reviews
     movie_review_content = movie_reviews.process_reviews(

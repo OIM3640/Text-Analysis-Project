@@ -5,7 +5,11 @@ import matplotlib.pyplot as plt
 
 
 def movie_sentiment_textblob(movie_name):
-    """"""
+    """
+    Generates the sentiment scores for the reviews extracted in file 'movie_reviews' using the Textblob library.
+    Creates a list with all the sentiment scores, and returns the average score for each category.
+    (Polarity, Subjectivity)
+    """
     # Generate sentiment analysis for the reviews
     movie_review_content = movie_reviews.process_reviews(
         movie_name, exclude_stopwords=True
@@ -30,14 +34,14 @@ def movie_sentiment_textblob(movie_name):
 
 def sentiment_plot():
     """
-    Plots the average sentiment scores of the three movies on a scatterplot.
+    Plots the average sentiment scores of the three movies on a scatter plot.
     """
     creed1 = movie_sentiment_textblob("Creed (2015)").tolist()
     creed2 = movie_sentiment_textblob("Creed 2").tolist()
     creed3 = movie_sentiment_textblob("Creed 3").tolist()
     data = [creed1, creed2, creed3]
 
-    # Extract values from data
+    # Extract values from data # Source: https://docs.python.org/3/library/functions.html#zip 
     pol, sub = zip(*data)
     # Create plot
     plt.scatter(pol, sub)
