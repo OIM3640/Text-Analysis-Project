@@ -87,18 +87,34 @@ For [Book Analysis with NLK and NTLK](book_analysis.py), the data structures in 
 
 For [Text Similarity](text_similarity.py), the fuzz listed in the instruction does not work, so I asked ChatGPT again to debug my code while my codes output an error to retrieve an package. And instead, I find out that I should use fuzzywuzzy library. The fuzz.ratio() can calculate the text similarity score; fuzz.token_set_ratio can find the most similar words between two texts (https://medium.com/nlpgurukool/fuzzy-matching-1baac719aa25). According to https://www.geeksforgeeks.org/fuzzywuzzy-python-library/, it is based on Levenshtein distance, which is minimum number of edits required to transform one string to another. Also, because I changed my analysis goal several times and realize that I should analyze the similarity score among many texts, so I changed my code to a function instead of a direct comparison between two books which I initially did (shown below). 
 
-'''
-score = fuzz.ratio(text, text2)
-print("Text similarity score:", score)
-
+```
 words1 = set(text.split())  
 words2 = set(text2.split()) 
 similarity_scores = [(w, fuzz.token_set_ratio(w, words2)) for w in words1]
-most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10] 
-print("Top 10 most similar words:")
-for word, score in most_similar:
-    print(f"{word}: {score}")
-'''
+```
+
+To a function that allows more combination of text to compute the scores: 
+
+```
+def compare_texts(url1, url2):
+    with urllib.request.urlopen(url1) as f:
+        text1 = f.read().decode('utf-8')
+    with urllib.request.urlopen(url2) as g:
+        text2 = g.read().decode('utf-8')
+        
+    similarity_score = fuzz.ratio(text1, text2)
+    print("Text similarity score:", similarity_score)
+    
+    words1 = set(text1.split())
+    words2 = set(text2.split())
+    
+    similarity_scores = [(w, fuzz.token_set_ratio(w, words2)) for w in words1]
+    most_similar = sorted(similarity_scores, key=lambda x: x[1], reverse=True)[:10]
+    
+    print("Top 10 most similar words:")
+    for word, score in most_similar:
+        print(f"{word}: {score}")
+```
 
 For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. 
 
@@ -159,7 +175,9 @@ quite    42
          42
 happy    40
 '''
-For *The Picture of Dorian Gray*, all sentences have a sentiment score ranging from -0.5994 to -0.9638, meaning the whole book is completely full of negative emotions without any positive upwarding sentences. Below is an example of a sentence. The overall tone is perceived to be negative, which is the characteristics of Oscar Wilde's focus on individual struggles and sufferings.  
+
+## Sentiment Score Analysis
+For *The Picture of Dorian Gray*, all sentences have a sentiment score ranging from -0.5994 to -0.9638, meaning the whole book is completely full of negative emotions without any positive upwarding sentences. Below is an example of output for a sentence. The overall tone is perceived to be negative, which is the characteristics of Oscar Wilde's focus on individual struggles and sufferings.  
 
 '''
 There were two cries heard, the cry of a hare in pain, which is dreadful, the cry of a man in agony, which is
@@ -171,7 +189,18 @@ worse. -0.9638
 Out of my nature has come wild despair; an abandonment to grief that was piteous even to look at;
 terrible and impotent rage; bitterness and scorn; anguish that wept aloud; misery that could find no voice; sorrow that was dumb. -0.9917
 ''' 
-However, for the fairy tales like *The Happy Prince and Other Tales*, the sentiment score is shown to be inclined to negativity which should not be the result given the nature of fairy tale for kids. So, I learnt that the SentimentIntensityAnalyzer may not be the best tool here. It uses a lexicon-based approach to look up words in a pre-defined list and assigns positive, negative, or neutral scores based on their presence in that list. This may not be efficient becasue of Wilde's word choice is normally sad, even in happy stories (with sad essence). 
+However, for the fairy tales like *The Happy Prince and Other Tales*, the sentiment score is shown to be inclined to negativity which should not be the result given the nature of fairy tale for kids. So, I learnt that the SentimentIntensityAnalyzer may not be the best tool here. It uses a lexicon-based approach to look up words in a pre-defined list and assigns positive, negative, or neutral scores based on their presence in that list. This may not be efficient becasue of Wilde's word choice is normally associated with negative prefix or suffix, even in happy stories (with sad essence). 
+
+## Text Similarity & Text Clustering
+The similarity score between *The Picture of Dorian Gray* (abbreviated to DG afterwords) and *The Happy Prince* (abbreviated to HP) is 31, with *De Profundis* (abbreviated to DP) is 32, with *The Importance of Being Earnest* (BE) is 33, with *The Gentle Art of Making Enemies* by James McNeill Whistler is 42, with *The Story of Venus and Tannhäuser* by Aubrey Beardsley is 27. It is interesting that among works of Oscar Wilde himself and friends, *The Gentle Art of Making Enemies" by James McNeill Whistler has a highest similarity score. He was a very close friend with Wilde, constantly communicating through telegrams. James McNeill Whilstler, as a painter, through the commmunications, gained a similar word choice pattern as Oscar Wilde. Instead, Wilde's work and his admirer Aubrey Beardley's works are very different as shown from the text similarity scores and scatter plot. While Victorian Era is more about revealing personal struggles, there are huge individual differences on presentation of words. 
+
+! [Scatter plot from text_clustering](images/Figure_1.png)
+
+Quotations:
+https://lewisartcafe.com/oscar-wilde-on-whistler-and-vice-a-versa/
+https://victorian-era.org/victorian-era-literature-characteristics.html
+
+Ten most similar words in DG and HP is "provide, dream, reason, much? is. gone, terms, lovlier"; in DG and DP is "platform, pattern, comeliness, kiss, spoken, tell, morbid, water-ways, tired". From these, there is a trend of connotations in the different texts; while serious literature normally have common in neutral or negative words like "morbid" and "tired"; while fairy tales have mostly neutral and positive words like "dream", "lovlier". 
 
 
 ## Reflection 

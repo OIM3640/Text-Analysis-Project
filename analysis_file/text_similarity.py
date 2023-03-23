@@ -23,7 +23,7 @@ def compare_texts(url1, url2):
         print(f"{word}: {score}")
 
 # Example usage:
-url1 = 'https://www.gutenberg.org/cache/epub/174/pg174.txt' # The Adventures of Sherlock Holmes, by Arthur Conan Doyle
-url2 = 'https://www.gutenberg.org/cache/epub/7849/pg7849.txt' # The Return of Sherlock Holmes, by Arthur Conan Doyle
+url1 = 'https://www.gutenberg.org/cache/epub/174/pg174.txt' 
+url2 = 'https://www.gutenberg.org/cache/epub/50210/pg50210.txt' 
 
 compare_texts(url1, url2)
