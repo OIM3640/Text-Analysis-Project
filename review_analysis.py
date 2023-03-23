@@ -3,7 +3,7 @@ import movie_reviews
 
 def review_dict(movie_name):
     """
-    Counts the frequency of words in the movie review list, and returns a dictionary with words and its corresponding frequency count.
+    Counts the frequency of each word in the movie review list, and returns a dictionary with words as keys and its corresponding frequency count as values.
     """
     # Create dictionary of reviews and extract movie reviews from the function above.
     hist = {}
@@ -19,7 +19,7 @@ def review_dict(movie_name):
 def most_frequent(hist, num=10):
     """
     Makes a list of the most frequent words in the movie dictionary.
-    Prints the most frequent words in the reviews and its fequency. (tnum = the number of words printed)
+    Prints the most frequent words in the reviews and its corresponding fequency. (num = the number of words printed)
     """
     res = []
     for word in hist:

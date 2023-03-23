@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 
 def movie_sentiment_vader(movie_name):
     """
-    Generates the sentiment scores for the reviews extracted in file 'movie_reviews', creates a list with all the sentiment scores, and returns the average score for each category.
+    Generates the sentiment scores for the reviews extracted in file 'movie_reviews' using the VADER library.
+    Creates a list with all the sentiment scores, and returns the average score for each category.
     """
     # Generate sentiment analysis for the reviews
     movie_review_content = movie_reviews.process_reviews(
@@ -31,7 +32,12 @@ def movie_sentiment_vader(movie_name):
 
 
 def sentiment_barchart():
-    """"""
+    """
+    Plot the average scores of the three movies on a bar chart.
+    """
+    # Source: https://pythonbasics.org/matplotlib-bar-chart/
+
+    # Convert sentiment scores to a list
     creed1 = movie_sentiment_vader("Creed (2015)").tolist()
     creed2 = movie_sentiment_vader("Creed 2").tolist()
     creed3 = movie_sentiment_vader("Creed 3").tolist()

@@ -1,7 +1,6 @@
 from imdb import Cinemagoer
 import nltk
 import string
-from unicodedata import category
 from nltk.corpus import stopwords
 
 nltk.download("stopwords")
@@ -69,16 +68,16 @@ def main():
     creed_list = process_reviews(creed1, exclude_stopwords=True)
     print(creed_list)
 
-    # # Creed 2
-    # creed2 = "Creed 2"
-    # creed2_list = process_reviews(creed2, exclude_stopwords=True)
-    # print(creed2_list)
+    # Creed 2
+    creed2 = "Creed 2"
+    creed2_list = process_reviews(creed2, exclude_stopwords=True)
+    print(creed2_list)
 
-    # # Creed 3
-    # creed3 = "Creed 3"
-    # creed3_list = process_reviews(creed3, exclude_stopwords=True)
-    # print(creed3_list)
+    # Creed 3
+    creed3 = "Creed 3"
+    creed3_list = process_reviews(creed3, exclude_stopwords=True)
+    print(creed3_list)
 
-
+    
 if __name__ == "__main__":
     main()
