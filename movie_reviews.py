@@ -49,11 +49,11 @@ def process_reviews(movie_name, exclude_stopwords=False):
 
         cleaned_sentence = []
         for word in words:
+            word = word.strip(strippables)
+            word = word.lower()
             if exclude_stopwords:
                 if word in stop_words:
                     continue
-            word = word.strip(strippables)
-            word = word.lower()
             cleaned_sentence.append(word)
 
         cleaned_reviews.append(" ".join(cleaned_sentence))
@@ -64,10 +64,10 @@ def main():
     """
     This will be the entry function. All the test code goes here.
     """
-    # # Creed 1
-    # creed1 = "Creed (2015)"
-    # creed_list = process_reviews(creed1, exclude_stopwords=True)
-    # print(creed_list)
+    # Creed 1
+    creed1 = "Creed (2015)"
+    creed_list = process_reviews(creed1, exclude_stopwords=True)
+    print(creed_list)
 
     # # Creed 2
     # creed2 = "Creed 2"
