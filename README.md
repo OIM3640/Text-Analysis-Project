@@ -118,9 +118,9 @@ def compare_texts(url1, url2):
 
 For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. I used chatgpt to understand more about numpy package and how to generate codes for scores of several texts. 
 
-[NP ARRAY CHATGPT QUESTION 1](images/np.array1.png)
-[NP ARRAY CHATGPT QUESTION 2](images/np.array2.png)
-[NP ARRAY CHATGPT QUESTION 3](images/np.array3.png)
+[CHATGPT Q1](images/np.array1.png)/
+[CHATGPT Q1 CONTINUED](images/np.array2.png)/
+[CHATGPT Q1 CONTINUED.](images/np.array3.png)/
 
 While first running the MDS for clustering, I got several error messages. 
 [MDS ERROR](images/mds%20error%20message.png)
@@ -135,7 +135,7 @@ In intepretting the result of my scatter plot, before meeting with Professor Li,
 
 In the book *The Picture of Dorian Gray*, there are over 8000 new words used which shows that Oscar Wilde tends to use a wide variety of words in his writing; this can be indicative of his writing skills gained from his Oxford education backgrounds and literature circle. Also, this is a serious literature work for adults, so the vocabulary is more diverse. Other books like *The Importance of Being Earnest* also show this trend with a 12674/23791 word-count that is not stop words. However, none of the other works is as elegant with variety like *The Picture of Dorian Gray*; this may lead to the book's great success in Victorian literature. 
 
-'''
+```
 Total number of words: 82027
 Number of different words: 8525
 The most common words are:     
@@ -159,11 +159,11 @@ things   125
 see      123
 now      123
 us       121
-'''
+```
 
 However, on the contrary, *The Happy Prince and Other Tales*, which is a fairy tale targeting the children as audience, has only 2797 different words while only 9479/19635 words are not stop words. Also the top-used words are simple just like what children's books are expected. 
 
-'''
+```
 Total number of words: 19635
 Number of different words: 2797
 The most common words are:     
@@ -186,21 +186,23 @@ rocket   42
 quite    42
          42
 happy    40
-'''
+```
 
 ## Sentiment Score Analysis
 For *The Picture of Dorian Gray*, all sentences have a sentiment score ranging from -0.5994 to -0.9638, meaning the whole book is completely full of negative emotions without any positive upwarding sentences. Below is an example of output for a sentence. The overall tone is perceived to be negative, which is the characteristics of Oscar Wilde's focus on individual struggles and sufferings.  
 
-'''
+```
 There were two cries heard, the cry of a hare in pain, which is dreadful, the cry of a man in agony, which is
 worse. -0.9638
-'''
+```
 
 *De Profundis*, which has a sentiment score ranging from 0.0(Gutenburg Description of Copyrights), -0.1655 (highest score in text) to -0.9917. This is a much lower score, because this is during the time when he was betrayed by his lover and thrown to jail. 
-'''
+
+```
 Out of my nature has come wild despair; an abandonment to grief that was piteous even to look at;
 terrible and impotent rage; bitterness and scorn; anguish that wept aloud; misery that could find no voice; sorrow that was dumb. -0.9917
-''' 
+```
+
 However, for the fairy tales like *The Happy Prince and Other Tales*, the sentiment score is shown to be inclined to negativity which should not be the result given the nature of fairy tale for kids. So, I learnt that the SentimentIntensityAnalyzer may not be the best tool here. It uses a lexicon-based approach to look up words in a pre-defined list and assigns positive, negative, or neutral scores based on their presence in that list. This may not be efficient becasue of Wilde's word choice is normally associated with negative prefix or suffix, even in happy stories (with sad essence). 
 
 ## Text Similarity & Text Clustering
