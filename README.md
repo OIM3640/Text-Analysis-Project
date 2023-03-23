@@ -118,9 +118,9 @@ def compare_texts(url1, url2):
 
 For [Text Clustering](text_clustering.py), there are 7 texts used to draw the plot. There is a iteration through the list of different tets and create a set of words that appear in each text to find the similarity coefficient. It will take all sets to generate the ratio of the size of intersection of the word sets and stored the results in the two dimensional way. It uses sets, which is a very efficient data structure here. I used chatgpt to understand more about numpy package and how to generate codes for scores of several texts. 
 
-[CHATGPT Q1](images/np.array1.png)/
-[CHATGPT Q1 CONTINUED](images/np.array2.png)/
-[CHATGPT Q1 CONTINUED.](images/np.array3.png)/
+1. [CHATGPT Q1](images/np.array1.png)
+2. [CHATGPT Q1 CONTINUED](images/np.array2.png)
+3. [CHATGPT Q1 CONTINUED.](images/np.array3.png)
 
 While first running the MDS for clustering, I got several error messages. 
 [MDS ERROR](images/mds%20error%20message.png)
@@ -212,8 +212,8 @@ Photo:
 [Scatter plot from text_clustering](https://github.com/Charlottefrid/Text-Analysis-Project/blob/main/images/Figure_1.png)
 
 Quotations:
-https://lewisartcafe.com/oscar-wilde-on-whistler-and-vice-a-versa/
-https://victorian-era.org/victorian-era-literature-characteristics.html
+[Whistler as a Friend](https://lewisartcafe.com/oscar-wilde-on-whistler-and-vice-a-versa/)
+[Victorian Writers](https://victorian-era.org/victorian-era-literature-characteristics.html)
 
 Ten most similar words in DG and HP is "provide, dream, reason, much? is. gone, terms, lovlier"; in DG and DP is "platform, pattern, comeliness, kiss, spoken, tell, morbid, water-ways, tired". From these, there is a trend of connotations in the different texts; while serious literature normally have common in neutral or negative words like "morbid" and "tired"; while fairy tales have mostly neutral and positive words like "dream", "lovlier". 
 
