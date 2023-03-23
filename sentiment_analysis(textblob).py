@@ -43,7 +43,8 @@ def sentiment_plot():
 
     # Extract values from data # Source: https://docs.python.org/3/library/functions.html#zip 
     pol, sub = zip(*data)
-    # Create plot
+    
+    # Create plot # Source: https://pythonspot.com/matplotlib-scatterplot/
     plt.scatter(pol, sub)
 
     # Add labels and title to plot

@@ -3,6 +3,7 @@ import nltk
 import string
 from nltk.corpus import stopwords
 
+# Download stopwords from NLTK # Source: https://pythonspot.com/nltk-stop-words/ 
 nltk.download("stopwords")
 
 # create an instance of the Cinemagoer class
