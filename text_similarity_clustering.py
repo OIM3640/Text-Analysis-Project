@@ -41,7 +41,6 @@ def clustering_kmeans(movie_name):
     # Multi-dimensional Scaling (MDS) embedding on the dissimilarity matrix
     coord = MDS(dissimilarity="precomputed").fit_transform(dissimilarities)
 
-    
     # Compute kmean model with dissimilarity matrix
     clusters = 3
     kmeans = KMeans(n_clusters=clusters).fit(dissimilarities)

@@ -41,9 +41,9 @@ def sentiment_plot():
     creed3 = movie_sentiment_textblob("Creed 3").tolist()
     data = [creed1, creed2, creed3]
 
-    # Extract values from data # Source: https://docs.python.org/3/library/functions.html#zip 
+    # Extract values from data # Source: https://docs.python.org/3/library/functions.html#zip
     pol, sub = zip(*data)
-    
+
     # Create plot # Source: https://pythonspot.com/matplotlib-scatterplot/
     plt.scatter(pol, sub)
 

@@ -3,7 +3,7 @@ import nltk
 import string
 from nltk.corpus import stopwords
 
-# Download stopwords from NLTK # Source: https://pythonspot.com/nltk-stop-words/ 
+# Download stopwords from NLTK # Source: https://pythonspot.com/nltk-stop-words/
 nltk.download("stopwords")
 
 # Create an instance of the Cinemagoer class
@@ -44,22 +44,23 @@ def process_reviews(movie_name, exclude_stopwords=False):
     review_list = get_reviews(movie_name)
     cleaned_reviews = []
 
-    
     for review in review_list:
-        words = review.split() # Split reviews into words
+        words = review.split()  # Split reviews into words
         cleaned_sentences = []
 
         for word in words:
-            word = word.strip(strippables) # Remove strippables
-            word = word.lower() # Convert letters to lowercase
-            if exclude_stopwords: # Remove stopwords
+            word = word.strip(strippables)  # Remove strippables
+            word = word.lower()  # Convert letters to lowercase
+            if exclude_stopwords:  # Remove stopwords
                 if word in stop_words:
                     continue
-            cleaned_sentences.append(word) # Add word to clean_sentences list 
+            cleaned_sentences.append(word)  # Add word to clean_sentences list
 
-        cleaned_reviews.append(" ".join(cleaned_sentences)) # join the words in cleaned_senences and add to cleaned_review list
+        cleaned_reviews.append(
+            " ".join(cleaned_sentences)
+        )  # join the words in cleaned_senences and add to cleaned_review list
     return cleaned_reviews
-    
+
 
 def main():
     """
@@ -81,6 +82,5 @@ def main():
     print(creed3_list)
 
 
-    
 if __name__ == "__main__":
     main()
