@@ -6,7 +6,7 @@ from nltk.corpus import stopwords
 # Download stopwords from NLTK # Source: https://pythonspot.com/nltk-stop-words/ 
 nltk.download("stopwords")
 
-# create an instance of the Cinemagoer class
+# Create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
 
@@ -22,6 +22,7 @@ def get_reviews(movie_name):
     movie_reviews = ia.get_movie_reviews(movie_id)
     movie_reviews_list = []
 
+    # Loop through the reviews and store them in a list
     for i in range(len(movie_reviews["data"]["reviews"])):
         movie_content = movie_reviews["data"]["reviews"][i]["content"]
         movie_reviews_list.append(movie_content)
@@ -43,22 +44,22 @@ def process_reviews(movie_name, exclude_stopwords=False):
     review_list = get_reviews(movie_name)
     cleaned_reviews = []
 
-    # Split reviews into words
+    
     for review in review_list:
-        words = review.split()
+        words = review.split() # Split reviews into words
+        cleaned_sentences = []
 
-        cleaned_sentence = []
         for word in words:
-            word = word.strip(strippables)
-            word = word.lower()
-            if exclude_stopwords:
+            word = word.strip(strippables) # Remove strippables
+            word = word.lower() # Convert letters to lowercase
+            if exclude_stopwords: # Remove stopwords
                 if word in stop_words:
                     continue
-            cleaned_sentence.append(word)
+            cleaned_sentences.append(word) # Add word to clean_sentences list 
 
-        cleaned_reviews.append(" ".join(cleaned_sentence))
+        cleaned_reviews.append(" ".join(cleaned_sentences)) # join the words in cleaned_senences and add to cleaned_review list
     return cleaned_reviews
-
+    
 
 def main():
     """
@@ -78,6 +79,7 @@ def main():
     creed3 = "Creed 3"
     creed3_list = process_reviews(creed3, exclude_stopwords=True)
     print(creed3_list)
+
 
     
 if __name__ == "__main__":

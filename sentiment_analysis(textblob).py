@@ -52,7 +52,7 @@ def sentiment_plot():
     plt.ylabel("Subjectivity")
     plt.title("Sentiment Analysis of Movies (Textblob)")
 
-    # Lable the points
+    # Lable the points # Source: https://stackoverflow.com/questions/14432557/scatter-plot-with-different-text-at-each-data-point
     for i, (pol, sub) in enumerate(data):
         plt.text(pol, sub, f"Creed {i+1}")
 
