@@ -1,14 +1,13 @@
-# Analysis #1: this part assess whether the TV show is recommended based on the scraped film reviews
-
-# import packages
+# Analysis 1: this part assess whether the TV show is recommended based on the scraped film reviews
+"""
+This module contains utility functions for processing text data.
+"""
 # install: pip install spacy
-from nltk.sentiment import SentimentIntensityAnalyzer
 import sys
 from unicodedata import category
+from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon')
-
 nltk.download('stopwords')  # download stopwords from NLTK library
 
 
@@ -24,7 +23,7 @@ def process_file(filename, excluding_stopwords=True):
     - hist: dictionary, a map from each word to the number of times it appears in the file
     """
     hist = {}  # create an empty dictionary to store the word frequency
-    fp = open(filename, encoding='UTF8')  # open the file
+    open_file = open(filename, encoding='UTF8')  # open the file
     # define the set of characters to remove from each word
     strippables = ''.join(
         [chr(i) for i in range(sys.maxunicode)
@@ -32,7 +31,7 @@ def process_file(filename, excluding_stopwords=True):
 
     # Get the list of English stop words
     stop_words = set(nltk.corpus.stopwords.words('english'))
-    for line in fp:
+    for line in open_file:
         if line.startswith('*** END OF THIS PROJECT'):
             break
         line = line.replace('-', ' ')
@@ -65,7 +64,8 @@ def most_common(hist):
     hist: a dictionary that contains the words and their frequencies.
 
     Returns:
-    a list of tuples, where each tuple contains a word and its frequency, sorted in descending order of frequency.
+    a list of tuples, where each tuple contains a word and its frequency, 
+    sorted in descending order of frequency.
     """
     res = []  # Create an empty list
     for word in hist:
@@ -77,8 +77,10 @@ def most_common(hist):
 
 def analyze_sentiment(hist):
     """
-    This function takes a histogram of words and their frequency as input and uses the VADER sentiment analyzer to compute
-    the average sentiment score for the words. The function then prints a recommendation for the film based on the
+    This function takes a histogram of words and their frequency as input 
+    and uses the VADER sentiment analyzer to compute the average sentiment 
+    score for the words. 
+    The function then prints a recommendation for the film based on the
     average sentiment score.
 
     Args:
@@ -89,11 +91,14 @@ def analyze_sentiment(hist):
 
     """
     nltk.data.path.append('/path/to/custom/nltk_data')
+    # define an empty word list
     word_list = []
+    # loop through each item in the dictionary and append words * frequency
     for key, value in hist.items():
         # use "extend" to add multiple copies of a word to the list
         word_list.extend([key]*value)
     analyzer = SentimentIntensityAnalyzer()
+    # loop through each word in the word_list to calculate the score
     total_score = 0
     for word in word_list:
         scores = analyzer.polarity_scores(word)
@@ -108,8 +113,8 @@ def analyze_sentiment(hist):
 def is_show_recommended(text_file):
     """
     This function reads a file containing reviews of a TV show, uses the VADER sentiment analyzer to
-    determine the sentiment of each review, and prints a recommendation for the TV show based on the majority sentiment
-    of the reviews.
+    determine the sentiment of each review, and prints a recommendation for the TV show based on 
+    the majority sentiment of the reviews.
 
     Args:
     - text_file (str): the name of the text file containing the reviews
@@ -121,12 +126,13 @@ def is_show_recommended(text_file):
     nltk.download('vader_lexicon')
     sid = SentimentIntensityAnalyzer()
 
-    with open(text_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-
+    with open(text_file, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    # set two variables for counting purposes
     num_positive_reviews = 0
     num_negative_reviews = 0
-
+    # loop through each line to calculate sentimental score
+    # and classify the words into positive and negative ones
     for line in lines:
         sentiment_scores = sid.polarity_scores(line)
         if sentiment_scores['compound'] >= 0.05:
@@ -135,19 +141,30 @@ def is_show_recommended(text_file):
             num_negative_reviews += 1
 
     if num_positive_reviews > num_negative_reviews:
-        print(
-            f"The TV show is recommended, with {num_positive_reviews} positive reviews and {num_negative_reviews} negative reviews")
+        print(f"The TV show is recommended, with {num_positive_reviews} positive reviews and "
+              f"{num_negative_reviews} negative reviews")
     elif num_positive_reviews < num_negative_reviews:
-        print(
-            f"The TV show is not recommended, with {num_positive_reviews} positive reviews and {num_negative_reviews} negative reviews")
+        print(f"The TV show is not recommended, with {num_positive_reviews} positive reviews"
+              f" and {num_negative_reviews} negative reviews")
     else:
-        print(
-            f"Mixed reviews, with {num_positive_reviews} positive reviews and {num_negative_reviews} negative reviews. Watch at your own discretion.")
+        print(f"Mixed reviews, with {num_positive_reviews} positive reviews and"
+              f"{num_negative_reviews} negative reviews. Watch at your own discretion.")
 
 
 def main():
+    """
+    Runs the main program, which processes reviews for the 
+    TV shows 'Stranger Things' and 'Vampire Diaries'.
+    
+    This function reads review files for each TV show, 
+    creates a dictionary of word frequencies for each show,
+    finds the 20 most common words for each show and their corresponding frequencies, 
+    analyzes the sentiment of each show's reviews using VADER, 
+    and prints a recommendation for each show based on its average sentiment score.
+    """
     # Stranger Things
-    # Read stranger_things_reviews.txt and creates a dictionary: values are words, keys are the frequencies of words
+    # Read stranger_things_reviews.txt and creates a dictionary:
+    # values are words, keys are the frequencies of words
     stranger_things = process_file('stranger_things_reviews.txt',
                                    excluding_stopwords=True)
     print(stranger_things)
@@ -156,14 +173,15 @@ def main():
     st_20_common_words = most_common(stranger_things)
     print('The most common words are:')
     for freq, word in st_20_common_words[0:20]:
-        print(word, '\st_20_common_words', freq)
+        print(word, '\\st_20_common_words', freq)
 
     # Analyze sentiment of the review
     analyze_sentiment(stranger_things)
     is_show_recommended('stranger_things_reviews.txt')
 
     # Vampire Diaries
-    # Read vampire_diaries_reviews.txt and creates a dictionary: values are words, keys are the frequencies of words
+    # Read vampire_diaries_reviews.txt and creates a dictionary:
+    # values are words, keys are the frequencies of words
     vampire = process_file('vampire_diaries_reviews.txt',
                            excluding_stopwords=True)
     print(vampire)

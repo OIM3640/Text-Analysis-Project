@@ -1,4 +1,7 @@
-# install: pip install beautifulsoup4
+"""
+This module contains utility functions for processing text data.
+install: pip install beautifulsoup4
+"""
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,7 +22,7 @@ def scrape_stranger_things_reviews():
         page_url = f'{url}?start={25*(page-1)}'
 
         # send a request to the URL and get the HTML content
-        response = requests.get(page_url)
+        response = requests.get(page_url, timeout = 5)
         html_content = response.content
 
         # use BeautifulSoup to parse the HTML content
@@ -39,9 +42,9 @@ def scrape_stranger_things_reviews():
         print(f'Finished scraping page {page} of Stranger Things reviews')
 
     # write the reviews to a text file using UTF-8 encoding
-    with open('stranger_things_reviews.txt', 'w', encoding='utf-8') as f:
+    with open('stranger_things_reviews.txt', 'w', encoding='utf-8') as file:
         for review in reviews:
-            f.write(review + '\n')
+            file.write(review + '\n')
 
 
 def scrape_vampire_diaries_reviews():
@@ -60,7 +63,7 @@ def scrape_vampire_diaries_reviews():
         page_url = f'{url}?start={10*(page-1)}'
 
         # send a request to the URL and get the HTML content
-        response = requests.get(page_url)
+        response = requests.get(page_url, timeout=5)
         html_content = response.content
 
         # use BeautifulSoup to parse the HTML content
@@ -80,13 +83,15 @@ def scrape_vampire_diaries_reviews():
         print(f'Finished scraping page {page} of Vampire Diaries reviews')
 
     # write the reviews to a text file using UTF-8 encoding
-    with open('vampire_diaries_reviews.txt', 'w', encoding='utf-8') as f:
+    with open('vampire_diaries_reviews.txt', 'w', encoding='utf-8') as file:
         for review in reviews:
-            f.write(review + '\n')
+            file.write(review + '\n')
 
 
 def main():
-    # call the function to scrape reviews and write them to a file
+    """
+    call the function to scrape reviews and write them to a file
+    """
     scrape_stranger_things_reviews()
     scrape_vampire_diaries_reviews()
 
