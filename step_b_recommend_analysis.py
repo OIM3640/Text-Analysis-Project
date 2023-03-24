@@ -5,6 +5,10 @@ This module contains utility functions for processing text data.
 # install: pip install spacy
 import sys
 from unicodedata import category
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.manifold import MDS
+from fuzzywuzzy import fuzz
 from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
 nltk.download('vader_lexicon')
@@ -151,11 +155,32 @@ def is_show_recommended(text_file):
               f"{num_negative_reviews} negative reviews. Watch at your own discretion.")
 
 
+def get_similarity_matrix(list1, list2):
+    """
+    Compute a similarity matrix between two lists of strings using fuzzy string matching.
+
+    Args:
+        list1 (list): A list of strings.
+        list2 (list): A list of strings.
+
+    Returns:
+        An array representing the similarity scores between every pair of strings 
+        in the two lists.
+    """
+    similarity_matrix = np.zeros((len(list1), len(list2)))
+    for i, review1 in enumerate(list1):
+        for j, review2 in enumerate(list2):
+            score = fuzz.token_sort_ratio(review1, review2)
+            similarity_matrix[i][j] = score
+            similarity_matrix[j][i] = score  # enforce symmetry
+    return similarity_matrix
+
+
 def main():
     """
     Runs the main program, which processes reviews for the 
     TV shows 'Stranger Things' and 'Vampire Diaries'.
-    
+
     This function reads review files for each TV show, 
     creates a dictionary of word frequencies for each show,
     finds the 20 most common words for each show and their corresponding frequencies, 
@@ -195,6 +220,30 @@ def main():
     # Analyze sentiment
     analyze_sentiment(vampire)
     is_show_recommended('vampire_diaries_reviews.txt')
+
+    # Read the first 50 lines from each file
+    filename1 = "stranger_things_reviews.txt"
+    with open(filename1, "r", encoding="utf-8") as file:
+        list1 = [next(file).strip() for x in range(50)]
+
+    filename2 = "vampire_diaries_reviews.txt"
+    with open(filename2, "r", encoding="utf-8") as file:
+        list2 = [next(file).strip() for x in range(50)]
+
+    # Compute similarity matrix and apply MDS
+    similarity_matrix = get_similarity_matrix(list1, list2)
+    mds = MDS(n_components=2, dissimilarity='precomputed')
+    results = mds.fit(similarity_matrix)
+
+    # Print the positions of the reviews in the 2D space
+    print(results.embedding_)
+
+    # Visualize the 2D space
+    x = [d[0] for d in results.embedding_]
+    y = [d[1] for d in results.embedding_]
+
+    plt.scatter(x, y)
+    plt.show()
 
 
 if __name__ == '__main__':

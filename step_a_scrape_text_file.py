@@ -22,7 +22,7 @@ def scrape_stranger_things_reviews():
         page_url = f'{url}?start={25*(page-1)}'
 
         # send a request to the URL and get the HTML content
-        response = requests.get(page_url, timeout = 5)
+        response = requests.get(page_url, timeout=5)
         html_content = response.content
 
         # use BeautifulSoup to parse the HTML content
