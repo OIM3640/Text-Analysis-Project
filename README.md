@@ -5,8 +5,6 @@ Please read the [instructions](instructions.md).
 
 ## 1. Project Overview 
 
-What data source(s) did you use? What technique(s) did you use to process or analyze them? What did you hope to create or learn through this project?
-
 I tested out multiple data sources but ended up going with the IMDB one. Being a movie fanatic, I thoroughly enjoyed going through the different types of data and seeing what I could analyze. I extracted both characters and integers from my data set. I analyzed "positive" and "negative" words found in reviews (chracterizing by word frequencies) and found an average of groups of numerical ratings. I also learned how to plot my findings using matplotlib.
 
 ## 2. Implementation 
