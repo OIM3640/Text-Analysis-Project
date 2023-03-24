@@ -172,7 +172,7 @@ def chosen_bar_chart(sentiment, number = 6):
 
 
 def main():
-    # scan_wiki_countries() # Note: takes a long time to load.
+    scan_wiki_countries() # Note: takes a long time to load.
 
     # Referenced the following source to learn how to load the contents of a pickle file:
     # https://pythonnumericalmethods.berkeley.edu/notebooks/chapter11.03-Pickle-Files.html
