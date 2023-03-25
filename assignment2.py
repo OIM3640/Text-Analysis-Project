@@ -149,7 +149,7 @@ def main():
     mostcommon(hist)
     compare_texts("data/percy_jackson.txt", "data/Dickens.txt")
     print(get_average_polarity("data/percy_jackson.txt"))
-    check_patterns()
+    print(f' The similarity matrix between the Babson College web page and Bentley University is {check_patterns()}')
     plot_matrix()
 
 
