@@ -290,6 +290,11 @@ def main():
     api_key_newsapi = "a81a2f3a42104f77aa29a2cdd60a0623"
     avg_sentiment = overall_market_sentiment(api_key_newsapi)
     decision = make_market_decision(avg_sentiment)
+
+    print("Welcome to James' Stock Market Analysis tool. This script retrieves and analyzes market data from various APIs, including historical stock prices, inflation trends, and news sentiment scores. It provides insights on moving averages, inflation trends, and sentiment scores to help you make informed decisions when investing in the stock market.")
+
+    print("Understanding moving averages, inflation trends, and sentiment scores are all important data metrics when it comes to making informed decisions in the stock market. Moving averages help to identify trends in the stock price over a certain period, while analyzing inflation trends can help investors anticipate changes in interest rates and plan accordingly. Finally, sentiment scores provide insight into the overall market sentiment, which can affect stock prices and investor behavior.")
+
     print(decision)
 
     crossover_response = get_ma_crossover_response(symbol, 5, api_key_alpha_vantage)
@@ -297,6 +302,7 @@ def main():
 
     last_12_months_cpi = get_last_12_months_cpi(api_key_alpha_vantage)
     analyze_inflation(last_12_months_cpi)
+
 
 
 """
