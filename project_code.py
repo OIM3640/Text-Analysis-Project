@@ -12,15 +12,12 @@ def get_moving_average(symbol, period, api_key):
     response = requests.get(url)
     data = response.json()["Time Series (Daily)"]
 
-    # Extract the daily closing prices from the data for the specified period
     closing_prices = []
     for date in sorted(data.keys(), reverse=True)[:period]:
         closing_prices.append(float(data[date]["4. close"]))
 
-    # Calculate the moving average
     moving_average = sum(closing_prices) / period
 
-    # Return the moving average
     return moving_average
 
 
@@ -43,12 +40,11 @@ A floating-point number representing the moving average of the stock's closing p
 
 
 def get_ma_crossover_response(symbol, period, api_key):
-    # Get the moving averages
+
     moving_average_5 = get_moving_average(symbol, 5, api_key)
     moving_average_8 = get_moving_average(symbol, 8, api_key)
     moving_average_13 = get_moving_average(symbol, 13, api_key)
 
-    # Determine the crossover direction
     if moving_average_5 > moving_average_8 and moving_average_8 > moving_average_13:
         response = f"{symbol} has a bullish crossover, with the 5-day moving average crossing above the 8-day moving average and the 8-day moving average crossing above the 13-day moving average."
     elif moving_average_5 > moving_average_8 and moving_average_5 < moving_average_13:
@@ -176,34 +172,26 @@ A string message indicating the inflation trend over the last 12 months.
 
 
 def get_article_sentiment(query, source, api_key):
-    # initialize NLTK's Vader module
+
     nltk.download("vader_lexicon")
 
-    # initialize NewsApiClient with your API key
     newsapi = NewsApiClient(api_key=api_key)
 
-    # set query parameters
     language = "en"
 
-    # get the latest article related to the query from the source
     articles = newsapi.get_everything(q=query, sources=source, language=language)
 
-    # retrieve the URL of the first article in the response
     url = articles["articles"][0]["url"]
 
-    # create an Article object and download the article content
     article = Article(url)
     article.download()
 
-    # parse the article content and extract the main text
     article.parse()
     text = article.text
 
-    # perform sentiment analysis on the article text
     analyzer = SentimentIntensityAnalyzer()
     score = analyzer.polarity_scores(text)
 
-    # return the sentiment scores as a dictionary
     return score
 
 
@@ -227,7 +215,7 @@ A dictionary containing the sentiment scores for the article text.
 
 
 def overall_market_sentiment(api_key):
-    # set the query terms
+
     query_terms = [
         "stocks",
         "cryptocurrency",
@@ -241,21 +229,16 @@ def overall_market_sentiment(api_key):
         "interest rates",
     ]
 
-    # set the news sources
     sources = "bbc-news,the-verge"
 
-    # initialize an empty list to store the sentiment scores
     sentiment_scores = []
 
-    # loop through the query terms and get the sentiment score for each term
     for term in query_terms:
         score = get_article_sentiment(term, sources, api_key)
         sentiment_scores.append(score["compound"])
 
-    # calculate the average sentiment score
     avg_score = np.mean(sentiment_scores)
 
-    # return the average sentiment score
     return avg_score
 
 
