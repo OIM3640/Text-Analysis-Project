@@ -42,18 +42,18 @@ For the sentiment analysis, as expected, I discovered that spam messages tend to
 Finally, I conducted Markov analysis to generate spam and ham messages. The accuracy of the output seems to vary, with some messages more realistic than others. Five example outputs for spam and ham are shown below:
 
 **Spam messages**
-> 1 year special cinema pass for 2 is yours. call 09061744553 now! videochat wid your mates, play java games Dload polyH music, noline rentl.
-> 2End send STOP to 87070.
-> Your mobile number *************** WON a guaranteed ï¿½1000 cash or a ï¿½500 prize!
-> Nyt.EC2A.3LP.msg@150p Knock Knock Txt whose there to 80082 Your unique user ID is 1172.
-> Get a brand new mobile music service is now in the next 24hrs.
+1. 1 year special cinema pass for 2 is yours. call 09061744553 now! videochat wid your mates, play java games Dload polyH music, noline rentl.
+2. 2End send STOP to 87070.
+3. Your mobile number *************** WON a guaranteed ï¿½1000 cash or a ï¿½500 prize!
+4. Nyt.EC2A.3LP.msg@150p Knock Knock Txt whose there to 80082 Your unique user ID is 1172.
+5. Get a brand new mobile music service is now in the next 24hrs.
 
 **Ham messages**
-> FRAN I DECIDED 2 GO BAK 2 COLLEGE!
-> How are you up to eyes in philosophy Ok lor.
-> I'm nervous because of course now he may have to leave the house.
-> Uhhhhrmm isnt having tb test bad when youre sick But i oso sian tmr haf 2 meet lect…
-> What are you going to the mail box Your dad is back in the + sign, choose my number and decided to keep in mind Aah bless!
+1. FRAN I DECIDED 2 GO BAK 2 COLLEGE!
+2. How are you up to eyes in philosophy Ok lor.
+3. I'm nervous because of course now he may have to leave the house.
+4. Uhhhhrmm isnt having tb test bad when youre sick But i oso sian tmr haf 2 meet lect…
+5. What are you going to the mail box Your dad is back in the + sign, choose my number and decided to keep in mind Aah bless!
 
 ## Reflection
 
