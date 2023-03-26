@@ -20,7 +20,7 @@ def remove_stop_words(data):
 def word_frequencies(words):
     """prints the frequency of each word in the text, excluding stop words"""
     frequency = nltk.FreqDist(words)
-    # asked chatgpt to help me sort the frequencies in line 34
+    # asked chatgpt to help me sort the frequencies in line 24
     sorted_freq = frequency.most_common()
     for word, freq in sorted_freq:
         print(f'{word}: {freq}')
