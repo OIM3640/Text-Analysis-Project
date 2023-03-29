@@ -20,7 +20,7 @@ def main():
     ham_hist = histogram(ham_paragraph, paragraph=True)
 
 
-    # 1. Summary Statistics (common words in spam and ham)
+    # 1. Common Words
     spam_common_words = most_common_words(spam_hist)
     ham_common_words = most_common_words(ham_hist)
 
