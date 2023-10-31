@@ -27,10 +27,6 @@ the_idiot_raw = open('data/theidiot.txt', encoding='UTF8')
 the_possessed_raw = open('data/thepossessed.txt', encoding='UTF8')
 
 
-# Here we store each raw txt file into a list:
-books_raw = [notes_from_underground_raw, crime_and_puinishment_raw, brothers_karamazov_raw, the_idiot_raw, the_possessed_raw]
-
-
 """
 STAGE 1 - CLEAN THE DATA
 """
