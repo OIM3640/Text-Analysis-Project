@@ -1,0 +1,35 @@
+Question about NLTK NLP Scoring for Text Analysis Project:
+
+Hi Prof Li,
+I checked with ChatGPT, course resources, and documentation for NLTK library but can't find any useful info on the problem I'm having.
+I have created a NLP model for 5 txt files. The data is read, cleaned, and then imported into the NLTK sentiment analysis function
+The NLTK appears to be working and I receive no errors when the program is run. The 'compound' score is the issue:
+Each output is assigned a compound score of 1.0, there is no variation.
+
+Here is a snip of the output:
+    Let's analyze the sentiment of Russian novelist Fyodor Dostoevsky's 5 greatest works:
+    The Sentiment Score of "Notes from the Underground" is: {'neg': 0.185, 'neu': 0.602, 'pos': 0.213, 'compound': 1.0}
+    The Sentiment Score of "Crime and Punishment" is: {'neg': 0.169, 'neu': 0.654, 'pos': 0.177, 'compound': 1.0}
+    The Sentiment Score of "The Brothers Karamazov" is: {'neg': 0.168, 'neu': 0.631, 'pos': 0.201, 'compound': 1.0}
+    The Sentiment Score of "The Idiot" is: {'neg': 0.151, 'neu': 0.645, 'pos': 0.204, 'compound': 1.0}
+    The Sentiment Score of "The Possessed" is: {'neg': 0.155, 'neu': 0.672, 'pos': 0.174, 'compound': 1.0}
+
+Here is my code for the NLTK section:
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+def do_nlp(books):
+
+    """
+    This function takes in the list of books and their titles and then performs NLP on each book, it prints the sentiment score of each book and its title when ran.
+    """
+
+    for title, book in books:
+        text = book
+        score = SentimentIntensityAnalyzer().polarity_scores(text)
+        print(f'The Sentiment Score of "{title}" is: {score}')
+
+
+If you can help push me in the right direction that would be very helpful. I don't know if this is an error with the way the tool is reading the txt, or a different type of problem. I can provide my code for how the data is being read if you think that's necessary.
+
+Thanks, Stephen
