@@ -98,7 +98,7 @@ books = [('Notes from the Underground', notes), ('Crime and Punishment', crime),
 
 
 """
-STAGE 3 - ANALYZE THE DATA
+STAGE 2 - ANALYZE THE DATA
 """
 
 
