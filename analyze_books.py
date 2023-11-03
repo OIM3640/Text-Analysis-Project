@@ -116,12 +116,18 @@ def do_nlp(books):
     for title, book in books:
         text = book
         score = SentimentIntensityAnalyzer().polarity_scores(text)
-        print(f'The Sentiment Score of "{title}" is: {score}')
+        print(f'The Sentiment Score of "{title}" is: {score:}')
 
     
 def main():
+    print()
     print("Let's analyze the sentiment of Russian novelist Fyodor Dostoevsky's 5 greatest works: ")
+    print()
     do_nlp(books)
+    print()
+    print(f'If you want to avoid the most negative book, stay away from "The Idiot".')
+    print(f'If you want to read the most upbeat book, I suggest you read "Notes From the Underground".')
+    print()
 
 if __name__ == '__main__':
     main()
