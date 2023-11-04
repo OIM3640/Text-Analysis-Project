@@ -203,7 +203,7 @@ Here's an example from the [Newspaper3k docs page](https://newspaper.readthedocs
 ```python
 from newspaper import Article
 
-url = 'http://fox13now.com/2013/12/30/new-year-new-laws-obamacare-pot-guns-and-drones/'
+url = 'https://www.fox13now.com/news/fox-13-investigates/epa-seeking-to-regulate-fumes-from-local-medical-facilities'
 article = Article(url)
 article.download()
 article.parse()
