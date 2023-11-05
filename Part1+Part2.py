@@ -5,6 +5,8 @@ import nltk
 nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from thefuzz import fuzz
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 # Download the text 1, "The Great Gatsby" inside Python.
@@ -121,6 +123,14 @@ def find_overlapping_words(d1, d2):
                break
     return d
 
+# Word Cloud
+def generate_word_cloud(text_file):
+    wordcloud = WordCloud(width=800, height=400).generate(text_file)
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation = "bilinear")
+    plt.axis("off")
+    plt.show()
+
 # Natural Language Processing
 def nltk_score(text_file):
     """
@@ -139,15 +149,6 @@ def similarity_ratios(text_file_1, text_file2):
 
     token_set_ratio = fuzz.token_set_ratio(text_file_1, text_file2)
     print(f"The token set ratio using fuzz is: {token_set_ratio} ")
-
-# Markov Test Synthesis?
-
-
-# More from Chatgpt?
-
-
-
-
 
 
 
@@ -170,6 +171,11 @@ def main():
     print('The most common 20 words in "The Age of Innocence" are:')
     for freq, word in innocence_frequency_list[0:20]:
         print(word, '\t', freq)
+
+    print("See the graph for the word cloud of the Great Gatsby:")
+    generate_word_cloud(great_gatsby)
+    print("See the graph for the word cloud of the Age of Innocence:")
+    generate_word_cloud(age_of_innocence)
 
     overlapping_words = find_overlapping_words(gatsby_frequency_list, innocence_frequency_list)    
     print("The top 15 overlapping common words between the two books are:")
