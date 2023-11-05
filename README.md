@@ -3,8 +3,9 @@
 ## Project Writeup and Reflection
 
 ### 1. Project Overview (~1 paragraph)
+#### What data source(s) did you use? What technique(s) did you use to process or analyze them? What did you hope to create or learn through this project?
 
-What data source(s) did you use? What technique(s) did you use to process or analyze them? What did you hope to create or learn through this project?
+For the data sources of the project, I downloaded two books from Gutenberg. One is "The Great Gatsby" by F. Scott Fitzgerald, and the other one is the "The Age of Innocence" by Edith Wharton. I chose these two books because they share the similar themes of exploration of social change, the American dream, etc. To make the analyzation process easier, I first preprocessed the text data to conduct simple data cleaning, including stripping unneeded characters like puctuation and whitespace, identifying when the text processing should start and end, seperating hyphenated words, and splitting each line into formatted words. I then calculated and displayed statistics on number of total words, different words between two texts, most common words, and overlapping words. I also generated word cloud to better visualie the common words in each text. I also calculated the nltk sentiment analysis score and ratio of text similarity between the texts. In this project, I hoped to dive into comparing and contrasting "The Great Gatsby" and "The Age of Innocence" while studying different technique of text analysis using python. 
 
 ### 2. Implementation (~1-2 paragraphs)
 
