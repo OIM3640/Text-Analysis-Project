@@ -140,7 +140,7 @@ def similarity_ratios(text_file_1, text_file2):
     token_set_ratio = fuzz.token_set_ratio(text_file_1, text_file2)
     print(f"The token set ratio using fuzz is: {token_set_ratio} ")
 
-# Markov Test Synthesis
+# Markov Test Synthesis?
 
 
 # More from Chatgpt?
