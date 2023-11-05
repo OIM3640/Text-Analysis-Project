@@ -76,12 +76,18 @@ print (top(cintext(text), 20))
 print (top(nonStopwords(text), 20))
 
 def at(s):
+    '''
+    calculate Sentiment score for str
+    '''
     score = SentimentIntensityAnalyzer().polarity_scores(s)
     return score
 
 #print (at(processing2(text)), at(text))
 
 def pat(dic):
+    '''
+    calculate the average Sentiment score for keys in a dic
+    '''
     d = {'neg':0, 'neu':0, 'pos':0, 'compound':0}
     ave = {}
     for word in dic.keys():
