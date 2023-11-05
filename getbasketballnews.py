@@ -13,7 +13,7 @@ us_sources = newsapi.get_sources(country = 'us')
 
 def get_category_sources(category):
     """
-    helper function that returns a string of ids for all sources in a certain category
+    function that returns a string of ids for all sources in a certain category
     """
     categorized_sources = []
     for s in us_sources['sources']:
@@ -26,13 +26,16 @@ def get_category_sources(category):
 # articles = newsapi.get_everything(sources = get_category_sources('sports'))
 # pprint.pprint(articles)
 
-def get_sports_news(keyword=' '):
+def get_basketball_news(keyword=' '):
     """
-    get sports news on a certain string keyword (i.e. team, player, league, etc.), assumes proper punctuation
+    get basketball news on a certain string keyword (i.e. team, player, league, etc.), assumes proper punctuation
     """
     news_list = []
     keywords = keyword.split()
-    articles_dict = newsapi.get_everything(sources = get_category_sources('sports'))
+
+    # all US sports sources subtracting ESPN Cric Info, NFL news and NHL news
+    basketball_sources = 'bleacher-report,espn,fox-sports'
+    articles_dict = newsapi.get_everything(sources = basketball_sources)
     articles_list = articles_dict['articles']
 
     # pprint.pprint(articles_list)
@@ -47,8 +50,8 @@ def get_sports_news(keyword=' '):
 
 
 def main():
-    player = 'Lebron'
-    news = get_sports_news(player)
+    team = 'Suns'
+    news = get_basketball_news(team)
     pprint.pprint(news)
 
 
