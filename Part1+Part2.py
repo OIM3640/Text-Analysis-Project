@@ -35,10 +35,10 @@ with open('the_age_of_innocence_texts','r') as f:
     age_of_innocence = json.load(f)
 
 
-# Process the gatsby_texts and showing the word frequencies.
+# Process the text and showing the frequencies of each word.
 def process_file(text_file):
     """
-    Create a histogram that contains the words in gatsby_texts, and return a map from each word to the number of times it appears in the gatsby_texts.
+    This function creates a histogram that contains the words in gatsby_texts, and return a map from each word to the number of times it appears in the gatsby_texts.
     """
     hist = {}
 
@@ -70,17 +70,21 @@ def process_file(text_file):
 
     return hist
 
-# Total words
+# Caculate total words in the text.
 def total_words(hist):
-    """Returns the total of the frequencies in a histogram."""
+    """
+    This functions returns the total of the frequencies in a histogram.
+    """
     sum = 0 
     for i in hist:
         sum += hist[i]
     return sum
 
-# Number of different words
+# Calculate number of different words in the text.
 def different_words(hist):
-    """Returns the number of different words in a histogram."""
+    """
+    This function returns the number of different words in a histogram.
+    """
     num_of_diff_words = 0
     for i in hist:
         if hist[i] == 1:
@@ -90,7 +94,7 @@ def different_words(hist):
 # Print the most common words with their frequencies. 
 def most_common(hist, excluding_stopwords=True):
     """
-    Make a list of word-frequency pairs in descending order of frequency.
+    This function makes a list of word-frequency pairs in descending order of frequency.
     """
     frequency_list = []
     stop_words_list = []
@@ -107,24 +111,11 @@ def most_common(hist, excluding_stopwords=True):
     frequency_list.sort(reverse=True)
     return frequency_list
 
-# Find the top 15 overlapping most common words between the two books.
-def find_overlapping_words(d1, d2):
-    """Returns a dictionary with all keys that appear in both d1 and d2.
-
-    d1, d2: dictionaries
-    """
-    d = []
-    counter = 0
-    for word in d1:
-        if word in d2:
-           d.append(word)
-           counter +=1
-           if counter == 15:
-               break
-    return d
-
-# Word Cloud
+# Generate a Word Cloud for the text.
 def generate_word_cloud(text_file):
+    """
+    This functions plots a word cloud of the text. 
+    """
     wordcloud = WordCloud(width=800, height=400).generate(text_file)
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation = "bilinear")
@@ -134,13 +125,16 @@ def generate_word_cloud(text_file):
 # Natural Language Processing
 def nltk_score(text_file):
     """
-    Return the results of sentiment analysis using VADER library in NLTK.
+    This function returns the results of sentiment analysis using VADER library in NLTK.
     """
     score = SentimentIntensityAnalyzer().polarity_scores(text_file)
     return score
 
-# Text Similarity
+# Get text Similarity ratios using the Fuzz.
 def similarity_ratios(text_file_1, text_file2):
+    """
+    This function prints the fuzz similaritiy ratios.
+    """
     simple_ratio = fuzz.ratio(text_file_1, text_file2)
     print(f"The simple ratio using fuzz is: {simple_ratio} ")
 
@@ -151,8 +145,10 @@ def similarity_ratios(text_file_1, text_file2):
     print(f"The token set ratio using fuzz is: {token_set_ratio} ")
 
 
-
 def main():
+    """
+    This function executes all of the main functions in the program at one time.
+    """
     great_gatsby_hist = process_file(great_gatsby)
     age_of_innocence_hist = process_file(age_of_innocence)
 
@@ -177,17 +173,13 @@ def main():
     print("See the graph for the word cloud of the Age of Innocence:")
     generate_word_cloud(age_of_innocence)
 
-    overlapping_words = find_overlapping_words(gatsby_frequency_list, innocence_frequency_list)    
-    print("The top 15 overlapping common words between the two books are:")
-    for word in overlapping_words:
-        print(word, '\t')
-
     great_gatsby_nltk_score = nltk_score(great_gatsby)
     print(f"The sentiment analysis score for The great Gastby is:\n{great_gatsby_nltk_score}")
 
     age_of_innocence_nltk_score = nltk_score(age_of_innocence)
     print(f"The sentiment analysis score for The Age of Innocence is:\n{age_of_innocence_nltk_score}")
 
+    print("The similarity ratios between The Great Gatsby and The Age of Innocence are shown below:")
     similarity_ratios(great_gatsby, age_of_innocence)
 
 if __name__ == '__main__':
