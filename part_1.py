@@ -56,18 +56,22 @@ with open('poke_glitch.pickle','rb') as g:
 # WHY are we doing this, you may ask? Well, later, I plan to check each glitch name w/ wikipedia to see if a certain glitch also appears on a broad website like Wiki.
     # If so, that will tell me that the glitch must be one of extra importance, and that I should focus specficially on those types of glitches in my analysis. 
 list_store = []
+list_divide = []
 list_glitch = {}
 f1 = open('poke_glitch.pickle')
 for line in f1:
     list_store = line.split(' ')
+    # list_divide.append(line.split(' '))
     if 'list of glitch' in line.lower():
             continue
     elif len(list_store) < 10:
         for i in range(len(list_store)):
             if 'glitch' in list_store[i] or 'bug' in list_store[i]:
+                # if 'glitch' in list_divide[len(list_divide)-1] or 'bug' in list_divide[len(list_divide)-1]:
                 list_glitch[line.strip('\n')] = 0
     list_store.clear()
-# pprint.pprint(list_glitch)
+    # list_divide.clear()
+pprint.pprint(list_glitch)
 
 print()
 print()
