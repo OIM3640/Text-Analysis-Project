@@ -13,6 +13,8 @@ The decision to leverage the MediaWiki and Google Translate APIs rather than dev
 Here is an example on a way that I used ChatGPT:
 - I asked ChatGPT *'How to print the top 10 words in python with rake_nltk'* and this was its response:
     <img src='images/chatgpttop10.png'>
+- I was also having a hard time installing the different libraries and asked ChatGPT on how to install them, but that information wasn't very helpful at first. But after various times of telling it that it didn't work, it finally gave me one that did. In the same chat, I asked about new ways to analyze the text.
+    '[Google translate in command prompt]' '(https://chat.openai.com/share/ebe66f38-67bd-4364-8fc1-87912b2d8ae4)'
 
 ## Results
 The text analysis provided several interesting insights about the Wikipedia page for Panama. The summary of Panama in spanish allowed non-English speackers to access essential information about the country and will try to let readers understand and see the official language of Panama. The top words on the Panama page included *panama (215 times), panamanian (35 times) and percent (34 times)*. And the top keywords included significant fraces that are critical aspects of Panama's history and geography.
