@@ -16,13 +16,13 @@ CREATE A PROGRAM THAT DOES SOCIAL MEDIA LISTENING (USING GOOGLE/NEWS SEARCH AND 
 6. Attempt program, make final edits, and edit readme to reflect application of finalized program
 
 
-#**Project Overview** 
+# Project Overview
 
 For this project, I used **Google Custom Search API**, **Newspaper3k API**, and **Reddit's API**. I used google CSE to generate URLs of news related to the company being investigated. This output was then used in combination with Newspaper3k article parsing to extract the text and store it into a list. I also used Reddit's API to gather some data on public opinion (which Reddit is the perfect forum for, however it has higher risk for not returning the specificed amount of comments if the company query doesn't show return enough results on Reddit). I compiled the text output from both sources into a single list and analyzed them using **Word Frequency Analysis** and **natural language processing** using the ***SentimentIntensityAnalyzer*** tool. To enhance the user experience with this analysis, I used ***tabulate***, ***matplotlib***, and ***numpy*** toolkits to create visualizations. ***Tabulate*** is used to summarize results of frequent words and their count; ***matplotlib*** and ***numpy*** were used to create a bar chart that summarized the average scores of each category in ***SentimentIntensityAnalyzer*** (neg, pos, neu, compound).
 
 Through this project, I hope to learn how to use API's and access new tools by creating an analysis of brand perception / PR performance for a company based on news about it.
 
-#**Implementation** 
+# Implementation
 
 My system begins at the ***config.py*** file, where the user should change the *company_query* variable to the company that is being researched. The ***num_results*** and ***limitcomments*** variables can also be edited to increase the amount of content being processed. 
 
@@ -39,7 +39,7 @@ In **text_analysis.py**, I begin by creating a list called ***all_texts***, wher
 If __name___ = "__main__" idiom is used with function so that full program will run without being called
 
 
-#**Results** 
+# Results
 
 This program allows the user to make configurations based on which company they want to research and how thouroughly for each source. The output for the text_analysis function gives a summarized, more self-explanatory version of average sentiment across the texts and words with their respective frequencies. A program like this would be particularly helpful internally for a company and using additional APIs to monitor social media and public perception of the company. The results are the right balance of qualitative and quantitative information since they allow for numerical and descriptive analysis of results. 
 
@@ -56,7 +56,7 @@ the bar chart:
 This analysis would reveal that most comments are neutral, with more average positive than average negative texts.  Some of the frequent words include competitor brands and reference to the brand founder, Rihanna, which would reaffirm that the public associates the brand with her. For a company like Fenty beauty, conversations about the brand online can presumably affect sales much more than it would for a company selling standarized products. As a result, knowing the tone and sentiment expressed online is a must, with the next step being how to strategically improve the brand perception (and therefore tone of those conversations)
 
 
-#**Reflection** 
+# Reflection
 
 From a process point of view, what went well? What could you improve? Was your project appropriately scoped? Did you have a good testing plan?
 From a learning perspective, mention what you learned through this project, how ChatGPT helped you, and how you'll use what you learned going forward. What do you wish you knew beforehand that would have helped you succeed?
