@@ -19,12 +19,13 @@ Below is the results of the function "top_words_table()" from "data_analysis.py"
 
 Words like "free", "money", "please", and "get" were at the top of the spam list but nowhere to be found in the top 20 words of ham. It became pretty clear that there are some big flag words that we can see for spam. I decided to make a wordcloud for each just to have a more static visualization that took into account scale using frequency. I did this using the wordcloud module as seen in "data_analysis.py". Below are the word clouds for spam and ham respectively.
 
+Ham:
 
 ![ham word cloud](ham_cloud.png "Ham Cloud")
 
 
 
-
+Spam:
 
 ![spam word cloud](spam_cloud.png "Spam Cloud")
 
