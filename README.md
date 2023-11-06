@@ -16,9 +16,13 @@ The system consists of three main components: a news fetching module, a sentimen
 A notable design decision was made regarding the output format—whether to display sentiment as numerical scores or as labels (positive, negative, or neutral). As a viewer, I found it more straightforward to use the terms positive, negative, or neutral, so I wouldn't have to explain the numerical threshold meanings to the users.
 
 ### Graphs
-Sentiment Graph: https://drive.google.com/file/d/1xn1PEL-iLxjY6g4p4PSow7OMlfklJlNY/view?usp=sharing 
+Sentiment Graph 
+
+![Sentiment](images/sentiment.png)
 
 Common Words: https://drive.google.com/file/d/1ATwvV2WN8b1ShKz5cq1-1YHLw4BhuUmu/view?usp=sharing 
+
+![common](images/commonwords.png)
 
 
 ## Results 
