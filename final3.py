@@ -12,13 +12,20 @@ from rake_nltk import Rake
 
 
 def get_panama_wikipedia_content():
+    """ 
+    With the help of MediaWiki, we are going to retrieve the content and summary from the Wikipedia page of Panama. It will return the full text content of panama and the summary of the Panama page.
+    """
+
     wikipedia = MediaWiki()
     Panama = wikipedia.page("Panama")
     text = Panama.content
     summary = Panama.summary
     return text, summary
 
-def filter_words(text):
+def filter_words(text): 
+    """
+    Tokenize and filter words in the imput text to remove stopwords, special characters, numbers, and the word "De". It will return the list of filtered and lowercase words. 
+    """
     words = word_tokenize(text)
     stop_words = set(stopwords.words("english"))
     special_characters = string.punctuation
@@ -26,16 +33,25 @@ def filter_words(text):
     return filtered_words
 
 def translate_to_spanish(text):
+    """
+    Translate the input text from English to Spanish using google translate API. It will take Panama's summary and return the translated text in spanish. 
+    """
     translator = Translator()
     translation = translator.translate(text, src='en', dest='es')
     return translation.text
 
 def find_top_words(filtered_words, n=10):
+    """
+    Find the top n (in this case 10) words in the filtered word list, along with their frequencies. It will return the top N words with the number of times it appears on the text and the overall percentage. 
+    """
     word_counts = Counter(filtered_words)
     top_words = word_counts.most_common(n)
     return top_words
 
 def find_top_keywords(text, n=10):
+    """ 
+    Extract and rank the top keywords form the input text using the Rake-NLTK library. It will return the list of top N keywrods with their rating from highest to lowerst. 
+    """ 
     text = text.replace("(", "").replace(")", "").replace("==", "")
     r = Rake()
     r.extract_keywords_from_text(text)
@@ -45,8 +61,11 @@ def find_top_keywords(text, n=10):
     return top_keywords
 
 def main():
-    nltk.download('stopwords')
-    nltk.download('punkt')
+    """
+    The main function that arranges the entire text analysis process, including data retrieval, filtering, translation and keyword extraction. Then, the results are printed. 
+    """
+    # nltk.download('stopwords')
+    # nltk.download('punkt')
 
     stop_words = set(stopwords.words("english"))
     content, summary = get_panama_wikipedia_content()

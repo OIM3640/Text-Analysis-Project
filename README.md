@@ -14,6 +14,7 @@ Here is an example on a way that I used ChatGPT:
 - I asked ChatGPT *'How to print the top 10 words in python with rake_nltk'* and this was its response:
     <img src='images/chatgpttop10.png'>
 - I was also having a hard time installing the different libraries and asked ChatGPT on how to install them, but that information wasn't very helpful at first. But after various times of telling it that it didn't work, it finally gave me one that did. In the same chat, I asked about new ways to analyze the text.
+    
     [Google translate in command prompt](https://chat.openai.com/share/ebe66f38-67bd-4364-8fc1-87912b2d8ae4)
 
 ## Results
