@@ -17,8 +17,12 @@ The project demostrated the value of automated text analysis in extracting key i
 Here are some specific expamples of my result:
 1. Panama's summary in spanish:
 <img src='images/spanishsummary.png'>
-![] (images/spanishsummary.png)
-</picture>
+
+2. Top 10 words:
+<img src='images/top10words.png'>
+
+3. Top 10 keywords:
+<img src='images/top10keywords.png'>
 
 ## Reflection
 This project provided valuable insights into extracting text from an API, analyzing that text and natural language processing. It showed me the power and availability of Python libraries inprocessing and analyzing text data. However, I faced many challenges such as ensuring that the libraries where imported correctly, the data sources were okay, and debugging issues with NLTK stopwords and tokenization. One thing that went well was taking time upfront to plan out the logical steps and component libraries I would need to use. Breaking the project down into discrete parts like getting the text, cleaning it, analyzing it, etc. made it more manageable.
