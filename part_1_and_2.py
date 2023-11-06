@@ -92,7 +92,7 @@ def part2():
                         list_glitch[line.strip('\n')] = 0
         # clears before analyzing next line of the text.
         list_store.clear()
-    # pprint.pprint(list_glitch)
+    pprint.pprint(list_glitch)
 
     ###     SPACER     ###
     print()
@@ -107,7 +107,7 @@ def part2():
         if '==' in line1 and ' ' in line1:
             # we strip the '==' and the '\n', to clean up the data.
             list_header[line1.strip(' ==\n')] = ''
-    # pprint.pprint(list_header)
+    pprint.pprint(list_header)
 
     ###     SPACER     ###
     print()
@@ -133,7 +133,13 @@ def part2():
                 # why '+='? Well, we are looking through 2 sets of descriptions here, so we much consolidate the fuzz score for each, following the iteration through the first header description, through the other header description.
                 for k in list_glitch:
                     list_glitch[k] += fuzz.ratio(k, line2)
-    # pprint.pprint(list_glitch)
+    pprint.pprint(list_glitch)
+
+    ###     SPACER     ###
+    print()
+    print()
+    print()
+    ###     SPACER     ###
 
     #Now, to order in the similarity #'s in anew dictionary, in ascending order:
   
@@ -143,8 +149,16 @@ def part2():
         list_sort.append(list_glitch[m])
     # we sort it afterwards
     list_sort.sort()
-    # print(list_sort)
+    print(list_sort)
     
+    ###     SPACER     ###
+    print()
+    print()
+    print()
+    print('*** The BELOW will print out the dictionary with the ascending fuzz values ***')
+    print()
+    ###     SPACER     ###
+
     glitch_dict = {} # this is for storing the fuzz scores as keys (in ascending order), and the glitch/bug name, as the output
     for a in range(len(list_sort)):
         # refers to previous dictionary from before
