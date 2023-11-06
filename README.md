@@ -24,8 +24,6 @@ Through this project, I hope to learn how to use API's and access new tools by c
 
 #**Implementation** 
 
-Describe your implementation at a system architecture level. You should NOT walk through your code line by line, or explain every function (we can get that from your docstrings). Instead, talk about the major components, algorithms, data structures and how they fit together. You should also discuss at least one design decision where you had to choose between multiple alternatives, and explain why you made the choice. Use shared links and/or screenshots to describe how you used ChatGPT to help you or learn new things.
-
 My system begins at the ***config.py*** file, where the user should change the *company_query* variable to the company that is being researched. The ***num_results*** and ***limitcomments*** variables can also be edited to increase the amount of content being processed. 
 
 In **datapull_newspaper3k.py**, googleapiclient tool is used to generate URLs and a for loop is then used to gather the article's text with newspaper and parse it. The text (str) of each URL article is stored on a list called: ***news_contents***. 
@@ -34,22 +32,41 @@ In **datapull_reddit.py**,  reddit API and praw are used to gather each submissi
 
 * I had originally intended to use **"newsapi"** and **Yelp API** as additional sources of text for the analysis, but I sturggle to get these APIs to work. 
 
-In the process of writing this programs, I used the help of ChatGPT to understand the functions related to each API and how to set the correct parameters. On the other hand, I had to make a decision between writing my program as functions or just writing the program as code. I decided not to write functions given that they didn't serve an additional purpose that couldn't be achieves with loops. However, if I intended to generalize the program's purpose and/or use some of the sub-components of the program, I would edit to define as functions.
+In the process of writing this programs, I used the help of ChatGPT to understand the functions related to each API and how to set the correct parameters. On the other hand, I had to make a decision between writing my program as functions or just writing the program as code. I decided to write only the text analysis as functions, given that datapull's programs didn't serve an additional purpose that couldn't be achieves with loops. However, if I intended to generalize the program's purpose and/or use some of the sub-components of the program, I would edit to define as functions. 
 
-In **text_analysis.py**, I begin by creating a list called ***all_texts***, where the texts from both sources are put together for a joint analysis. 
+In **text_analysis.py**, I begin by creating a list called ***all_texts***, where the texts from both sources are put together for a joint analysis. The program then defines the function ***text_analysis***, which analyzes all texts together by creating a word frequency dictionary and creating a dicitionary the stores the average Sentiment Analyzer scores for each category and they are presented in a bar chart form. 
 
-**3. Results** (~2-3 paragraphs + figures/examples)
+If __name___ = "__main__" idiom is used with function so that full program will run without being called
 
-Present what you accomplished in your project:
 
-- If you did some text analysis, what interesting things did you find? Graphs or other visualizations may be very useful here for showing your results.
-- If you created a program that does something interesting (e.g. a Markov text synthesizer), be sure to provide a few interesting examples of the program's output.
+#**Results** 
 
-**4. Reflection** (~1-2 paragraphs)
+This program allows the user to make configurations based on which company they want to research and how thouroughly for each source. The output for the text_analysis function gives a summarized, more self-explanatory version of average sentiment across the texts and words with their respective frequencies. A program like this would be particularly helpful internally for a company and using additional APIs to monitor social media and public perception of the company. The results are the right balance of qualitative and quantitative information since they allow for numerical and descriptive analysis of results. 
+
+### When researching Fenty beauty (set in config.company_query):
+
+Some of the words and frequencies that were relevant:
+'brand': 55,  'Rihanna': 37, 'Kylie': 30, 'love': 29,  'Rare': 19 
+C:\Users\mdominguezgonzalez1\Documents\GitHub\Text-Analysis-Project\image.png
+
+
+the bar chart:
+![Alt text](image-2.png)
+
+This analysis would reveal that most comments are neutral, with more average positive than average negative texts.  Some of the frequent words include competitor brands and reference to the brand founder, Rihanna, which would reaffirm that the public associates the brand with her. For a company like Fenty beauty, conversations about the brand online can presumably affect sales much more than it would for a company selling standarized products. As a result, knowing the tone and sentiment expressed online is a must, with the next step being how to strategically improve the brand perception (and therefore tone of those conversations)
+
+
+#**Reflection** 
 
 From a process point of view, what went well? What could you improve? Was your project appropriately scoped? Did you have a good testing plan?
 From a learning perspective, mention what you learned through this project, how ChatGPT helped you, and how you'll use what you learned going forward. What do you wish you knew beforehand that would have helped you succeed?
 
 
-As I advance the data pulls for this assignment, I have struggled to access the YELP data using its API and determining ways to combine Google's CSE and Newspaper3k. As a result, for efficient learning purposes I have tweaked my project's objective to be more related to company news as opposed to brand perception online. In an effort to add more information to my analysis, I tried configuring NewsAPI as well, but it wasnt working well.
+As I advance the data pulls for this assignment, I have struggled to access the YELP data using its API and determining ways to combine Google's CSE and Newspaper3k. As a result, for efficient learning purposes I have tweaked my project's objective to be more related to company news as opposed to brand perception online. In an effort to add more information to my analysis, I tried configuring NewsAPI as well, but it wasnt working well. 
+
+In the process of writing the program, the hardest part was managing functions from the tools for which I didn't necessarily understand the parameters. ChatGPT was really helpful whenever I encountered this issue, as it explained options and outcomes of different parameters. As a result, ChatGPT was a great source of inspiration to explore tools that I wasn't familiar with and asking it to explain alternatives prompted more ideas of features I wanted to add to my program. 
+
+I think I had a good testing plan, since I divided the program into smaller sub-programs and didn't proceed coding until a section was working perfectly. I wish I had understood beforehand how I could automate different parts of the program, since I could have written functions in a way that is more applicable to future programs. Additionally, I think that the way I wrote my program could be more efficient and there are ways I that I could edit the code so that results load faster. Specially for the word frequency component of the analysis, I wish I had created a bigger list of stop words so that more relevant results were shown.
+
+
 
