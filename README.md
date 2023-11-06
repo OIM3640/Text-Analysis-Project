@@ -16,8 +16,8 @@ The project demostrated the value of automated text analysis in extracting key i
 
 Here are some specific expamples of my result:
 1. Panama's summary in spanish:
-   ![Panama's summary in spanish.](https://babson-my.sharepoint.com/:i:/g/personal/ldayan1_babson_edu/EdsX7IZ0WzlHpHKR7eQx1csB98D3OmwtE4l9R6n7LsRfwA?e=Hg8uFS)
-   
+   ![Panama's summary in spanish.](file:///C:/Users/ldayan1/Desktop/spanishsummary.png)
+
 ## Reflection
 This project provided valuable insights into extracting text from an API, analyzing that text and natural language processing. It showed me the power and availability of Python libraries inprocessing and analyzing text data. However, I faced many challenges such as ensuring that the libraries where imported correctly, the data sources were okay, and debugging issues with NLTK stopwords and tokenization. One thing that went well was taking time upfront to plan out the logical steps and component libraries I would need to use. Breaking the project down into discrete parts like getting the text, cleaning it, analyzing it, etc. made it more manageable.
 
