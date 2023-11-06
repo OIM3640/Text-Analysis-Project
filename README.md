@@ -10,6 +10,10 @@ Several key algorithms were applied for text analysis. Word Frequency Analysis i
 
 The decision to leverage the MediaWiki and Google Translate APIs rather than developing scraping and translation systems from scratch simplified the code by utilizing robust existing packages. However, it necessitates reliance on external service availability and usage limits. Throughout the project, ChatGPT proved invaluable in providing coding assistance, helping to troubleshoot issues, and offering guidance on how to tackle various tasks, enhancing the overall development process.
 
+Here is an example on a way that I used ChatGPT:
+- I asked ChatGPT 'How to print the top 10 words in python with rake_nltk' and this was its response:
+    <img src='images/chatgpttop10>
+
 ## Results
 The text analysis provided several interesting insights about the Wikipedia page for Panama. The summary of Panama in spanish allowed non-English speackers to access essential information about the country and will try to let readers understand and see the official language of Panama. The top words on the Panama page included *panama (215 times), panamanian (35 times) and percent (34 times)*. And the top keywords included significant fraces that are critical aspects of Panama's history and geography.
 The project demostrated the value of automated text analysis in extracting key information and enabling language translation, benefiting individuals who seek information in different languages.
@@ -20,10 +24,12 @@ Here are some specific expamples of my result:
 
 2. Top 10 words:
    This are the top 10 words seen in the Wikipedia page of Panama. You will see the words, followed by the number of times the word appears and the percentage overall.
+
     <img src='images/top10words.png'>
 
 3. Top 10 keywords:
     The top 10 keywords are key phrases in the Wikipedia page of Panama extracted by analyzing the frequency of word appearenaces and its co-occurance with other words in the text. You will see the phrase followed by its score, ranked from highest to lowest.
+    
     <img src='images/top10keywords.png'>
 
 ## Reflection
