@@ -11,9 +11,9 @@ Please read the [instructions](instructions.md).
 
 3. **Results**
     I collected two data sources in Wikipedia: the search result content of "Babson College" and "Olin College", and I get the top ten most frequently occurring words from two different data sources (see examples). You can see that the words that appear more frequently in the content of the search results for "Babson College" are words that characterizes Babson: such as "business" and "ceo" ; And the content that appears more often in the search results for "Olin College" is: "enginerring". I think this result can be used to prove the success and significance of my project. By analyzing more words that appear in a paragraph of text, we can get a rough summary of the text and quickly understand the important elements in the text data.
-
+    '''
     "Babson College" Example： 
-        The most common words are:
+        `The most common words are:
         babson   24
         mba      20
         business         19
@@ -23,10 +23,10 @@ Please read the [instructions](instructions.md).
         new      8
         ranked   7
         president        7
-        ceo      7
+        ceo      7`
     
     "Olin College" Example:
-        The most common words are:
+       ` The most common words are:
         olin     53
         students         27
         college          25
@@ -37,27 +37,30 @@ Please read the [instructions](instructions.md).
         academic         9
         school   7
         also     7
-
+    '''
+   
     There is another very interesting point in my data analysis. I compared the fuzz similarity between Babson and Brandeis text data and etween Babson and Olin text data. I originally thought that Babson and Brandeis would be more similar because they are both business schools, but then I found that Babson and Olin would be closer. Fuzz uses Levenshtein distance to analyze the similarity of two data. In fact, it is reasonable to think about it carefully. For example, if Babson and Olin have the same geographical location, then the Levenshtein distance of their text data may be closer.
 
+    '''
     Example Babson vs. Olin:
-    text = babson_content
+  `  text = babson_content
     reference_text = olin_content
-    fuzztext(text, reference_text)
+    fuzztext(text, reference_text)`
     Output: 
     Ratio Similarity: 40
     Partial Similarity: 40
     Token similarity: 62
 
     Example Babson vs. Brandeis:
-    text = babson_content
+    `text = babson_content
     reference_text = brandeis_content
-    fuzztext(text, reference_text)
+    fuzztext(text, reference_text)`
     Output: 
     Ratio Similarity: 29
     Partial Similarity: 40
     Token similarity: 57
-
-4. **Reflection**
+    '''
+   
+5. **Reflection**
     There are still many areas for improvement in my code. For example, when I clean up the text data, I use a lot of repeated code (.replace), which can be coded to be cleaner.  Since I was constantly updating my data and wanted to use the code I learned in class as much as possible in this assignment, I chose to continue using .replace. I feel that the data analyzed by my code is not very relevant, but they are all useful analysis methods. Whether it is the word with most frequncy or the similarity between the two sets of text data, some interesting findings can be analyzed very well.
     Reasonable use of ChatGPT can develop more coding ideas. For example, it can tell you multiple ways to solve a problem, so you can compare them and choose the most suitable code. Through ChatGPT, we can realize more problem-solving ideas and learn more codes.
