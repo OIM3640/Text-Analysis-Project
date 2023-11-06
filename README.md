@@ -16,7 +16,8 @@ The project demostrated the value of automated text analysis in extracting key i
 
 Here are some specific expamples of my result:
 1. Panama's summary in spanish:
-   ![] (images/spanishsummary.png)
+<img src='images/spanishsummary.png'>
+![] (images/spanishsummary.png)
 </picture>
 
 ## Reflection
