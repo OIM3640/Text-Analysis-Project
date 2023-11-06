@@ -41,7 +41,7 @@ Please read the [instructions](instructions.md).
    
     There is another very interesting point in my data analysis. I compared the fuzz similarity between Babson and Brandeis text data and etween Babson and Olin text data. I originally thought that Babson and Brandeis would be more similar because they are both business schools, but then I found that Babson and Olin would be closer. Fuzz uses Levenshtein distance to analyze the similarity of two data. In fact, it is reasonable to think about it carefully. For example, if Babson and Olin have the same geographical location, then the Levenshtein distance of their text data may be closer.
 
-    '''
+    ```
     Example Babson vs. Olin:
   `  text = babson_content
     reference_text = olin_content
@@ -59,7 +59,7 @@ Please read the [instructions](instructions.md).
     Ratio Similarity: 29
     Partial Similarity: 40
     Token similarity: 57
-    '''
+    ```
    
 5. **Reflection**
     There are still many areas for improvement in my code. For example, when I clean up the text data, I use a lot of repeated code (.replace), which can be coded to be cleaner.  Since I was constantly updating my data and wanted to use the code I learned in class as much as possible in this assignment, I chose to continue using .replace. I feel that the data analyzed by my code is not very relevant, but they are all useful analysis methods. Whether it is the word with most frequncy or the similarity between the two sets of text data, some interesting findings can be analyzed very well.
