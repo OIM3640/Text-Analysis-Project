@@ -1,0 +1,2 @@
+'''I was going to try to use a translation library to translate the parsed articles. However the process of sourcing the articles from different countries in different languages is 
+proving to be a bit complicated so I have decided to skip this step. I will instead be using english articles from different articles to make my analysis'''
