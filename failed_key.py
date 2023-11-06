@@ -1,3 +1,6 @@
+##This was my first attempt at remove_preamble. It does not work. It is only here to supplement my writing.
+
+
 def remove_preamble(text):
     count = 0
     checker = 0

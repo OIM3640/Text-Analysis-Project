@@ -17,7 +17,6 @@ def remove_words(input_string, stop_words):
     return result_string
 
 
-# Example usage
 if __name__ == "__main__":
     input_string = "Every time BaNaNa!!!!!!!!! we touch I get this feeling. And every time we kiss I swear I could fly."
     stop_words = ["banana", "time", "feeling"]
