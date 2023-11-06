@@ -9,15 +9,9 @@ nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 """
-This following Project will analyze the text "Phantom of the Opera" by Gaston Leroux. 
+This following Project will analyze the text "Phantom of the Opera" by Gaston Leroux. It will do a sentiment Analysis of the Three Main Characters: Christine, The Phantom, and Raoul. 
 """
 #Text Exploration
-"""
-filename = 'Phantom of the Opera.txt'
-f = open(filename, encoding = 'utf-8')
-text = f.read()
-print(text)
-"""
 ###Text Analysis Begins
 
 def skipgutenbergheader(filename):
@@ -110,7 +104,7 @@ def unique_words(dictionary):
     unique_word_count = len(dictionary)
     return unique_word_count
 
-#Removal of Stop Words
+#Removal of Stop Words. Source:
 def stop_words():
     """
     This function returns a list of stop_words based off the file terrier.txt.
@@ -162,18 +156,19 @@ def extract_sentences(filename):
 
     for word in words:
         word = word.lower()
+
+        if word in stop_list:
+            continue #also got this code from the internet, did not know continue was a thing!
         current_sentence.append(word)
         if word.endswith(('.', '!', '?')):
             sentences.append(' '.join(current_sentence))
             current_sentence = []
         #come back to this and remove stop words and gutenberg ender.
     return sentences
-
+##Sentiment Analysis Begins: code borrowed from https://www.datacamp.com/tutorial/text-analytics-beginners-nltk and edited for Project Purposes.
 # initialize NLTK sentiment analyzer
 
 analyzer = SentimentIntensityAnalyzer()
-
-
 # create get_sentiment function
 
 def get_sentiment_phantom(filename):
@@ -185,7 +180,7 @@ def get_sentiment_phantom(filename):
         if 'phantom'in phrase or 'erik' in phrase or 'ghost' in phrase:
             phantom_occurences.append(phrase)
     #count the number of sentences = > to divide score 
-    total_score = 0
+    total_score = 0 #contains the number of positive occurences of the character in the function
     total_no_occurences = len(phantom_occurences)
     for phrase in phantom_occurences:
 
@@ -193,7 +188,7 @@ def get_sentiment_phantom(filename):
 
         sentiment = 1 if scores['pos'] > 0 else 0
         total_score += sentiment
-    return (total_score / total_no_occurences)*100
+    return (total_score / total_no_occurences)*100 #This returns a percentage of overall sentiment. T
 
 def get_sentiment_christine(filename):
 
@@ -234,39 +229,17 @@ def get_sentiment_raoul(filename):
     return (total_score / total_no_occurences)*100  
 
 
-
-
-# apply get_sentiment function
-
-#df['sentiment'] = df['reviewText'].apply(get_sentiment)
-
-#df
-
-"""
-        if string not in ending_punctuation:
-            sentences.append(string)
-        else:
-            break
-        sentence_list.append(sentences)
-    return sentence_list
-"""
-    #if the thing has three ... then make sure that it does not start to count those as strings. 
-    #Welcome back. Here's an update: 1) We have released traversing this by a "for line in text" for loop is not possible 
-    #we break it into strings --> then we have the program add to a list, until it sees one of the ending punctuation strings.
-
-
-
 def main():
     filename = 'Phantom of the Opera.txt'
-    #print(count_words(filename))
+    print(f"This is the total count of words within this file: {count_words(filename)}")
     hist = process_file(filename)
     #print(process_file(filename))
     #print(histogram_test(hist))
-    #print(most_common(hist))
+    print(f"The top ten words in this book are (in (freq,word) order are:\n{most_common(hist)}")
     #print(extract_sentences(filename))
-    print(get_sentiment_phantom(filename)) #neutral
-    print(get_sentiment_christine(filename)) #neutral
-    print(get_sentiment_raoul(filename)) #neutral
+    print(f"\nThe Phantom of the Opera, or Erik,  got a total sentiment score of: {get_sentiment_phantom(filename)}, which is mostly neutral, but leans negtive.") #neutral
+    print(f"\nChristine Daae has a sentiment score of:{get_sentiment_christine(filename)}, which is mostly neutral and leans positive. ") #neutral
+    print(f"\nRoul has a sentiment score of: {get_sentiment_raoul(filename)} which is mostly neutral, but leans negative") #neutral
 
 
 if __name__ == '__main__':
