@@ -17,7 +17,7 @@ The project demostrated the value of automated text analysis in extracting key i
 Here are some specific expamples of my result:
 1. Panama's summary in spanish:
    
-   <!-- ![Panama's summary in spanish.](Desktop/spanishsummary.png) -->
+   <!-- ![Panama's summary in spanish.](file:///C:/Users/ldayan1/Desktop/spanishsummary.png) -->
    <img src="file:///C:/Users/ldayan1/Desktop/spanishsummary.png" width="400" alt="text clustering" style="display:block; margin:10px auto;"/>
 
 ## Reflection
