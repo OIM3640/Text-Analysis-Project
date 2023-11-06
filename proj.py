@@ -23,6 +23,13 @@ it divides a text into a series of tokens. There are three main tokenizers – w
 
     # Tokenize the text into words and sentences
     words = word_tokenize(text)
+=======
+    # Initialize a set of English stop words to a set using the packages imported
+    stopWords = set(stopwords.words("english"))
+
+    # Tokenize the text into words and sentences
+    words = word_tokenize(text) #tokenize function is from nltk pack
+>>>>>>> Stashed changes
     sentences = sent_tokenize(text)
 
     # Initialize dictionaries for word frequencies and sentence scores
@@ -164,6 +171,17 @@ def sentiment_in_reviews(movie_title):
  print(f"Total Neutral: {sentiment_counts['Neutral']}")
  print(f"Total Negative: {sentiment_counts['Negative']}")
 
+<<<<<<< Updated upstream
 sentiment_in_reviews("Interstellar")
 summarize_reviews("Interstellar")
 count_good_in_reviews('Interstellar')
+=======
+   
+def main():
+    sentiment_in_reviews("Interstellar")
+    summarize_reviews("Interstellar")
+    count_good_in_reviews('interstellar')
+
+if __name__ == '__main__':
+    main()
+>>>>>>> Stashed changes
