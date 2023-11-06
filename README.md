@@ -50,22 +50,22 @@ However, I shortened these codes to: `hist[word] = hist.get(word,0) + 1` based o
 
     ```
     Example Babson vs. Olin:
-  ` text = babson_content
+    `text = babson_content
     reference_text = olin_content
-    fuzztext(text, reference_text)
-    _Output: 
+    fuzztext(text, reference_text)`
+    Output: 
     Ratio Similarity: 40
     Partial Similarity: 40
-    Token similarity: 62_
+    Token similarity: 62
 
     Example Babson vs. Brandeis:
-    text = babson_content
+    `text = babson_content
     reference_text = brandeis_content
-    fuzztext(text, reference_text)
-   _ Output: 
+    fuzztext(text, reference_text)`
+    Output: 
     Ratio Similarity: 29
     Partial Similarity: 40
-    Token similarity: 57_
+    Token similarity: 57
     ```
    
 5. **Reflection**
