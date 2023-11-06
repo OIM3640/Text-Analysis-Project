@@ -232,8 +232,13 @@ movie = ia.search_movie("The Dark Knight")[0]
 print(movie.movieID)
 # '0468569'
 
-movie_reviews = ia.get_movie_reviews('0468569')
-print(movie_reviews['data']['reviews'][0]['content'])
+# Get reviews
+movie = ia.get_movie('0468569', info=['reviews']) # Make sure to add the second argument
+reviews = movie.get('reviews', [])
+
+for review in reviews:
+    print(review['content'])
+    print()
 ``` 
 
 ### Data Source: More Data Sources
@@ -429,4 +434,4 @@ From a learning perspective, mention what you learned through this project, how 
 3. Submit your project's GitHub repository URL to Canvas.
 
 ---
-*updated: 10/23/2023*
+*updated: 11/03/2023*
