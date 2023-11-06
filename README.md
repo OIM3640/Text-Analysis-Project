@@ -11,7 +11,7 @@ Several key algorithms were applied for text analysis. Word Frequency Analysis i
 The decision to leverage the MediaWiki and Google Translate APIs rather than developing scraping and translation systems from scratch simplified the code by utilizing robust existing packages. However, it necessitates reliance on external service availability and usage limits. Throughout the project, ChatGPT proved invaluable in providing coding assistance, helping to troubleshoot issues, and offering guidance on how to tackle various tasks, enhancing the overall development process.
 
 Here is an example on a way that I used ChatGPT:
-- I asked ChatGPT 'How to print the top 10 words in python with rake_nltk' and this was its response:
+- I asked ChatGPT *'How to print the top 10 words in python with rake_nltk'* and this was its response:
     <img src='images/chatgpttop10.png'>
 
 ## Results
