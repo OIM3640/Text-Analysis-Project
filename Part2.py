@@ -136,7 +136,7 @@ def analyze_sentiment(texts):
             {"text": text, "sentiment_scores": sentiment_scores, "sentiment": sentiment}
         )
 
-    return sentiment_results
+    return sentiment_results 
 
 
 # List of texts

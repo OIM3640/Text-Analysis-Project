@@ -42,5 +42,5 @@ article_2.parse()
 article_1_text = article_1.text
 article_2_text = article_2.text
 print(article_1_text)
-print(article_2_text)
+print(article_2_text) 
 

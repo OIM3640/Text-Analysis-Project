@@ -309,7 +309,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 sentence = 'Software Design is my favorite class because learning Python is so cool!'
 score = SentimentIntensityAnalyzer().polarity_scores(sentence)
-print(score)
+print(score) 
 # Output
 # {'neg': 0.0, 'neu': 0.614, 'pos': 0.386, 'compound': 0.7417}
 ```
