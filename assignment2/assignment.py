@@ -127,11 +127,10 @@ def markov_paragraph(text1, text2, sentence=8):
     combined = text1 + text2 # Combine the 2 texts for training
     model = markovify.Text(combined, state_size=2) # Create a training model that checks every 2 words to determine generation of n+1
 
-    paragraph = "" # Str
-    print(type(paragraph))
-    for _ in range(sentence): # 8 sentence paragraphs
-        sentence = model.make_short_sentence(max_chars=200)
-        paragraph += sentence + ' '
+    paragraph = "" # Creates string
+    for _ in range(sentence): # Uses _ to loop 8 times (sentences=8) to create 8 sentence paragraph
+        sentence = model.make_short_sentence(max_chars=200) # Maxes sentence length at 200 characters
+        paragraph += sentence + ' ' # Adds space betwene sentences
 
     return paragraph
 
@@ -193,7 +192,6 @@ def main():
     print(paragraph)
     
 
-
-
+    
 if __name__ == '__main__':
     main()
