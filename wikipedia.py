@@ -53,8 +53,8 @@ def translate_to_spanish(text):
     translation = translator.translate(text, src='en', dest='es')
     return translation.text
 
-# print('Here is the summary of Panama in Spanish.')
-# print(translate_to_spanish(Panama.summary))
+print('Here is the summary of Panama in Spanish.')
+print(translate_to_spanish(Panama.summary))
 
 
 """ top 10 keywords"""
@@ -62,29 +62,16 @@ def translate_to_spanish(text):
 from rake_nltk import Rake
 
 text = text.replace("(","").replace(")", "").replace("==","")
-# Create Rake object
-r = Rake(stopwords=stop_words, include_repeated_phrases=False)
-
-# Extract keywords
-r.extract_keywords_from_text(text) 
-
-# Get the top 10 keywords
-keywords = r.get_ranked_phrases()[:10]
-
-# Print top 10 keywords with scores
-for rating, keyword in r.get_ranked_phrases_with_scores()[:10]:
-  print(round(rating,2), keyword)
-
 
 # r = Rake(stopwords=stop_words, include_repeated_phrases=False, min_length=1, max_length=2)
-# r = Rake(stopwords=stop_words, include_repeated_phrases=False)
-# r.extract_keywords_from_text(text)
-# keywords = r.get_ranked_phrases()[:10]
-# keywords_score = r.get_ranked_phrases_with_scores()[:10]
-# for rating, keyword in keywords_score:
-#     if rating > 30:
-#         # print(round(rating,2), keyword)
-#         pass
+r = Rake(stopwords=stop_words, include_repeated_phrases=False)
+r.extract_keywords_from_text(text)
+keywords = r.get_ranked_phrases()[:10]
+keywords_score = r.get_ranked_phrases_with_scores()[:10]
+for rating, keyword in keywords_score:
+    if rating > 30:
+        print(round(rating,2), keyword)
+        
     
 
 # print(set([keyword for keyword in keywords if len(keyword.split()) > 1]))
@@ -95,18 +82,18 @@ for rating, keyword in r.get_ranked_phrases_with_scores()[:10]:
 """find flag of pty"""
 
 # page = Panama."Flag of Panama"
-# if page.exists():
-#     images = page.images
-#     flag_image = None
+if page.exists():
+    images = page.images
+    flag_image = None
 
-#     for image in images:
-#         if 'flag of panama' in image.lower():
-#             flag_image = image
-#             break
+    for image in images:
+        if 'flag of panama' in image.lower():
+            flag_image = image
+            break
 
-#     if flag_image:
-#         print(f"URL of the flag of Panama: {flag_image}")
-#     else:
-#         print("Flag image not found on the Wikipedia page.")
-# else:
-#     print("Wikipedia page not found for 'Flag_of_Panama'.")
+    if flag_image:
+        print(f"URL of the flag of Panama: {flag_image}")
+    else:
+        print("Flag image not found on the Wikipedia page.")
+else:
+    print("Wikipedia page not found for 'Flag_of_Panama'.")

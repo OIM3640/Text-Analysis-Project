@@ -1,11 +1,15 @@
-from mediawiki import MediaWiki
 import nltk
+# nltk.download('stopwords')
+# nltk.download('punkt')
+import string  # Import the string module
+
+from mediawiki import MediaWiki
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
-import string
 from googletrans import Translator
 from rake_nltk import Rake
+
 
 def get_panama_wikipedia_content():
     wikipedia = MediaWiki()
@@ -21,19 +25,19 @@ def filter_words(text):
     filtered_words = [word.lower() for word in words if word.lower() not in stop_words and not any(char.isdigit() for char in word) and word.lower() != "de" and all(char not in special_characters for char in word)]
     return filtered_words
 
+def translate_to_spanish(text):
+    translator = Translator()
+    translation = translator.translate(text, src='en', dest='es')
+    return translation.text
+
 def find_top_words(filtered_words, n=10):
     word_counts = Counter(filtered_words)
     top_words = word_counts.most_common(n)
     return top_words
 
-def translate_to_spanish(summary):
-    translator = Translator()
-    translation = translator.translate(summary, src='en', dest='es')
-    return translation.summary
-
 def find_top_keywords(text, n=10):
     text = text.replace("(", "").replace(")", "").replace("==", "")
-    r = Rake(stopwords=stop_words, include_repeated_phrases=False)
+    r = Rake()
     r.extract_keywords_from_text(text)
     keywords = r.get_ranked_phrases()[:n]
     keywords_score = r.get_ranked_phrases_with_scores()[:n]
@@ -41,9 +45,17 @@ def find_top_keywords(text, n=10):
     return top_keywords
 
 def main():
-    """ """
-    content = get_panama_wikipedia_content()
+    nltk.download('stopwords')
+    nltk.download('punkt')
+
+    stop_words = set(stopwords.words("english"))
+    content, summary = get_panama_wikipedia_content()
     filtered_words = filter_words(content)
+
+    # Translate the summary to Spanish
+    translated_summary = translate_to_spanish(summary)
+    print('Here is the summary of Panama in Spanish:')
+    print(translated_summary)
     
     # Top 10 words
     top_words = find_top_words(filtered_words, n=10)
@@ -51,11 +63,6 @@ def main():
     for word, count in top_words:
         percentage = (count / len(filtered_words) * 100)
         print(f"{word}: {count} times ({percentage:.2f}%)")
-    
-    # Translate the summary to Spanish
-    translated_summary = translate_to_spanish(summary)
-    print('Here is the summary of Panama in Spanish:')
-    print(translated_summary)
     
     # Top 10 keywords
     top_keywords = find_top_keywords(content, n=10)
