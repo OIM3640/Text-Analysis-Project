@@ -20,7 +20,7 @@ However, I shortened these codes to: `hist[word] = hist.get(word,0) + 1` based o
     I collected two data sources in Wikipedia: the search result content of "Babson College" and "Olin College", and I get the top ten most frequently occurring words from two different data sources (see examples). You can see that the words that appear more frequently in the content of the search results for "Babson College" are words that characterizes Babson: such as "business" and "ceo" ; And the content that appears more often in the search results for "Olin College" is: "enginerring". I think this result can be used to prove the success and significance of my project. By analyzing more words that appear in a paragraph of text, we can get a rough summary of the text and quickly understand the important elements in the text data.
     ```
     "Babson College" Example： 
-        `The most common words are:
+        The most common words are:
         babson   24
         mba      20
         business         19
@@ -33,7 +33,7 @@ However, I shortened these codes to: `hist[word] = hist.get(word,0) + 1` based o
         ceo      7`
     
     "Olin College" Example:
-       ` The most common words are:
+        The most common words are:
         olin     53
         students         27
         college          25
