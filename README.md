@@ -12,7 +12,7 @@ The decision to leverage the MediaWiki and Google Translate APIs rather than dev
 
 Here is an example on a way that I used ChatGPT:
 - I asked ChatGPT 'How to print the top 10 words in python with rake_nltk' and this was its response:
-    <img src='images/chatgpttop10'>
+    <img src='images/chatgpttop10.png'>
 
 ## Results
 The text analysis provided several interesting insights about the Wikipedia page for Panama. The summary of Panama in spanish allowed non-English speackers to access essential information about the country and will try to let readers understand and see the official language of Panama. The top words on the Panama page included *panama (215 times), panamanian (35 times) and percent (34 times)*. And the top keywords included significant fraces that are critical aspects of Panama's history and geography.
