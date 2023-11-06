@@ -20,7 +20,9 @@ To get started on the assignment, you should **fork** this base repository. Once
 You should read this document in a somewhat non-linear/spiral fashion:
 
 1. Scan through Part 1 to get a sense of what data sources are available. You can select a source that interests you and try to retrieve text from it. Note that you do not need to try all the data sources.
+
 2. Scan through Part 2 to see a bunch of cool examples for what you can do with your text. You can also ask ChatGPT what else you can do with Python to process, analyze or visulize text.
+
 3. Choose (at least) one data source from Part 1 and apply techniques from Part 2 or elsewhere to analyze, manipulate or transform the text. 
 4. Use the `if __name__ == "__main__"` idiom in the `.py` file (or the entry `.py` file if you create multiple `.py` files). In other words, your code should be executed when the entry Python file is run.
     ```python
@@ -78,8 +80,11 @@ babson = wikipedia.page("Babson College")
 print(babson.title)
 print(babson.content)
 ```
+https://en.wikipedia.org/wiki/Jean-Michel_Basquiat
 
 This code will fetch the article with the given title and print its title and content. The output will look like this:
+
+
 
 ```txt
 Babson College 
