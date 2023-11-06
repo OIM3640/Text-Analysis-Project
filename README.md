@@ -20,6 +20,13 @@ Here are some specific expamples of my result:
    <!-- ![Panama's summary in spanish.](file:///C:/Users/ldayan1/Desktop/spanishsummary.png) -->
    <img src="file:///C:/Users/ldayan1/Desktop/spanishsummary.png" width="400" alt="text clustering" style="display:block; margin:10px auto;"/>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+</picture>
+
+
 ## Reflection
 This project provided valuable insights into extracting text from an API, analyzing that text and natural language processing. It showed me the power and availability of Python libraries inprocessing and analyzing text data. However, I faced many challenges such as ensuring that the libraries where imported correctly, the data sources were okay, and debugging issues with NLTK stopwords and tokenization. One thing that went well was taking time upfront to plan out the logical steps and component libraries I would need to use. Breaking the project down into discrete parts like getting the text, cleaning it, analyzing it, etc. made it more manageable.
 
