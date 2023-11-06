@@ -1,11 +1,11 @@
 from collections import defaultdict
 import part1 as p
 
-# research link: https://observablehq.com/@dhowe/tut-rita-ngrams 
-#Chat GPT link: https://chat.openai.com/share/cc46d90a-37af-44e4-b73c-4cbc263a3ad2 
+
+# research link: https://observablehq.com/@dhowe/tut-rita-ngrams
+# Chat GPT link: https://chat.openai.com/share/cc46d90a-37af-44e4-b73c-4cbc263a3ad2
 def build_markov_chain(text, n):
-    """This builds the actual "chain". The n is the amount of consecutive words that are brought together
-    """
+    """This builds the actual "chain". The n is the amount of consecutive words that are brought together"""
     words = text.split()
     chain = defaultdict(list)
 
@@ -38,19 +38,23 @@ mmp = p.murder_piracy
 hc = p.history_Cuba
 
 
-def text_generation(source_text, n_size):
+def text_generation(source_text, n_size, max_words):
     # Build the Markov chain
-    n = n_size # You can adjust the n-gram size
+    n = n_size  # You can adjust the n-gram size
     markov_chain = build_markov_chain(source_text, n)
 
     # Generate text
-    generated_text = generate_text(markov_chain, n, 100)  # 100 words in this example
+    generated_text = generate_text(
+        markov_chain, n, max_words
+    )  # 100 words in this example
 
     return generated_text
 
-print(f"MMP n-size 1: {text_generation(mmp,1)}")
-print()
-print(f"MMP n-size 5: {text_generation(mmp,1)}")
-print()
-print(f"MMP n-size 15: {text_generation(mmp,1)}")
 
+print(f"MMP n-size 1: {text_generation(mmp,1, 100)}")
+print()
+print(f"MMP n-size 5: {text_generation(mmp,5, 100)}")
+print()
+print(f"MMP n-size 15: {text_generation(mmp,15, 100)}")
+print()
+print(f"HC n-size 5: {text_generation(hc,5, 250)}")

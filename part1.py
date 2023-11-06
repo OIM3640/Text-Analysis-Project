@@ -1,7 +1,6 @@
 import urllib.request
 
 
-
 def remove_preamble(text, cutoff):
     """Takes two parameters. The first is the text and the second is a word whose first time appearing is either in the heading of the main body of the book or the first word of the first sentence. First the text is broken up into a list of individual words. Then a loop iterates until the cutoff word is reached. The condition cutoff_reached will then become true, activating the second conditional. The loop then adds that word and every subsequent word into a new list. The new list is then joined back together to become a string and it is returned."""
     words = text.split()  # string is broken up into individual words
@@ -20,12 +19,13 @@ def remove_preamble(text, cutoff):
 
 
 def only_alpha(word):
-    """A bunch of other functions give wrong outputs if the word is attatched to a punctuation mark. I looked online and found this method called isalpha() that can determine if a character is a letter or not. The code runs through the word and removed all non-letter characters by creating a new string and only adding valid letters.
-    """
-    result = "" #empty string waiting to be filled
-    for letter in word: #iterates through each letter
+    """A bunch of other functions give wrong outputs if the word is attatched to a punctuation mark. I looked online and found this method called isalpha() that can determine if a character is a letter or not. The code runs through the word and removed all non-letter characters by creating a new string and only adding valid letters."""
+    result = ""  # empty string waiting to be filled
+    for letter in word:  # iterates through each letter
         if letter.isalpha():
-            result = result + letter #if the character is a valid letter then it is added to the new string
+            result = (
+                result + letter
+            )  # if the character is a valid letter then it is added to the new string
     return result
 
 
@@ -50,4 +50,4 @@ url_3 = "https://www.gutenberg.org/cache/epub/25982/pg25982.txt"
 with urllib.request.urlopen(url_3) as f:
     MMP_original = f.read().decode("utf-8")
 murder_piracy = remove_preamble(MMP_original, "book")
-#print(murder_piracy) # for testing
+# print(murder_piracy) # for testing

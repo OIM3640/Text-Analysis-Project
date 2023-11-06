@@ -49,7 +49,9 @@ def compare_word_count(t1, t2, t3):
     print()
     print("Below are the results")
     for i in range(amount):
-        print(f"Text 1: {text_1_count[i]}      Text 2: {text_2_count[i]}      Text 3: {text_3_count[i]}")
+        print(
+            f"CF: {text_1_count[i]}      HC: {text_2_count[i]}      MMP: {text_3_count[i]}"
+        )
 
 
 if __name__ == "__main__":
