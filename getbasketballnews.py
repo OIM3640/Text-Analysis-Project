@@ -19,7 +19,7 @@ def get_category_sources(category):
     for s in us_sources['sources']:
         if s['category'] == category:
             categorized_sources.append(s['id'])
-    categorized_sources = ','.join(categorized_sources)
+    categorized_sources = ','.join(categorized_sources) # converts the list to the NewsApi-friendly format
     return categorized_sources
 # print(get_category_sources('sports'))
 
@@ -46,13 +46,28 @@ def get_basketball_news(keyword=' '):
                 news_list.append(article)
     return news_list
 
+def reading_print(newsapi_list):
+    """
+    prints the articles returned by newsapi in an easy-to-read format
+    """
+    if len(newsapi_list) == 0:
+        print('There are no articles under these keywords.')
 
-
+    print_dict = {'TITLE':'title','DESCRIPTION':'description','CONTENT':'content'}
+    for article in newsapi_list:
+        print('')
+        article_num = newsapi_list.index(article) + 1
+        # I learned this method of formatting from https://realpython.com/python-f-strings/
+        print('{:=^100}'.format(f'ARTICLE {article_num}'))
+        for i in print_dict:
+            print(f'{i:-^30}')
+            print(f'{article[print_dict[i]]}')
 
 def main():
-    team = 'Suns'
+    team = 'Los Angles Lakers'
     news = get_basketball_news(team)
-    pprint.pprint(news)
+    reading_print(news)
+
 
 
 if __name__ == "__main__":

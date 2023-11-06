@@ -5,12 +5,33 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 get ratings from movie reviews
 """
 
-ia = Cinemagoer()
 
-movie = ia.search_movie('The Dark Knight')[0]
-# print(movie.movieID)
+def paragraph_sentiment(par):
+    """
+    returns the average sentiment compound of each sentence in a paragraph
+    """
+    scores_list = []
+    # split paragraph by sentence
+    punctuation = '.?!'
+    for i in punctuation:
+        par = par.replace()
+    print(par)
 
-movie_reviews = ia.get_movie_reviews(movie.movieID)
-review = movie_reviews['data']['reviews'][0]['content']
-score = SentimentIntensityAnalyzer().polarity_scores(review)
-print(score)
+    for sentence in par:
+        if len(sentence) > 2:
+            score = SentimentIntensityAnalyzer().polarity_scores(sentence)
+            print(score)
+            scores_list.append(score['compound'])
+    print(scores_list)
+
+    sum_scores = 0
+    for sentence in scores_list:
+        sum_scores += sentence
+    
+    average_score = sum_scores/len(scores_list)
+    return average_score
+    pass
+
+print(paragraph_sentiment('I am very happy with your work. It came out great. Looking forward to the next one!'))
+
+
