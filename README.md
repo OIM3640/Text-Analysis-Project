@@ -32,3 +32,4 @@ From a process perspective, the project unfolded pretty smoothly. Extracting and
 However, I believe that there's room for improvement. In future projects, incorporating more advanced natural language processing techniques and could definitely enhance the depth of analysis. 
 
 From a learning perspective, this project provided valuable insight on  the extraction, processing, and analysis of text data. ChatGPT played a pivotal role in offering me guidance on text analysis techniques, assisting in intepretation of my results and also suggesting code improvements. Looking back, a better understanding of advanced natural language processing tools and how to use them effectively would have been valuable for a more ccomplex analysis.
+
