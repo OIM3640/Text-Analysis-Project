@@ -152,4 +152,3 @@ cython_debug/
 #.idea/
 data/private.py
 config.py
-config.py
