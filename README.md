@@ -3,8 +3,8 @@
 ## Overview
 
 The data is a short novel from Gutenberg.org. The program is designed to showcase the most important topic of a given text dataset. In this project, the dataset is the short novel, and each observation is a paragraph. The program will use an LDA topic model to output the most relevant topic of a given paragraph. The concept of topic modeling is commonly discussed in machine learning. The overall approach is inspired by these two scripts from Professor Davit Khachatryan:
-- [`Text Mining Intro`](references/Text%20Mining%20Intro%20Fall%202023.R)
-- [`Topic Modeling`](references/Topic%20Modeling%202023.R)
+- [`Text Mining Intro`]
+- [`Topic Modeling`]
 
 ## Implementation
 
