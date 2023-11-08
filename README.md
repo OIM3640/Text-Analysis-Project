@@ -18,11 +18,12 @@ A notable design decision was made regarding the output format—whether to disp
 ### Graphs
 Sentiment Graph 
 
-![Sentiment](images/sentiment.png)
+![Sentiment](images/sentiment.jpg)
 
-Common Words: https://drive.google.com/file/d/1ATwvV2WN8b1ShKz5cq1-1YHLw4BhuUmu/view?usp=sharing 
+Common Words
+![clustring](images/text_clustering.png)
 
-![common](images/commonwords.png)
+![common](images/common_words.jpg)
 
 
 ## Results 
@@ -49,5 +50,9 @@ I created three different files during the entire process. The first, news.py, w
 
 Moving forward, I will leverage these skills to conduct more sophisticated text analysis, and be more meaningful and more specific about the sources I and APIs I use, I will do research and look at reviews from APIs before I use them. For example, understanding API alimitations before starting a project wil be important for my future project.
 
-GPT Usage = https://drive.google.com/drive/folders/13sFMSH8_VoO3HFBw4hnQaFSMecD0jGV9?usp=drive_link 
+GPT Usage = 
 
+![Alt text](<explain dictionary.jpg>)
+![Alt text](<improving prompt.jpg>)
+![Alt text](<main function.jpg>)
+![Alt text](Stopwords.jpg)
