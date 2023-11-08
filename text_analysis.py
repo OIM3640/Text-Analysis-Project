@@ -157,7 +157,7 @@ if __name__ == "__main__":
 
     most_common(hist, 10)
 
-    print(f'The polarity scores are: {nltktest()}')
+    nltktest()
 
     text = babson_content
     reference_text = brandeis_content
