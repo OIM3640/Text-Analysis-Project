@@ -25,8 +25,6 @@ def processing2(s):
     text = text.replace('\r', ' ')
     text = text.replace('\n', ' ')
     text = text.lower()
-    while '  ' in text:
-        text = text.replace('  ', ' ')
     return text
 
 def cintext(s):
@@ -34,7 +32,7 @@ def cintext(s):
     sort str in to a dictionary with the frequency of each word
     '''
     s = processing2(s)
-    l = s.split(" ")
+    l = s.split()
     d = {}
     for word in l:
         d[word]=d.get(word,0)+1
