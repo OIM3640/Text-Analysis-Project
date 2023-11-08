@@ -8,8 +8,7 @@ import string
 from collections import Counter
 import datetime
 import random
-
-APIKEY = '34686ac4ab5866863e5cd49de96ce446'
+from apikey import APIKEY
 
 api_cache = {}  # Cache for API responses; added by Chat GPT
 
