@@ -16,6 +16,9 @@ from newspaper import Article
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pickle
 
+import praw
+# import config
+
 
 ###   PART 1   ###
 
@@ -171,6 +174,15 @@ def part2():
     # I would then go on to look more into the top x-amount (x is subjective) of glitches (has the highest total fuzz score/key-value), and do deeper research into those.
 
 ###   END OF PART 2   ###
+def part3():
+    reddit = praw.Reddit(client_id=config.client_id,
+                        client_secret=config.client_secret,
+                        username=config.username,
+                        password=config.password,
+                        user_agent=config.user_agent)
+    sub = 'learnpython'
+    submissions = reddit.subreddit(sub).top('day', limit=5)
+    top5 = [(submission.title, submission.selftext) for submission in submissions]
 
 
 
