@@ -17,7 +17,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pickle
 
 import praw
-# import config
+import config 
 
 
 ###   PART 1   ###
@@ -175,21 +175,35 @@ def part2():
 
 ###   END OF PART 2   ###
 def part3():
+    # reddit = praw.Reddit(client_id=config.client_id,
+    #                     client_secret=config.client_secret,
+    #                     username=config.username,
+    #                     password=config.password,
+    #                     user_agent=config.user_agent)
+    # sub = 'learnpython'
+    # submissions = reddit.subreddit(sub).top('day', limit=5)
+    # top5 = [(submission.title, submission.selftext) for submission in submissions]
+    # print(top5)
     reddit = praw.Reddit(client_id=config.client_id,
-                        client_secret=config.client_secret,
-                        username=config.username,
-                        password=config.password,
-                        user_agent=config.user_agent)
-    sub = 'learnpython'
-    submissions = reddit.subreddit(sub).top('day', limit=5)
-    top5 = [(submission.title, submission.selftext) for submission in submissions]
+                     client_secret=config.client_secret,
+                     username=config.username,
+                     password=config.password,
+                     user_agent=config.user_agent)
 
+    sub = 'pokemongo'
+    submissions = reddit.subreddit(sub)
+    reddit.read_only = True
+    # print(reddit.read_only)
+    # print(submissions.description)
+    for submission in submissions.controversial(limit=10):
+        print(submission.title, submission.url)
 
 
 
 def main():
-    part1()
-    part2()
+    # part1()
+    # part2()
+    part3()
 
 
 
