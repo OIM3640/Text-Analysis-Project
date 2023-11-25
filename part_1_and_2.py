@@ -195,7 +195,7 @@ def part3():
     reddit.read_only = True
     # print(reddit.read_only)
     # print(submissions.description)
-    for submission in submissions.controversial(limit=10):
+    for submission in submissions.controversial(limit=20):
         print(submission.title, submission.url)
 
 
