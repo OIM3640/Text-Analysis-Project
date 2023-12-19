@@ -54,7 +54,7 @@ By using 'rb' mode, you will be able to correctly read the binary data from the 
     79: 'No internet connection message glitch'
 
 Purpose:
-    As an aspiring Product Manager in the gaming sector, I saw this a great opportunity to conduct a semi-game teardown, through utilizing code to collect prevalent glitches/bugs in the game of choice: Pokemon Go.
+    I've always loved playing games of all kinds, and given this fact, I saw this project as a great opportunity to conduct a semi-game teardown, through utilizing code to collect prevalent glitches/bugs in the game of choice: Pokemon Go.
 
     But how do I select the most prevalent bugs?
 
