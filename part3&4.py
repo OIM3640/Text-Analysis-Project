@@ -451,8 +451,7 @@ def vsr(text1, text2, title1, title2):
     plt.figure(figsize=(8, 6))
 
     plt.scatter(vsm_matrix_reduced[:, 0], vsm_matrix_reduced[:, 1])
-    # in simple terms:
-    # x component or axies = book1, y component or axies = book2 (this is a scatter plot)
+    # in simple terms => scatter plot is in 2 dimentions
 
     # labeling the two points
     labels = [title1, title2]
@@ -470,6 +469,81 @@ def vsr(text1, text2, title1, title2):
     plt.title(f"Vector Space Representation by IDF for {title1} and {title2}")
     plt.xlabel("Dimention 1")
     plt.ylabel("Dimention 2")
+    plt.show()
+
+
+## VSR for most common words in a book ##
+# I wanted to generate a similar VSR plot I had in R
+# This code is derived from ChatGPT
+# link: https://chat.openai.com/c/4acc8bbf-d17f-4241-920b-e612ad84d948
+import spacy
+import numpy as np
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+from gensim.models import Word2Vec
+from collections import Counter
+
+
+def vst_words(bookname, title):
+    """
+    Plot VSR Plot for the top 100 most common words in the book
+
+    The function takes 2 arguments:
+    bookname is the txt file
+    title is the str of the book title
+    """
+    # load NLP spaCy model
+    nlp = spacy.load("en_core_web_sm")  # This is a NLP modle
+
+    text = " ".join(cleantext(bookname))
+
+    # tokenize the text (break text into segments)
+    doc = nlp(text)
+    tokens = [token.text for token in doc]
+
+    # calculate the frequency of each word
+    word_freq = Counter(tokens)
+    # this is simple version of process_file function
+    # returns a dictionary with frequencies as value and words as key
+
+    top_words = [word for word, _ in word_freq.most_common(100)]
+    # most_common function returns a lost of tuples (word, count)
+    # iterates through words in the most frequenct 100 words
+
+    # traing the NLP model (initializing some parameters)
+    word_vectors = Word2Vec(
+        sentences=[top_words], vector_size=100, window=5, min_count=1, sg=1
+    )
+
+    # convert into arrays (similar to the process in the VSR function before)
+    word_vectors_np = np.array([word_vectors.wv[token] for token in top_words])
+
+    # dimensionality reduction using t-SNE
+    tsne_model = TSNE(
+        perplexity=40, n_components=2, init="pca", n_iter=2500, random_state=88
+    )
+    word_vectors_tsne = tsne_model.fit_transform(word_vectors_np)
+    # in simple terms this code take higher dimention data rendered by the NLP model into
+    # 2 dimentional plottable version so we can plot in x and y axies
+    # the logic is similar to pruning (reduce complexity)
+    # the random_state is set to 88 as before (similar to set.seed)
+
+    # plotting the VSR
+    plt.figure(figsize=(12, 8))  # initializing the dimentions of the plot
+
+    plt.scatter(word_vectors_tsne[:, 0], word_vectors_tsne[:, 1])
+    # plot in 2 dimentions (similar to VSR before)
+
+    for i, word in enumerate(top_words):
+        plt.annotate(
+            word, xy=(word_vectors_tsne[i, 0], word_vectors_tsne[i, 1]), fontsize=8
+        )
+    # adding word labels to each point using for loop
+    # for each corresponding top words, the label is appended and the text size is 8
+
+    plt.xlabel("Dimension 1")
+    plt.ylabel("Dimension 2")
+    plt.title(f"VSR Plot for Top 100 Most Common Words in {title}")
     plt.show()
 
 
@@ -532,12 +606,19 @@ def main():
         "\nDeciphering sentiment scores: compound score (0 extremely negative, 1 extremely positive)"
     )
 
+    # WordCloud for both books
     wordcloud(book)
     wordcloud(book2)
 
+    # Side by side barchars for the most common 50 words in each book
     sbs_barchart()
 
+    # VSR for both books using IDF
     vsr(book, book2, "Metamorphosis", "The Trail")
+
+    # VSR for the top 100 frequent words in the book
+    vst_words(book, "Metamorphosis")
+    vst_words(book2, "The Trail")
 
 
 if __name__ == "__main__":
@@ -548,3 +629,4 @@ if __name__ == "__main__":
 # https://chat.openai.com/c/c96b6bac-e943-40b9-98c4-9b9a0b355131
 # Wordcloud chat link: https://chat.openai.com/c/56bf14ac-01c2-4376-9d81-15ad9ad7ba57
 # reading multiple files: https://stackoverflow.com/questions/208120/how-to-read-and-write-multiple-files
+# VSR words link: https://chat.openai.com/c/4acc8bbf-d17f-4241-920b-e612ad84d948
