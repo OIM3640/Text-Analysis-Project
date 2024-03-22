@@ -13,7 +13,7 @@ movie = ia.search_movie("Dead Poets Society")[0]
 print(movie.movieID)
 #0097165
 
-movie = ia.get_movie('0097165', info=['reviews']) # Make sure to add the second argument
+movie = ia.get_movie('0097165', info=['reviews'])
 reviews = movie.get('reviews', [])
 
 #Creates a list of words for the first review
@@ -28,10 +28,12 @@ import pickle
 
 with open('moviereview.pkl','wb') as f:
     pickle.dump(moviereview,f)
-    
+
+
 with open('moviereview.pkl','rb') as f:
     reloaded_copy_of_texts = pickle.load(f)
-    
+#used "wb" and "rb" to specify binary write mode    
+
 # print(reloaded_copy_of_texts)
 
 # Part 2:
@@ -93,12 +95,27 @@ def sentimental_analysis():
     """
     takes the sentiment scores and draws interesting arguments from the review
     """
-    d_scores = {}
+    max_pos_score = -1
+    max_neg_score = -1
+    most_positive_line = ""
+    most_negative_line = ""
     for line in reloaded_copy_of_texts:
         score = SentimentIntensityAnalyzer().polarity_scores(line)
-        # print("Text:", line)
-        # print("Sentiment Score:", score)
-        
-        
+        pos_score = score["pos"]
+        neg_score = score["neg"]
+        print("Text:", line)
+        print("Sentiment Score:", score)
+        if pos_score > max_pos_score: 
+            #compares with the -1 at first and stores the previous score
+            #because positive score is between 0 to 1, it can never be smaller than -1
+            max_pos_score = pos_score
+            most_positive_line = line
+        if neg_score > max_neg_score:
+            max_neg_score = neg_score
+            most_negative_line = line
+    print(f"The most positive line: {most_positive_line} ")
+    print(f"The most negative line: {most_negative_line}")
 
 sentimental_analysis()
+
+#Part 3
