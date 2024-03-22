@@ -4,14 +4,13 @@ from sklearn.manifold import MDS
 import matplotlib.pyplot as plt
 from thefuzz import fuzz
 import re
-
-# import nltk
-# from nltk.corpus import stopwords
+import nltk
+from nltk.corpus import stopwords
 
 wikipedia = MediaWiki()
 NVDA_page = wikipedia.page("Nvidia")
 AMD_page = wikipedia.page("AMD")
-# add more pages to calculate clustering
+# Add more pages to calculate clustering
 pages_titles = [
     "Nvidia",
     "AMD",
@@ -36,140 +35,9 @@ for i in range(n):
             fuzz.token_sort_ratio(pages_content[i], pages_content[j]) / 100.0
         )  # Normalizing to [0, 1]
 
-stop_words = set(
-    [
-        "i",
-        "me",
-        "my",
-        "myself",
-        "we",
-        "our",
-        "ours",
-        "ourselves",
-        "you",
-        "your",
-        "yours",
-        "yourself",
-        "yourselves",
-        "he",
-        "him",
-        "his",
-        "himself",
-        "she",
-        "her",
-        "hers",
-        "herself",
-        "it",
-        "its",
-        "itself",
-        "they",
-        "them",
-        "their",
-        "theirs",
-        "themselves",
-        "what",
-        "which",
-        "who",
-        "whom",
-        "this",
-        "that",
-        "these",
-        "those",
-        "am",
-        "is",
-        "are",
-        "was",
-        "were",
-        "be",
-        "been",
-        "being",
-        "have",
-        "has",
-        "had",
-        "having",
-        "do",
-        "does",
-        "did",
-        "doing",
-        "a",
-        "an",
-        "the",
-        "and",
-        "but",
-        "if",
-        "or",
-        "because",
-        "as",
-        "until",
-        "while",
-        "of",
-        "at",
-        "by",
-        "for",
-        "with",
-        "about",
-        "against",
-        "between",
-        "into",
-        "through",
-        "during",
-        "before",
-        "after",
-        "above",
-        "below",
-        "to",
-        "from",
-        "up",
-        "down",
-        "in",
-        "out",
-        "on",
-        "off",
-        "over",
-        "under",
-        "again",
-        "further",
-        "then",
-        "once",
-        "here",
-        "there",
-        "when",
-        "where",
-        "why",
-        "how",
-        "all",
-        "any",
-        "both",
-        "each",
-        "few",
-        "more",
-        "most",
-        "other",
-        "some",
-        "such",
-        "no",
-        "nor",
-        "not",
-        "only",
-        "own",
-        "same",
-        "so",
-        "than",
-        "too",
-        "very",
-        "s",
-        "t",
-        "can",
-        "will",
-        "just",
-        "don",
-        "should",
-        "now",
-    ]
-)
 
-# nltk.download("stopwords")
-# stop_words = set(stopwords.words("english"))
+nltk.download("stopwords")
+stop_words = set(stopwords.words("english"))
 
 # print(NVDA.title)
 # print(NVDA.content)
@@ -244,16 +112,22 @@ def main():
     # Apply MDS
     mds = MDS(dissimilarity="precomputed", random_state=42)
     coords = mds.fit_transform(dissimilarities)
+    # dissimilarity is 1 minus similarity
+    dissimilarities = 1 - similarity_matrix
 
-    # Plot the results
-    plt.figure(figsize=(10, 8))
-    plt.scatter(coords[:, 0], coords[:, 1], marker="o")
-    for i, title in enumerate(pages_titles):
-        plt.annotate(title, (coords[i, 0], coords[i, 1]))
-    plt.title("Text Clustering with MDS")
-    plt.xlabel("MDS Dimension 1")
-    plt.ylabel("MDS Dimension 2")
+    # compute the embedding
+    coord = MDS(dissimilarity="precomputed", random_state=42).fit_transform(
+        dissimilarities
+    )
+
+    plt.scatter(coord[:, 0], coord[:, 1])
+
+    # Label the points
+    for i in range(coord.shape[0]):
+        plt.annotate(str(i), (coord[i, :]))
+
     plt.show()
+    # In this plot, "0" represents to "Nvidia", "1" represents to "AMD", "2" represents to "Intel", "3" represents to "Graphics Processing Unit", and "4" represents to "Central Processing Unit".
 
 
 if __name__ == "__main__":
