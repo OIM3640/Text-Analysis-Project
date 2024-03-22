@@ -547,6 +547,25 @@ def vst_words(bookname, title):
     plt.show()
 
 
+## Generate an AI summary for the book ##
+# This did not work probably because I do not have access to the model in my current OpenAI plan
+import openai
+
+
+def analyze_book(bookname, APIkey):
+    openai.api_key = APIkey
+
+    response = openai.Completion.create(
+        engine="text-davinci-002",  # Use a model available in your plan
+        prompt=f"Give me a short analysis and summary of the book {bookname}",
+        max_tokens=150,
+    )
+
+    # Extract and print the generated response
+    generated_text = response.choices[0].text.strip()
+    print(f"AI generated summary for {bookname}:", generated_text)
+
+
 def main():
     hist = process_file(book)  # This text file is downloaded from gutenberg.org
     # print(hist)
@@ -603,7 +622,7 @@ def main():
     print(overallscore2)
 
     print(
-        "\nDeciphering sentiment scores: compound score (0 extremely negative, 1 extremely positive)"
+        "\nDeciphering sentiment scores: compound score (-1 extremely negative, 1 extremely positive)"
     )
 
     # WordCloud for both books
@@ -619,6 +638,9 @@ def main():
     # VSR for the top 100 frequent words in the book
     vst_words(book, "Metamorphosis")
     vst_words(book2, "The Trail")
+
+    # # Analyze the book
+    # analyze_book("Metamorphosis", APIkey)
 
 
 if __name__ == "__main__":
