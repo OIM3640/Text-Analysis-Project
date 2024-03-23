@@ -8,8 +8,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import random
 from thefuzz import fuzz
 import numpy as np
-from sklearn.manifold import MDS
-import matplotlib.pyplot as plt
 
 
 def process_file(content):
@@ -22,19 +20,19 @@ def process_file(content):
     hist = {}
     
     strippables = "".join(
-        chr(i) for i in range(sys.maxunicode) if category(chr(i)).startswith("P")
+        chr(i) for i in range(sys.maxunicode) if category(chr(i)).startswith("P") and not chr(i).isspace()
     )
 
     for line in content.split("\n"):
-        line = line.replace("-", " ")
-        line = line.replace(
-            chr(8212), " "
-        )  # Unicode 8212 is the HTML decimal entity for em dash
+        line = line.replace("-", "")
+        line = line.replace(chr(8212), " ")  # Unicode 8212 is the HTML decimal entity for em dash
 
-        for line in line.split():
+        for word in line.split():
             # word could be 'Sussex.'
-            word = word.strip(strippables)
+            word = ''.join(char for char in word if char.isalpha())
+            word = word.strip(strippables).strip()
             word = word.lower()
+            
 
             # update the dictionary
             hist[word] = hist.get(word, 0) + 1
@@ -103,6 +101,7 @@ def random_word(hist):
 
 
 def random_sentence(wiki_page):
+    """Chooses a random sentence from the content."""
     sentences = nltk.sent_tokenize(wiki_page)
     random_sentence = random.choice(sentences)
 
@@ -110,11 +109,13 @@ def random_sentence(wiki_page):
 
 
 def sentiment_analysis(sentence):
+    """Analyzes the sentiment of a sentnece."""
     score = SentimentIntensityAnalyzer().polarity_scores(sentence)
     return score
 
 
 def text_similarity(sentence1, sentence2):
+    """Compares two sentences and outputs a similarity score."""
     ratio = fuzz.ratio(sentence1, sentence2)
     partial_ratio = fuzz.partial_ratio(sentence1, sentence2)
     token_sort_ratio = fuzz.token_sort_ratio(sentence1, sentence2)
