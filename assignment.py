@@ -15,8 +15,7 @@ import matplotlib.pyplot as plt
 def process_file(content):
     """Makes a histogram that contains the words from a file.
 
-    filename: string
-    skip_header: boolean, whether to skip the Gutenberg header
+    content: string
 
     returns: map from each word to the number of times it appears.
     """
@@ -26,14 +25,13 @@ def process_file(content):
         chr(i) for i in range(sys.maxunicode) if category(chr(i)).startswith("P")
     )
 
-    for line in content.split():
-        line.split()
+    for line in content.split("\n"):
         line = line.replace("-", " ")
         line = line.replace(
             chr(8212), " "
         )  # Unicode 8212 is the HTML decimal entity for em dash
 
-        for word in line.split():
+        for line in line.split():
             # word could be 'Sussex.'
             word = word.strip(strippables)
             word = word.lower()
@@ -136,7 +134,7 @@ def main():
     t = most_common(hist, excluding_stopwords=True)
     print("The most common words are:")
     for freq, word in t[0:20]:
-        print(word, freq)
+        print(word, "\t", freq)
     
     print_most_common(hist, num=20)
 
