@@ -1,3 +1,19 @@
-# Text-Analysis-Project
+# Text-Analysis-Project - Aryan Subramanian
  
 Please read the [instructions](instructions.md).
+
+## Project Overiew
+The data source that I had used for this mini project was a newpaper article using the newpaper3k library. I selected an article on the Federal Reserves plans for interest rate cuts. I thought this would be interesting to analyse as there has been a lot of speculation on when they would finally cut interest rates after multiple terms of constant rate hikes over the last 2 years. Hence, I was interested in conducting analysis on articles that covered this to potentially see if the results could provide any further indication on future rate cuts. The techniques used in this analysis were computing summary statistics, word frequencies, removing stop words, and using the NLTK libraries to conduct sentiment analysis.
+
+## Implementation
+As for the implementation of the code, I was mainly fascinated by the sentiment analysis aspect, as this would have likely revealed the most meaningful information. First of, the removal of stop words was necessary as this would have definitely tampered with the accuracy of some of the measures. The use of lists and dictionaries throughout was also crucial, as they helped store and output values that were split for analysis. The use of NLTK libraries to conduct sentiment analysis was also key in giving further insights. As for design alternatives, in the top ten words function, I displayed 2 solutions I had come up with along with 1 from ChatGPT. I had a lot of issues with this specific function as it was outputting the same values, hence tried to work with multiple different solutions using different techniques. I also consulted with ChatGPT on how it would have addressed the issue, as it gave me more clarity on sorting. 
+
+## Results
+As for the results, the main part I was interested in was the sentiment analysis. The results were as follows: `{'neg': 0.079, 'neu': 0.784, 'pos': 0.137, 'compound': 0.9995}`. As it is a newpaper article, it was evident that the neutral variable would have the highest score due to its journalistic writing style, but I was interested in the score between the negative and positive values. As the positive value is higher, it could suggest that the Fed may be more optimistic with rate cuts this year, compared to previous, which seems to be the trend highlighted in external qualitative sources as well. 
+
+Furthermore, the word analysis also highlighted some key results. Some of the top words: Rates (53), Fed (48), Inflation (31), Interest (27), Credit (23) all essentially summarise the article. However, when going through some of the other more frequently occuring words, some notable results were: May (7), cut (8), likely (12). This could possibly suggest interest rate cuts are likely as early as May, and the text seems to be speaking with a fair amount of confidence.
+
+## Reflection
+In terms of strengths of the project, I chose a topic I was interested in and had some prior knowledge of, and I was glad to see that the insights from this assignment align somewhat well with those from external sources. As for improvements, in an ideal world, analysing a transcript from the Federal Reserve meeting would have been great, as it would have provided more data and pull more insights. It would also eliminiate the journalistic tone conveyed by news sources, as this significantly increases the neutral score in the sentiment analysis. I woul have also liked to use different mediums of data as this would also likely provide more meaningful results. 
+
+I thought this process was very interesting, as text analysis/mining has always made me curious. I was able to use resources such as geeksforgeeks, pythontutor and ChatGPT to help me improve my understanding of concepts. One of my main takeaways was the learning about and the use of NLTK libraries, as this serves such a significant purpose and can do a variety of analysis an tasks, as I look forward to applying this to other assignments. 
