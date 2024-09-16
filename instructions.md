@@ -27,7 +27,7 @@ You should read this document in a somewhat non-linear/spiral fashion:
     if __name__ == "__main__":
         main()
     ```
-5. You are ~~encouraged~~ required to experiment with learning from ChatGPT (see more in Part 3).
+5. You are required to experiment with learning from ChatGPT (see more in Part 3).
 6. Write a brief document (Part 4) describing what you did.
 7. If you use any code that is not written by you (or that you learned from other places such as StackOverFlow/GitHub), please add Python comments (before the block of code) describing where you got/learned it from.
 8. Overall, I don't recommend using `numpy`, `pandas`, `sklearn` or `matplotlib` in this project, unless there is no other alternative way of processing and analyazing your data.
