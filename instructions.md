@@ -182,7 +182,7 @@ Here's an example from the [Python client library page](https://newsapi.org/docs
 from newsapi import NewsApiClient
 
 # Init
-newsapi = NewsApiClient(api_key='API_KEY')
+newsapi = NewsApiClient(api_key='12bcd741cfe7426ea4df9c970e781394')
 
 # /v2/top-headlines
 top_headlines = newsapi.get_top_headlines(q='bitcoin',
