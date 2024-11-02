@@ -12,7 +12,7 @@ def calculate_word_frequencies(text):
 
     for word in words:
         word = word.strip(string.punctuation)
-        if word == "gatsby":  # Check if the word is "Gatsby"
-            gatsby_count += 1  # Increment the count for "Gatsby"
+        if word == "gatsby":  # Check if the word is "gatsby"
+            gatsby_count += 1  # Increment the count for "gatsby"
         word_counts[word] = (word_counts.get(word, 0) + 1)  # This updates the word frequency count in the dictionary
     return word_counts, gatsby_count
