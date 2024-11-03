@@ -46,6 +46,7 @@ def unique_frequent_words(frequency1, frequency2, threshold=5):
             unique_words[word] = count
     return unique_words
 
+
 def analyze_sentiment(text):
     """Perform sentiment analysis using NLTK's VADER."""
     sia = SentimentIntensityAnalyzer()
