@@ -2,20 +2,19 @@
 
 ## 1. Project Overview
 
-This project focuses on analyzing text data from Wikipedia to understand content and sentiment patterns in educational topics. The main data sources used were Wikipedia articles on "Babson College" and "Entrepreneurship." The project involved processing text data through word frequency analysis, sentiment analysis, and text similarity calculations. Through this project, I aimed to learn more about natural language processing techniques and gain hands-on experience with sentiment analysis and text similarity using Python libraries such as NLTK and TheFuzz.
+This project focuses on analyzing text data from Wikipedia to understand content and sentiment patterns about Babson College. The main data sources used were Wikipedia articles on "Babson College" and "Entrepreneurship." The project involved processing text data through word frequency analysis, summary statistics, sentiment analysis, and text similarity calculations. Through this project, I aimed to learn more about natural language processing techniques and gain hands-on experience with sentiment analysis and text similarity using Python libraries such as NLTK and TheFuzz.
 
 ## 2. Implementation
-The project is organized into three main files: data_collection.py, text_analysis.py, and main.py. The data_collection.py file fetches and cleans article content from Wikipedia, while text_analysis.py includes functions for word frequency calculation, statistics summary, sentiment analysis, and text similarity. The main.py file orchestrates the execution, combining these components to perform the overall analysis.
+The project is organized into three main files: data_collection.py, text_analysis.py, and main.py. The data_collection.py file fetches and cleans article content from Wikipedia, while text_analysis.py includes functions for word frequency calculation, summary statistics, sentiment analysis, and text similarity analysis. The main.py file orchestrates the execution, combining these components to perform the overall analysis.
 
 A fourth file, part3.py, demonstrates how ChatGPT assisted in consolidating the separate components (data_collection, text_analysis, and main execution) into a single, more concise script for efficiency. This process involved restructuring the code and ensuring that each function was self-contained and reusable. ChatGPT also provided guidance on checking errors and optimizing the code, especially for stop word removal and sentiment analysis setup.
 
 ## 3. Results
 
-The text analysis provided interesting insights into each article. For example, the word frequency analysis highlighted the key topics in each article, with terms like "babson" and "business" ranking high in frequency for Babson College and "entrepreneurship" and "business" for Entrepreneur article. However, surprisingly, words related to "entrepreneurship" only exist once in the Babson text. The sentiment analysis for both texts showed a largely neutral tone, with a slight positive inclination, reflecting the informative and factual nature of Wikipedia articles.
+The text analysis provided interesting insights into each article. For example, the word frequency analysis highlighted the key topics in each article, with terms like "babson" and "business" ranking high in frequency for Babson College and "entrepreneurship" and "business" for Entrepreneur article. However, words related to "entrepreneurship" only exist once in the Babson text, which is surprising for Babson since it is known for its entrepreneurship. The sentiment analysis for both texts showed a largely neutral tone, with a slight positive inclination, reflecting the informative and factual nature of Wikipedia articles.
 
-The similarity scores calculated between "Babson College" and "Entrepreneurship" articles revealed a moderately high similarity, as expected due to the shared themes. The `fuzz.ratio`, `fuzz.partial_ratio`, and `fuzz.token_sort_ratio` metrics offered a nuanced understanding of how similar these articles are at different levels of text comparison.
+The similarity scores calculated between "Babson College" and "Entrepreneurship" articles revealed a moderately high similarity, as expected due to the shared themes for business. The `fuzz.ratio`, `fuzz.partial_ratio`, and `fuzz.token_sort_ratio` metrics offered a nuanced understanding of how similar these articles are at different levels of text comparison.
 
-Overall, the project was successful in analyzing key aspects of the articles, revealing the thematic overlap and general tone in the educational and business-oriented topics covered.
 
 ## 4. Reflection
 
