@@ -1,0 +1,1306 @@
+{
+    "status": "ok",
+    "totalResults": 8972,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "[Removed]"
+            },
+            "author": null,
+            "title": "[Removed]",
+            "description": "[Removed]",
+            "url": "https://removed.com",
+            "urlToImage": null,
+            "publishedAt": "2024-11-02T18:51:09Z",
+            "content": "[Removed]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "[Removed]"
+            },
+            "author": null,
+            "title": "[Removed]",
+            "description": "[Removed]",
+            "url": "https://removed.com",
+            "urlToImage": null,
+            "publishedAt": "2024-10-30T17:40:51Z",
+            "content": "[Removed]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Danny Gallagher",
+            "title": "X’s Community Notes feature has one job, and it’s failing to do it",
+            "description": "It’s no secret that X has become an even bigger cesspool of misleading information, unchecked claims and flat-out falsities since Elon Musk took over. Two new reports from The Center for Countering Digital Hate (CCDH) and The Washington Post reveals that the …",
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_51152d06-3544-4225-bbb9-3e792bc21690",
+            "urlToImage": null,
+            "publishedAt": "2024-10-30T20:26:45Z",
+            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Makena Kelly",
+            "title": "Ahead of the Election, Social Media Platforms Have Given Up",
+            "description": "If you thought 2020 was bad, decisions from Big Tech and the US government have led to an internet that’s even worse off.",
+            "url": "https://www.wired.com/story/tech-companies-abdicated-responsibility-for-their-platforms/",
+            "urlToImage": "https://media.wired.com/photos/67216e155c751da78340bad9/191:100/w_1280,c_limit/Politics_newsletter_tech_platforms_election.jpg",
+            "publishedAt": "2024-10-31T11:00:00Z",
+            "content": "Our social media platforms and government have had four years to get this right. Instead, theyve thrown up their hands.\r\nIn the days following January 6, Meta, Twitter, YouTube, and Twitch suspended … [+2314 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Vittoria Elliott",
+            "title": "Elon Musk's America PAC Has Created an Election Denial Cesspool on X",
+            "description": "The group has nearly 50,000 members, many enthusiastically sharing debunked claims about voting fraud. “It's just an election denier jamboree,” says one expert.",
+            "url": "https://www.wired.com/story/elon-musk-america-pac-election-denial-community-x/",
+            "urlToImage": "https://media.wired.com/photos/6723d28fe9642f2551fc93df/191:100/w_1280,c_limit/musk-michigan-pol-1757147063.jpg",
+            "publishedAt": "2024-10-31T19:37:10Z",
+            "content": "For months, billionaire and X owner Elon Musk has used his platform to share election conspiracy theories that could undermine faith in the outcome of the 2024 election. Last week, the political acti… [+2472 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Jake Lahut",
+            "title": "Elon Musk’s America PAC Hit With Class Action Lawsuit",
+            "description": "Canvassers for California representative Michelle Steel are suing the congresswoman's campaign, America PAC, and others, alleging that they were promised hourly wages, then told pay would depend on how many doors they knocked.",
+            "url": "https://www.wired.com/story/elon-musk-america-pac-class-action-lawsuit/",
+            "urlToImage": "https://media.wired.com/photos/67254293a3ba4283003d2bc9/191:100/w_1280,c_limit/musk-pac-abuse-pol-2178881341.jpg",
+            "publishedAt": "2024-11-01T22:01:08Z",
+            "content": "Elon Musks America PAC and several other defendants, including the reelection campaign for Representative Michelle Steel, a Republican from California, are accused of violating California labor law i… [+3309 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "Tess Owen",
+            "title": "Election Violence Is Already Here",
+            "description": "With bombs, brawls, and stolen mail-in ballots already in play, the 2024 election is shaping up to be exceptionally chaotic. WIRED is tracking these incidents as they unfold.",
+            "url": "https://www.wired.com/story/election-violence-is-already-here/",
+            "urlToImage": "https://media.wired.com/photos/67214e475c751da78340bad5/191:100/w_1280,c_limit/vote-violence-interference-pol.jpg",
+            "publishedAt": "2024-11-01T16:30:14Z",
+            "content": "A man in a white van circled an early voting site in Loxahatchee, Florida, and shouted antisemitic and racist slurs at a group of people campaigning outside. A man who went to vote in Orangeburg, Sou… [+6546 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "David Gilbert",
+            "title": "'We're a Fortress Now': The Militarization of US Elections Is Here",
+            "description": "From bulletproof glass, drones, and snipers to boulders blocking election offices, the US democratic system is bracing for violent attacks in 2024.",
+            "url": "https://www.wired.com/story/2024-us-election-polling-location-militarized-security/",
+            "urlToImage": "https://media.wired.com/photos/67222ec294dce53b1903ff51/191:100/w_1280,c_limit/GettyImages-2180571876.jpg",
+            "publishedAt": "2024-10-30T15:31:35Z",
+            "content": "Drones, snipers, razor wire, sniffer dogs, body armor, bulletproof glass, and 24-hour armed security.\r\nThis is not a list of protections in place for a visit by the president of the United States nor… [+2469 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "James Fallows",
+            "title": "After the Election, California (Yes, That Hellscape) Will Keep Moving the World Forward No Matter What",
+            "description": "The state has been written off as a woke wasteland. But it's still inventing the future on a bunch of frontiers nobody's talking about. Even if Trump wins, it will remain a golden, global example.",
+            "url": "https://www.wired.com/story/california-will-keep-moving-the-world-forward/",
+            "urlToImage": "https://media.wired.com/photos/67210b73fdc82da59d1ddbb8/191:100/w_1280,c_limit/CAF_Lindsey_Price_FINAL.jpg",
+            "publishedAt": "2024-10-31T10:00:00Z",
+            "content": "Just take the area of gasoline-powered transportation. After World War II, when American car culture was famously getting minted in Southern California, the state used a gas tax hike to build out one… [+5644 chars]"
+        },
+        {
+            "source": {
+                "id": "wired",
+                "name": "Wired"
+            },
+            "author": "WIRED Staff",
+            "title": "Will Your Elected Officials in Congress Accept the Results of the Election?",
+            "description": "We’ve asked every member of Congress whether they’ll accept the results as called by the Associated Press. Use our tool to see how your representatives answer.",
+            "url": "https://www.wired.com/story/congress-accept-election-results/",
+            "urlToImage": "https://media.wired.com/photos/67226f2226693bf18984e220/191:100/w_1280,c_limit/Congressman.jpg",
+            "publishedAt": "2024-10-31T10:00:00Z",
+            "content": "We are in the final days of a momentous presidential election between Kamala Harris and Donald Trump. Do you know whether your elected officials will accept the outcome?\r\nWIRED reached out to every s… [+3156 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Lucas Ropek",
+            "title": "Pennsylvania Residents Peppered With False Texts Claiming They Already Voted",
+            "description": "In the final weeks of the presidential campaign, swing state voters are getting hit with mysterious texts.",
+            "url": "https://gizmodo.com/pennsylvania-residents-peppered-with-false-texts-claiming-they-already-voted-2000518256",
+            "urlToImage": "https://gizmodo.com/app/uploads/2024/10/People-waiting-to-vote-in-New-York.jpg",
+            "publishedAt": "2024-10-30T13:20:28Z",
+            "content": "All sorts of crazy stuff has been happening as we reach the end of a long and very chaotic presidential election. In Pennsylvania, considered the battleground state as far as this political race is c… [+2216 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com"
+            },
+            "author": "Todd Feathers",
+            "title": "The Biden Administration Touts Its Big Year in AI",
+            "description": "On the anniversary of President Biden's executive order on AI, the White House says it has met all its year-one goals.",
+            "url": "https://gizmodo.com/the-biden-administration-touts-its-big-year-in-ai-2000518407",
+            "urlToImage": "https://gizmodo.com/app/uploads/2024/10/biden-ai-executive-order.jpg",
+            "publishedAt": "2024-10-30T17:50:32Z",
+            "content": "The White House on Wednesday said that federal agencies have completed all the tasks they committed to during the first year of the Biden administration’s executive order on artificial intelligence.\r… [+2610 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Labour budget sets the scene for 2026 Holyrood election",
+            "description": "The devolved Scottish government will have had an extra £3.4bn to spend - including more money than SNP ministers anticipated for public building projects.",
+            "url": "https://www.bbc.com/news/articles/cgj723jvzz9o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/d5fc/live/02be1e30-9795-11ef-a41c-dd1648bd8502.jpg",
+            "publishedAt": "2024-10-31T15:05:33Z",
+            "content": "Anas Sarwar promised there would be no austerity under Labour ahead of Rachel Reeves announcing her budget \r\nThe UK government's autumn Budget should help Scottish Labour fight the Holyrood elections… [+4289 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Investigating Musk's far-fetched claim about Democrats importing voters",
+            "description": "BBC Verify investigates the claim by Elon Musk that Democrats import illegal immigrants to vote.",
+            "url": "https://www.bbc.com/news/articles/czd5l0d3794o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/a645/live/d6a1adb0-96e2-11ef-90df-3f1823a91773.jpg",
+            "publishedAt": "2024-10-31T22:50:00Z",
+            "content": "Since endorsing Donald Trump for president in July, Elon Musk - the owner of X - has posted about the US election hundreds of times, attracting more than four billion views.\r\nBBC Verify, working with… [+7660 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "As US votes, Ukraine’s future hangs in balance",
+            "description": "Ukrainians on the front lines tell the BBC's James Waterhouse that their country’s survival is in the hands of Americans.",
+            "url": "https://www.bbc.com/news/articles/cr5m6d6l7e2o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ade5/live/85cde500-97b6-11ef-a41c-dd1648bd8502.jpg",
+            "publishedAt": "2024-10-31T23:51:07Z",
+            "content": "Russian shelling in Zaporizhzhia\r\nAs she sweeps up broken glass outside her shop, Inna knows her countrys future is in the hands of Americans voting more than 5,000 miles away.\r\nWe hope that the woma… [+7659 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Challenges facing Kemi Badenoch as new Tory leader",
+            "description": "Kemi Badenoch is a political fighter and she now has a battle on her hands to rebuild her party.",
+            "url": "https://www.bbc.com/news/articles/cd6vjyj3nd0o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/98f7/live/ea284330-9908-11ef-adf8-21c3a1c2995b.jpg",
+            "publishedAt": "2024-11-02T11:10:54Z",
+            "content": "She would cross the road to bite your ankles, whether you were goading her or not!\r\nThis is a remark from a long term admirer of Kemi Badenoch, delighted to see her win the Conservative leadership co… [+2962 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Badenoch is favourite, but will she clinch Tory leadership crown?",
+            "description": "BBC political editor Chris Mason gives the run down on how the Tory Party leadership result could play out.",
+            "url": "https://www.bbc.com/news/articles/cje0vp790eqo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/3eff/live/3c9e4ef0-989d-11ef-94e8-6ddac229fb53.jpg",
+            "publishedAt": "2024-11-01T22:45:29Z",
+            "content": "Famously, it is the hardest job in politics: leader of the opposition.\r\nAnd it is particularly hard if your party has just gone down to a historically bad thrashing at the hands of the electorate.\r\nA… [+4289 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Harris pledges 'different path' at site of Trump 6 January rally",
+            "description": "The Democratic presidential candidate delivers her final message a week before election day.",
+            "url": "https://www.bbc.com/news/articles/ced9n00n820o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/841a/live/fd360bf0-965c-11ef-bcb7-0ff98a1ece99.jpg",
+            "publishedAt": "2024-10-30T02:24:08Z",
+            "content": "The night before Kamala Harris sets off on a final multi-day swing through the key battleground states that will decide the 2024 presidential election, she gave one last speech, practically in the sh… [+4115 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Tory leadership race: Seven things you might have missed",
+            "description": "Either Kemi Badenoch or Robert Jenrick will be announced as the winner of the election to replace Rishi Sunak.",
+            "url": "https://www.bbc.com/news/articles/c89vy0kq1pjo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1126/live/ae92e5c0-986b-11ef-94ac-ef444091525a.jpg",
+            "publishedAt": "2024-11-01T16:24:03Z",
+            "content": "Nearly four months after the Conservatives went down to their worst defeat in a general election in their history, they are about to anoint a new leader. \r\nEither Kemi Badenoch or Robert Jenrick will… [+5060 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "'I'm not a one-issue voter, but this is huge': Abortion decided these women's votes",
+            "description": "It is the first presidential election since the top court overturned Roe v Wade, which protected the nationwide right to an abortion.",
+            "url": "https://www.bbc.com/news/articles/cew2x50808go",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/53be/live/c4fa8ca0-9627-11ef-a965-49eefc19faba.png",
+            "publishedAt": "2024-10-30T09:13:30Z",
+            "content": "The 2024 presidential election is the first since the Supreme Court overturned Roe v Wade, which protected the national right to an abortion.\r\nThe gender divide has been prominent in this election, w… [+7713 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Pennsylvania officials reject viral claim about illegal voters",
+            "description": "Pennsylvania officials reject claim that \"illegal voters\" were able to apply for mail-in ballots.",
+            "url": "https://www.bbc.com/news/articles/ckgzyxwvrnpo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/e3e4/live/bf490490-970c-11ef-8538-e1655f5a8342.jpg",
+            "publishedAt": "2024-10-30T23:28:07Z",
+            "content": "Officials in the US state of Pennsylvania have rejected claims that illegal voters were able to apply for ballots and vote at an election office in Allegheny County.\r\nOfficials have put out a stateme… [+2789 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "How Donald Trump came back from the political abyss",
+            "description": "North America correspondent Anthony Zurcher explores a disgraced White House exit and a comeback for the ages.",
+            "url": "https://www.bbc.com/news/articles/cq52zj466l7o",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/b64e/live/2e9b75b0-98fe-11ef-9260-19e6a950e830.jpg",
+            "publishedAt": "2024-11-02T07:48:58Z",
+            "content": "When Donald Trump lost to Joe Biden in 2020, it seemed to be the death knell of his political career.\r\nHis first term in office ended in chaos and condemnation - even from members of his own party.\r\n… [+18875 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "'A classic left-right era': Labour's big Budget and Badenoch's win reset politics",
+            "description": "With the government announcing big spending and tax, the differences between the two main parties feel sharper, writes Laura Kuenssberg.",
+            "url": "https://www.bbc.com/news/articles/c8dm4er5rnzo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6f30/live/f1d2bcc0-992e-11ef-9260-19e6a950e830.png",
+            "publishedAt": "2024-11-02T15:21:21Z",
+            "content": "Its like week zero, a government insider suggests. A new Conservative leader today. A whopper of a Budget on Wednesday.\r\nAdd those two events together and it feels like this is the week that everythi… [+9933 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Call for DUP apology for 'misleading electorate' over Sinn Féin talks",
+            "description": "Lord Empey calls for an apology after revelations that members of the DUP were secretly meeting Sinn Féin.",
+            "url": "https://www.bbc.com/news/articles/cq6lg748v5qo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/c42f/live/54199a00-96ac-11ef-9260-19e6a950e830.jpg",
+            "publishedAt": "2024-10-30T11:08:26Z",
+            "content": "A former Ulster Unionist leader has called for the current DUP leader to apologise on behalf of his party after it emerged that the DUP had secret meetings with Sinn Féin.\r\nLord Empey said that, whil… [+2723 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Android Central"
+            },
+            "author": "jerry.hildenbrand@futurenet.com (Jerry Hildenbrand)",
+            "title": "What the heck is going on at TSMC?",
+            "description": "TSMC got caught up in the U.S. battle with China and it appears to have done nothing wrong.",
+            "url": "https://www.androidcentral.com/phones/tsmc-us-investigation-breakdown",
+            "urlToImage": "https://cdn.mos.cms.futurecdn.net/FQFii5BwHLdxcL48JME658-1200-80.jpg",
+            "publishedAt": "2024-11-02T15:00:00Z",
+            "content": "TSMC is the most important tech company of them all. It may not be the wealthiest or the most recognizable, but the company manufactures the parts that make most of your tech stuff possible. TSMC is … [+4651 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Thomas Kika",
+            "title": "Can I Still Request a Mail Ballot so Close to Election Day?",
+            "description": "Election Day is now less than a week away, so you might be running out of time to request a mail-in ballot for the general election on Nov. 5.",
+            "url": "https://www.cnet.com/news/politics/can-i-still-request-a-mail-ballot-so-close-to-election-day/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/1588bd54fda9448954b436c0fa1a69041fa66efc/hub/2024/09/10/3680492e-f55e-4f43-a46d-9322beeb567b/election-series-v600000.png?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-11-02T00:00:00Z",
+            "content": "Mail-in voting is one of the major modern conveniences afforded to US voters, but with Election Day less than a week away, it might be too late in some states to request a mail ballot if you haven't … [+4887 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Joe Supan",
+            "title": "Could the Election Revive the Affordable Connectivity Program?",
+            "description": "I polled industry insiders on the prospects of an ACP return.",
+            "url": "https://www.cnet.com/home/internet/could-the-election-revive-the-affordable-connectivity-program/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/abae930279bf26fdd5c55504a9190380e0ba8eae/hub/2024/06/13/8105e39f-00f2-427f-bcf2-e1620d8e7f33/broadband-internet-connectivity-wireless-fiber-9715.jpg?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-30T23:46:00Z",
+            "content": "When millions of Americans cast their ballots next week, the Affordable Connectivity Program won't be up for a vote, but the results could dictate whether we see an internet subsidy of its size again… [+4565 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Bree Fowler",
+            "title": "Election 2024 Will Be Fair and Secure, Experts Say. Disregard the Noise",
+            "description": "It's not the security of the election process that experts are worried about, it's the efforts to discredit that process.",
+            "url": "https://www.cnet.com/news/politics/election-2024-will-be-fair-and-secure-experts-say-disregard-the-noise/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/5b89b46d5fa8fd179e05846f7ce1685e1928afcb/hub/2024/09/10/c73d0291-93eb-4f78-a03d-acfe4d1f3f4f/election-series-v700000.png?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-31T21:48:40Z",
+            "content": "The seemingly never-ending 2024 presidential election is in its final sprint, with early voting underway in some states and less than a week to go before voting hits its zenith on Election Day.\r\nThe … [+10866 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Thomas Kika",
+            "title": "I Still Register to Vote? Where Things Stand Less Than a Week From Election Day",
+            "description": "With less than a week left until Election Day 2024, are there even still options left to register to vote? Quite a few, actually.",
+            "url": "https://www.cnet.com/news/politics/i-still-register-to-vote-where-things-stand-less-than-a-week-from-election-day/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/5b89b46d5fa8fd179e05846f7ce1685e1928afcb/hub/2024/09/10/c73d0291-93eb-4f78-a03d-acfe4d1f3f4f/election-series-v700000.png?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-30T15:41:00Z",
+            "content": "With less than a week to go until the 2024 general election, options for for voter registration have dried up almost everywhere, but depending on where you live, you might still be in luck.\r\nVoter re… [+12905 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Thomas Kika",
+            "title": "Early Voting Winds Down in Certain States: Is There Still Time for You Before Election Day?",
+            "description": "With less than a week to go until Election Day 2024, early voting periods are starting to wrap up in certain states.",
+            "url": "https://www.cnet.com/news/politics/early-voting-winds-down-in-certain-states-is-there-still-time-for-you-before-election-day/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/cdddd11d67da2196ce031e086466e286a8fb3123/hub/2020/11/03/3080afc7-e104-4a35-a042-49666f11e0e6/i-voted-ballots-elections-election-2020-1928.jpg?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-30T17:05:00Z",
+            "content": "There's less than a week left until Election Day -- Nov. 5 -- and some states are now seeing their early voting periods end, so if you still haven't cast your ballot in the 2024 general election, it'… [+9998 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Thomas Kika",
+            "title": "Where Can I Vote Early? It's Simple to Find the Answer Online",
+            "description": "Early voting is still underway in most states, but do you'll want to check some online resources to make sure you're headed to the right place.",
+            "url": "https://www.cnet.com/news/politics/where-can-i-vote-early-its-simple-to-find-the-answer-online/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/d6ed975245450fb61674167cbb9edb583e36cb0e/hub/2024/09/10/f3dd60e1-617e-4d2a-af5e-943ab9680a41/election-series-v300000.png?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-30T22:01:00Z",
+            "content": "There's less than a week left until the 2024 general election between Vice President Kamala Harris and former President Donald Trump. That means early voting is still underway in most of the states -… [+2888 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNET"
+            },
+            "author": "Jessica Rendall",
+            "title": "Questions About IVF? Here's How In Vitro Fertilization Works",
+            "description": "IVF is a medical technology that's been around for decades. Here's a step-by-step process of how it works.",
+            "url": "https://www.cnet.com/health/medical/questions-about-ivf-heres-how-in-vitro-fertilization-works/",
+            "urlToImage": "https://www.cnet.com/a/img/resize/129aa547664dfd1380a36a0a34ca3a12c8ab6d0a/hub/2024/03/01/ad11864a-4dc8-4a92-8edb-3879058e5f3e/gettyimages-1732052579-1.jpg?auto=webp&fit=crop&height=675&width=1200",
+            "publishedAt": "2024-10-30T21:00:22Z",
+            "content": "As Election Day approaches, there's a national spotlight on reproductive health care. This includes a medical process hopeful parents go through to grow their families called in vitro fertilization. … [+9909 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "fdemott@insider.com (Filip De Mott)",
+            "title": "3 reasons why surging gold prices will climb another 8% by the end of 2025, Goldman says",
+            "description": "Goldman Sachs says the price of gold will reach a record of $3,000 an ounce by the end of next year.",
+            "url": "https://markets.businessinsider.com/news/commodities/gold-price-record-outlook-3-reasons-continued-rally-goldman-sachs-2024-10",
+            "urlToImage": "https://i.insider.com/66d70e801d8d2deb96b814ac?width=1200&format=jpeg",
+            "publishedAt": "2024-10-31T13:32:12Z",
+            "content": "A gold-buying spree has turned the yellow metal into one of this year's hottest investments.\r\nThough the commodity has already soared more than 30% year-to-date, Goldman Sachs anticipates that there'… [+2139 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Quinn Klinefelter",
+            "title": "After a chaotic vote count in 2020, here's what Detroit will do differently this year",
+            "description": "Four years ago, Trump supporters, motivated in part by false election fraud claims, loudly protested at a Detroit counting facility. Election officials are determined to avoid a repeat of the chaos.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5161536/after-a-chaotic-vote-count-in-2020-heres-what-detroit-will-do-differently-this-year",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6586x3705+0+344/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4c%2Fd5%2Feb019db94a2ea9572540a4e421a4%2Fgettyimages-1229462274.jpg",
+            "publishedAt": "2024-10-31T09:00:00Z",
+            "content": "DETROIT In 2020, what was then called the TCF Center became a tinderbox as Detroit poll workers counted the presidential election results.\r\nA crowd of Republican observers at the center grew increasi… [+4904 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Benjamin Swasey",
+            "title": "Here are the key Electoral College dates to keep in mind ahead of Inauguration Day",
+            "description": "Former President Donald Trump's efforts to overturn the last election put a spotlight on what are essentially ministerial steps between Election Day and Inauguration Day. Here are the key dates ahead.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5161596/electoral-college-count-reform-deadlines",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4480x2520+0+464/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe4%2F90%2Fa944b4a4441fbb5f8d92036c2441%2Fgettyimages-1230461116.jpg",
+            "publishedAt": "2024-11-01T09:00:00Z",
+            "content": "Former President Donald Trump's efforts to overturn the 2020 election culminating with the Jan. 6 riot at the U.S. Capitol put a spotlight on what are essentially ministerial steps between Election D… [+2531 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Nina Totenberg",
+            "title": "Supreme Court pauses court order blocking Virginia from purging voter rolls",
+            "description": "The court's order comes less than a week before the 2024 general election.",
+            "url": "https://www.npr.org/2024/10/30/g-s1-30644/supreme-court-virginia-elections",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x3375+0+313/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4c%2F2f%2F53f6ab52482eb69ec3b8f6d45975%2Fgettyimages-2176481436-2.jpg",
+            "publishedAt": "2024-10-30T14:16:01Z",
+            "content": "Just six days before the 2024 general election, the Supreme Court on Wednesday allowed Virginia to continue its purge of more than 1,600 individuals from the state's voter rolls.\r\nThe vote was 6 to 3… [+2395 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Luke Garrett",
+            "title": "Americans bet $100 million on Trump v. Harris, but at what cost?",
+            "description": "Political prognosticators legally bet over $100 million on the 2024 presidential election, favoring Harris over Trump.",
+            "url": "https://www.npr.org/2024/10/29/nx-s1-5132616/election-day-betting-trump-harris",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x3375+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2Fc5%2F3051dcff4bcaa919ab54ecc569b4%2Fgettyimages-2181524866.jpg",
+            "publishedAt": "2024-10-30T09:15:00Z",
+            "content": "An election betting advertisement flashed on screen during coverage of former President Donald Trump's rally at Madison Square Garden this weekend on the Right Side Broadcasting Network, a conservati… [+6384 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Nina Totenberg",
+            "title": "Supreme Court sides with Democrats in Pennsylvania voting case",
+            "description": "It is hard to estimate how many ballots will be affected by the decision or whether it will ultimately impact the outcome of the presidential election.",
+            "url": "https://www.npr.org/2024/11/01/g-s1-31054/supreme-court-pennsylvania",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5566x3131+0+290/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fae%2F7d%2F4d1289104c7b8b993aa331e6173f%2Fgettyimages-2157829281-2.jpg",
+            "publishedAt": "2024-11-01T23:04:56Z",
+            "content": "The U.S. Supreme Court on Friday left in place a lower court ruling that for now allows Pennsylvania voters to cast provisional ballots if their mail-in ballots have been invalidated.\r\nSince 2019, al… [+2646 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Jonaki Mehta",
+            "title": "In this school’s election, it’s pizza vs. chicken nuggets, with democracy as the winner",
+            "description": "At an Arizona tribal school, it's a fierce campaign to pick the top school lunch, as students learn about making their voice count",
+            "url": "https://www.npr.org/2024/10/30/nx-s1-5170306/school-election-kids-vote-pizza-chicken-nuggets",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8192x4608+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5c%2F17%2Fad8d61d74b0d9baa20d4126db2fe%2F9k0a4792.jpg",
+            "publishedAt": "2024-10-31T09:00:00Z",
+            "content": "The library at Salt River Elementary School is anything but silent on a recent Tuesday morning.\r\nTheres blaring patriotic music from the loudspeaker as teachers and staff put finishing touches on dec… [+5295 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Rosemary Westwood",
+            "title": "Women sharing personal stories about abortion bans have become a political force",
+            "description": "Women who have suffered unnecessarily after being denied abortions are talking about it publicly, and to support candidates. Could these stories have a political impact in the upcoming election?",
+            "url": "https://www.npr.org/sections/shots-health-news/2024/11/01/nx-s1-5157670/women-personal-story-miscarriage-reproductive-rights-abortion-bans-harris-walz-campaign",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4032x2268+0+378/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F38%2F39%2Fc85c71bc4195b074b9432492671c%2Fphoto-6-img-7700.jpeg",
+            "publishedAt": "2024-11-02T11:00:00Z",
+            "content": "If the US Supreme Court had not overturned Roe v. Wade, Nancy Davis and Kaitlyn Joshua might never have met, or become public figures.\r\nBut within weeks of the ban taking effect in 2022, both women w… [+11029 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Ximena Bustillo",
+            "title": "Harris and Trump will bring their closing arguments to 2 key Southwest swing states",
+            "description": "With five days left until Election Day, the candidates are expected to make a pitch to Latino voters in Arizona and Nevada — and talk about border security, one of the biggest issues for the campaign.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5172910/2024-election-kamala-harris-donald-trump-arizona-nevada",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+156/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fed%2F9a%2Fdb1e0d26437e81548f048b6d9dc9%2Fap24303109400818.jpg",
+            "publishedAt": "2024-10-31T09:00:00Z",
+            "content": "The presidential campaign heads west on Thursday as Vice President Harris and former President Donald Trump take their closing arguments to voters in the critical swing states of Arizona and Nevada.\r… [+2493 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Huo Jingnan",
+            "title": "Crowdsourced voting fraud claims could become grist for Republican lawsuits",
+            "description": "One hub for rumors and conspiracies about voting is X, the social media site once known as Twitter. There, users are floating unverified and false claims about voting that can quickly go viral.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5165523/voting-election-conspiracy-theories-social-media",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4063x2285+0+161/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd2%2F15%2F9ce170554620a4b062e00bc9617e%2Fgettyimages-2180386458.jpg",
+            "publishedAt": "2024-10-31T09:00:00Z",
+            "content": "As Election Day nears, social media is lighting up with users scouring for evidence of election fraud. Some of those unsubstantiated claims are poised to become grist for Republican lawsuits contesti… [+6717 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Brittney Melton",
+            "title": "Debunking voter fraud conspiracy theories. And, presidential power over abortion",
+            "description": "Conspiracy theories connected to voter fraud have increased on social media. And, how both presidential candidates, who have different views on abortion access, could implement their plans if elected.",
+            "url": "https://www.npr.org/2024/10/31/g-s1-31186/up-first-newsletter-voter-fraud-conspiracy-theories-kamala-harris-donald-trump-abortion-policies",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4063x2285+0+161/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd2%2F15%2F9ce170554620a4b062e00bc9617e%2Fgettyimages-2180386458.jpg",
+            "publishedAt": "2024-10-31T12:08:51Z",
+            "content": "Good morning. You're reading the Up First newsletter. Subscribe here to get it delivered to your inbox, and listen to the Up First podcast for all the news you need to start your day.\r\nToday's top st… [+5113 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Huo Jingnan",
+            "title": "A baseless voting claim is being amplified by a network of social media accounts",
+            "description": "It’s unclear who runs the network of social media accounts that has gotten millions of views amplifying trending claims about alleged voting fraud.",
+            "url": "https://www.npr.org/2024/10/29/nx-s1-5171438/social-media-voting-conspiracies-noncitizens",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5576x3137+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F47%2Fc4%2F3f38f94d48568fd60ef1849cdd53%2Fgettyimages-2180066278.jpg",
+            "publishedAt": "2024-10-30T10:00:00Z",
+            "content": "A network of accounts on the social media site X claims to be foreign nationals who have illegally voted in the U.S. presidential election, according to new research from the nonprofit Institute for … [+2903 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Bill Chappell",
+            "title": "Worried about your 2024 ballot being counted? These states let you track it online",
+            "description": "“There's no need to panic,” an elections expert tells NPR. All but three states have free tracking sites that send updates to voters as their ballot goes through the system.",
+            "url": "https://www.npr.org/2024/10/30/nx-s1-5170285/voting-2024-ballots-states-online-tracking",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4800x2700+0+154/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe1%2Fe1%2F315562fa4d99806bdd1b0a0ab728%2Fgettyimages-2180910258.jpg",
+            "publishedAt": "2024-10-30T17:03:17Z",
+            "content": "Election officials in at least four states have reported ballots being damaged or put at risk in the past week, renewing focus on the security of the U.S. voting system. Experts say the incidents are… [+6093 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Susan Davis",
+            "title": "Meet the Democrats using porn ads to convince Trump voters to stay home",
+            "description": "Two friends launched a political action committee to run anti-Trump ads in perhaps the last untouched advertising market in politics: pornographic websites.",
+            "url": "https://www.npr.org/2024/11/01/nx-s1-5168877/2024-election-pac-trump-porn-sites",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1915x1077+0+7/resize/1400/quality/100/format/png/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe9%2F4f%2F84f6c0734be39f63b7cc14895947%2Ftrumppornban.png",
+            "publishedAt": "2024-11-01T09:00:00Z",
+            "content": "Earlier this year, Wally Nowinski and his buddy Matt Curry were texting back and forth about what they two regular voters with no ties to any political campaign could do to defeat Donald Trump in the… [+3824 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Holly J. Morris",
+            "title": "Who said 'I hate politics' — then endorsed Harris? Find out in the quiz",
+            "description": "This week's news quiz mixes celebrities and politics. But hey, they started it. Were you paying attention?",
+            "url": "https://www.npr.org/2024/10/31/g-s1-31111/harris-trump-statue-chalamet-wade-schwarzenegger-news-quiz",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/11308x6361+0+2/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F91%2F60%2F639a4dac46aebe12d5c4d8e5d935%2Farnie-dwyane-timothee.jpg",
+            "publishedAt": "2024-11-01T09:00:00Z",
+            "content": "As you awaken from a night of Halloween debauchery, dressed as a Chipotle fork or a Croc clog or a Stanley tumbler, you'll find you're still haunted and not by the Hawk Tuah Girl costume or other Spi… [+310 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Tom Bowman",
+            "title": "A Good Guy: Under Oath",
+            "description": "There's a promise that all Marines make to defend the Constitution. After Sgt. Joshua Abate participated in the events on January 6, the Corps has to decide: Did he break his oath when he entered the Capitol that day? And what does his case say about the chan…",
+            "url": "https://www.npr.org/2026/01/01/1254713683/embedded-a-good-guy-episode-two",
+            "urlToImage": "https://media.npr.org/assets/img/2024/10/18/embedded_nipper_scala-1920x1080_wide-8117c04937a4ece2f6ae00e331b6ab98106ae1a0.jpg?s=1400&c=100&f=jpeg",
+            "publishedAt": "2024-10-31T09:30:00Z",
+            "content": "All Marines take an oath to defend the Constitution. After Sgt. Joshua Abate participated in the events on January 6, the Corps has to decide if he is a Marine worth keeping. Did he break his oath wh… [+588 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Chloe Veltman",
+            "title": "Broadway stars campaign to get out the vote",
+            "description": "The new nonprofit Broadway Votes is corralling musical theater celebrities to help with the effort both both on stage and online.",
+            "url": "https://www.npr.org/2024/11/01/nx-s1-5172881/broadway-stars-campaign-to-get-out-the-vote",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8256x4644+0+430/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F42%2Fe7%2Fb05037f64667891bd33d3aacc7df%2Fbroadway-votes-bts-32.jpg",
+            "publishedAt": "2024-11-02T09:00:00Z",
+            "content": "A new video encouraging Broadway fans to vote has being popping up on social media feeds lately. \r\nSet at a workers rally at the turn of the last century, the musical number called Carrying the Messa… [+2479 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Kathryn Fink",
+            "title": "Support from rural Democrats will be crucial for Harris to win this swing state",
+            "description": "North Carolina has more rural voters than any other 2024 presidential swing state, and canvassing groups are working to turn out voters in one purple county as early voting continues in the state.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5165534/harris-trump-election-north-carolina",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F17%2Fcc%2Fe75f15974165a9a089a593d8f243%2Fnpr-northcarolina-day2-015.jpg",
+            "publishedAt": "2024-11-01T09:00:00Z",
+            "content": "Jakai Britton was not planning on casting a ballot this election season. When a group of door knockers came to his neighborhood, he wasnt planning on having a conversation, either. But in the span of… [+6426 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Rachel Treisman",
+            "title": "It's not just D.C.: Satirical Trump statues are appearing in cities across the U.S.",
+            "description": "Trump statues appeared next to sculptures of nude women in Portland and Philadelphia. The plaques bear the title In Honor of a Lifetime of Sexual Assault and quote Trump's Access Hollywood remarks.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5173569/trump-statues-portland-philadelphia-sexual-assault",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5792x3258+0+301/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb6%2F8d%2Fc3de06e049fd870a7a2496e7881f%2Fgettyimages-2181374385.jpg",
+            "publishedAt": "2024-10-31T18:03:36Z",
+            "content": "Divisive statues mocking former President Donald Trump arent just sprouting up in Washington, D.C\r\n.: Similar structures have spread to other cities in recent days.\r\nLast week, two bronze-colored sta… [+4212 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Leila Fadel",
+            "title": "First Gaza, now Lebanon: How support for Israel’s war is influencing Michigan voting",
+            "description": "Many Muslim and Arab American voters are leaning toward third-party candidates or not voting, feeling neither main candidate values their families' lives. Others are choosing between Harris and Trump.",
+            "url": "https://www.npr.org/2024/11/01/g-s1-30762/michigan-voting-israel-lebanon-gaza-war",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5500x3094+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fbb%2Fc8%2F2ae9eda04c36ac83be152a200c29%2F2024-10-08t022933z-1380968308-rc2zfaavv5pm-rtrmadp-3-israel-palestiiams-dearborn-vigil.JPG",
+            "publishedAt": "2024-11-01T09:00:00Z",
+            "content": "DEARBORN, Mich. This city, home to one of the largest Arab American communities in the country, is a city in deep mourning over two wars in the Middle East thousands of miles away.\r\nThe signs of that… [+10293 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "NPR Washington Desk",
+            "title": "Trump, using violent language, attacks 'war hawk' Liz Cheney",
+            "description": "\"Let's see how she feels about it, you know, when the guns are trained on her face,\" Trump said while criticizing Cheney's support of the U.S.-led conflicts in the Middle East.",
+            "url": "https://www.npr.org/2024/11/01/g-s1-31443/2024-election-trump-harris-cheney",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7151x4022+0+12/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fdc%2F7a%2Fa5f494074856ad3c9689720f5347%2Fgettyimages-2181497326.jpg",
+            "publishedAt": "2024-11-01T10:11:05Z",
+            "content": "Former President Donald Trump lashed out against former GOP Rep. Liz Cheney in Arizona on Thursday, using violent language and insults to describe the most prominent Republican supporter of his oppon… [+1786 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "NPR Washington Desk",
+            "title": "Trump, using violent language, attacks 'war hawk' Liz Cheney",
+            "description": "\"Let's see how she feels about it, you know, when the guns are trained on her face,\" Trump said while criticizing Cheney's support of the U.S.-led conflicts in the Middle East.",
+            "url": "https://www.npr.org/2024/11/01/g-s1-31443/trump-liz-cheney",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6164x3467+0+321/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F7a%2F9f%2F317d420441eba5c3a9647ea10bcb%2Fgettyimages-2179760093.jpg",
+            "publishedAt": "2024-11-01T10:11:05Z",
+            "content": "Former President Donald Trump lashed out against former GOP Rep. Liz Cheney in Arizona on Thursday, using violent language and insults to describe the most prominent Republican supporter of his oppon… [+1675 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "The Associated Press",
+            "title": "Judge continues to block Florida from threatening TV stations over abortion ads",
+            "description": "The order extends a previous one that bars Florida's surgeon general from coercing or intimidating broadcasters that run commercials for an abortion rights amendment.",
+            "url": "https://www.npr.org/2024/10/30/g-s1-30871/florida-abortion-amendment-judge-threats-ads",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2423x1363+0+127/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fbc%2F02%2F3de0c1154727841a8fef610a1596%2Fap24290506465158.jpg",
+            "publishedAt": "2024-10-30T05:34:44Z",
+            "content": "TALLAHASSEE, Fla. (AP) A federal judge who recently chastised Florida officials for \"trampling\" on free speech rights continued to block the head of the state's health department from taking any more… [+5622 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "The Associated Press",
+            "title": "North Korea launches a new intercontinental ballistic missile designed to threaten US",
+            "description": "North Korea confirmed the launch hours after its neighbors detected the firing of what they suspected was a new weapon.",
+            "url": "https://www.npr.org/2024/10/31/g-s1-31160/north-korea-missile-us-kim-jong-un",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8296x4667+0+432/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fac%2F9d%2F33cdeb3b408a926493e18618f2fd%2Fap24304858663050.jpg",
+            "publishedAt": "2024-10-31T05:54:55Z",
+            "content": "SEOUL, South Korea North Korea launched a new intercontinental ballistic missile Thursday in its first test in almost a year of a weapon designed to threaten the U.S. mainland and occurring days ahea… [+6118 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Ayana Archie",
+            "title": "Arnold Schwarzenegger has endorsed Kamala Harris for president",
+            "description": "Schwarzenegger served as the governor of California from 2003 to 2011. He said he is frustrated with both parties, and does not trust either, but felt compelled to speak out.",
+            "url": "https://www.npr.org/2024/10/31/nx-s1-5173456/arnold-schwarzenegger-endorses-kamala-harris",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6122x3444+0+74/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F49%2Fb7%2F6b8a70814557a30c419f1d6314f5%2Fap24261488922399.jpg",
+            "publishedAt": "2024-10-31T06:15:15Z",
+            "content": "Former Republican governor and actor Arnold Schwarzenegger has endorsed Democratic nominee Kamala Harris for president.\r\nIn a lengthy Wednesday post on X, Schwarzenegger said he does not typically gi… [+1789 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "The Associated Press",
+            "title": "Iran's supreme leader threatens Israel, U.S. with 'crushing response' to Israeli attack",
+            "description": "Iran's supreme leader threatened Israel and the U.S. with “a crushing response” over attacks on Iran and its allies. The Pentagon said Friday that more U.S. forces would be coming to the region.",
+            "url": "https://www.npr.org/2024/11/02/nx-s1-5176493/iran-leader-threatens-israel-crushing-response",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2500x1406+0+13/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F90%2F31%2F76e86f524a2286710689a56e043c%2Fap24307317139778.jpg",
+            "publishedAt": "2024-11-02T12:15:36Z",
+            "content": "DUBAI, United Arab Emirates Iran's supreme leader on Saturday threatened Israel and the U.S. with a crushing response over attacks on Iran and its allies.\r\nAyatollah Ali Khamenei spoke as Iranian off… [+4265 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Kirk Siegler",
+            "title": "America's first Native American cabinet secretary says she's righting historical wrongs",
+            "description": "As the nation's first ever indigenous cabinet secretary, Deb Haaland has made it her priority to right the US government's historical wrongs in Indian Country, a monumental task that's not been without controversy.",
+            "url": "https://www.npr.org/2024/10/30/g-s1-29217/americas-first-native-american-cabinet-secretary-says-shes-righting-historical-wrongs",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+156/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F20%2F2c%2Fa88955cb4f688b58e084df965e1e%2F20241008-npr-haaland-0028.JPG",
+            "publishedAt": "2024-10-30T09:00:00Z",
+            "content": "WASHINGTON, D.C. The cavernous Stewart Udall Department of Interior Building may be just off the National Mall in Washington but it feels like a window into the Old West.\r\nPast the nostalgic if pecul… [+6999 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Scott Detrow",
+            "title": "Why are some Evangelicals drawn to — and sticking by — Trump? This pastor weighs in",
+            "description": "NPR sits down with North Carolina pastor Chad Harvey to talk about Donald Trump, religion and politics.",
+            "url": "https://www.npr.org/2024/10/29/nx-s1-5165535/trump-christians-evangelical-harris-support",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa6%2F29%2F5468d1c642249f649988259b2f66%2Fnpr-northcarolina-day1-055.jpg",
+            "publishedAt": "2024-10-30T09:00:00Z",
+            "content": "On a late October evening in North Carolina's capital city, a massive stage in a dark auditorium is backlit by tall screens, and bass-thumping music and vocals are filling the space.\r\nThere's a table… [+7548 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "Sergio Martínez-Beltrán",
+            "title": "Pushed by public opinion shift, Democrats adopt immigration restrictions",
+            "description": "President Biden has issued a number of immigration-related executive actions that mimic those of the Trump administration, and VP Harris has promised she’ll continue restrictive policies.",
+            "url": "https://www.npr.org/2024/10/29/nx-s1-5171441/democrats-shift-immigration",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8256x4644+0+99/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F33%2Ff4%2Fc37c5f8e441eaa836a8749118a2c%2Fgettyimages-1246100358.jpg",
+            "publishedAt": "2024-11-01T20:51:38Z",
+            "content": "When President Joe Biden took office on January 20, 2021, he did what he had promised: he rescinded many of former President Donald Trumps draconian immigration policies.\r\nBut three years into his pr… [+8517 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Talia Lakritz",
+            "title": "Photos show the biggest moments of the 2024 election so far",
+            "description": "The 2024 presidential election has been full of memorable moments and unexpected twists.",
+            "url": "https://www.businessinsider.com/donald-trump-kamala-harris-election-biggest-moments-photos-2024-10",
+            "urlToImage": "https://i.insider.com/67228e299b3250dbbceb3f41?width=1200&format=jpeg",
+            "publishedAt": "2024-10-31T15:39:27Z",
+            "content": "Donald Trump and Kamala Harris on the debate stage.SAUL LOEB / AFP\r\n<ul><li>The 2024 election has been full of memorable moments and unexpected twists.</li><li>It began as a Trump-Biden rematch, then… [+13730 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Allie Kelly",
+            "title": "How the cost of childcare is expected to change under Trump or Harris",
+            "description": "BI looked at Harris and Trump's past track records and proposed policies to see how the election could affect childcare affordability.",
+            "url": "https://www.businessinsider.com/childcare-costs-presidential-election-scenarios-parents-paid-leave-harris-trump-2024-10",
+            "urlToImage": "https://i.insider.com/671bb3ac9b3250dbbcea1bc0?width=1200&format=jpeg",
+            "publishedAt": "2024-11-01T09:00:04Z",
+            "content": "Getty Images; Jenny Chang-Rodriguez/BI\r\n<ul><li>The cost of childcare is weighing on American families.</li><li>Below are some of the policies Harris and Trump have proposed to address these worries.… [+5238 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Kwan Wei Kevin Tan",
+            "title": "One week out from the election, Jared Kushner and Ivanka Trump still say they're set on moving on from Trumpworld",
+            "description": "\"We're rooting for him — obviously, we're proud of him. But, you know, either way, our life will just continue to move forward,\" Kushner said of Trump.",
+            "url": "https://www.businessinsider.com/jared-kushner-ivanka-trump-moving-on-trumpworld-election-results-2024-10",
+            "urlToImage": "https://i.insider.com/6721b0a7a0a0cc14f224d8d9?width=1200&format=jpeg",
+            "publishedAt": "2024-10-30T09:40:52Z",
+            "content": "Ivanka Trump and Jared Kushner standing on stage with former President Donald Trump and Melania Trump during the Republican National Convention.Jason Armond/Los Angeles Times via Getty Images\r\n<ul><l… [+3385 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Katie Notopoulos",
+            "title": "Want to feel old? Gen Z is discovering the horrors of the 2016 election — but that's not a bad thing.",
+            "description": "Donald Trump's lewd \"Grab 'em\" comments that came to light in 2016 are resurfacing on TikTok. Yes, millennials, we're officially old. But that's OK.",
+            "url": "https://www.businessinsider.com/gen-z-donald-trump-grab-em-tiktok-explained-2024-11",
+            "urlToImage": "https://i.insider.com/672565409b3250dbbcebcbef?width=1200&format=jpeg",
+            "publishedAt": "2024-11-02T18:23:01Z",
+            "content": "Billy Bush interviewed Donald Trump on \"Access Hollywood\" in 2015. Conversations between the two from 2005 resurfaced in the last presidential electionRob Kim/Getty Images\r\n<ul><li>Gen Z is apparentl… [+3532 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Grace Eliza Goodwin",
+            "title": "US intel says Russian actors made the fake Georgia voter fraud video — and expects more to come",
+            "description": "Russian influence actors created a fake Georgia voter fraud video, a group of US intelligence officials said.",
+            "url": "https://www.businessinsider.com/us-intel-russia-made-fake-georgia-voter-fraud-video-2024-11",
+            "urlToImage": "https://i.insider.com/67252775a0a0cc14f225944c?width=1200&format=jpeg",
+            "publishedAt": "2024-11-01T19:55:38Z",
+            "content": "A video circulating online suggests that Haitian nationals are committing voter fraud in Georgia. But it's all fake, US intel group says.Nathan Posner/Anadolu via Getty Images\r\n<ul><li>Russian influe… [+3170 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Bryan Metzger",
+            "title": "The closing note of the 2024 campaign: How dare you?",
+            "description": "From an offensive joke about Puerto Rico, to a Biden gaffe, to Mark Cuban, both sides have tried to harness outrage in the election's final days.",
+            "url": "https://www.businessinsider.com/election-trump-harris-outrage-garbage-mark-cuban-puerto-rico-2024-11",
+            "urlToImage": "https://i.insider.com/6724d71ba0a0cc14f2257199?width=1200&format=jpeg",
+            "publishedAt": "2024-11-01T20:31:08Z",
+            "content": "From an offensive joke about Puerto Rico to garbage trucks to Mark Cuban, each campaign tried to harness outrage in the final week of the election.Chip Somodevilla/Getty Images\r\n<ul><li>The final wee… [+5723 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Katherine Tangalakis-Lippert",
+            "title": "RFK Jr. to remain on the ballot in 2 swing states despite attempts to get himself removed, Supreme Court rules",
+            "description": "The Supreme Court on Tuesday rejected RFK Jr.'s last-ditch efforts to remove his name from ballots in swing states.",
+            "url": "https://www.businessinsider.com/supreme-court-rules-rfk-jr-on-ballot-presidential-election-2024-10",
+            "urlToImage": "https://i.insider.com/672177cb01ea6d83dee4fb56?width=1200&format=jpeg",
+            "publishedAt": "2024-10-30T01:26:25Z",
+            "content": "RFK Jr., who has endorsed Trump, will remain on the presidential ballot despite having dropped out of the race.Leonard Ortiz/MediaNews Group/Orange County Register via Getty Images; Bill Pugliano/Get… [+2196 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Palmer Haasch",
+            "title": "'The Diplomat' season 2 finale completely shakes up Kate's bid for the vice presidency",
+            "description": "\"The Diplomat\" season two ends a cliffhanger, as Kate puts together a conspiracy involving Roylin and Vice President Grace Penn.",
+            "url": "https://www.businessinsider.com/the-diplomat-season-2-finale-ending-explained-kate-grace-vice-president",
+            "urlToImage": "https://i.insider.com/6723f116a0a0cc14f225663d?width=1200&format=jpeg",
+            "publishedAt": "2024-10-31T21:43:13Z",
+            "content": "Keri Russell as Kate Wyler in \"The Diplomat.\"Alex Bailey/Netflix\r\n<ul><li>A major character death at the end of \"The Diplomat\" season two throws a wrench into the series.</li><li>Keri Russell's titul… [+6586 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Harvard Business Review"
+            },
+            "author": "Laura Empson, Jennifer Howard-Grenville",
+            "title": "How to Lead When the Future Feels Unpredictable",
+            "description": "Three ways to help your colleagues — and yourself — cope during liminal times.",
+            "url": "https://hbr.org/2024/11/how-to-lead-when-the-future-feels-unpredictable",
+            "urlToImage": "https://hbr.org/resources/images/article_assets/2014/10/Nov24_01_150653396.jpg",
+            "publishedAt": "2024-11-01T14:11:03Z",
+            "content": "Right now, many of us feel suspended between what once was and what is yet to come. In the United States, this sense of extended uncertainty reflects the protracted presidential-election process, wit… [+234 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Felix Light",
+            "title": "US pollster Edison says Georgia election results suggest 'manipulation'",
+            "description": "TBILISI (Reuters) -U.S. data and polling firm Edison Research said on Friday the differences between its exit poll of Georgia's parliamentary election and...",
+            "url": "https://uk.news.yahoo.com/us-pollster-edison-says-georgia-042227747.html",
+            "urlToImage": "https://media.zenfs.com/en/reuters.com/f992057a2c2658a18660fce62bd9aa3e",
+            "publishedAt": "2024-11-01T04:22:27Z",
+            "content": "Yahoo is using AI to generate takeaways from this article. This means the info may not always match what's in the article. Reporting mistakes helps us improve the experience.Generate Key Takeaways\r\nB… [+2751 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Free doughnuts at Krispy Kreme and more Election Day freebies",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_cc3697a7-d7bc-4340-813f-1a65e463f956",
+            "urlToImage": null,
+            "publishedAt": "2024-11-01T19:21:50Z",
+            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Detroit Free Press"
+            },
+            "author": "Jamie L. LaReau and Eric D. Lawrence, Detroit Free Press",
+            "title": "Election Day is a holiday for Detroit 3; GM and Ford seek volunteers for some production",
+            "description": "The Detroit automakers have made Election Day a holiday since 1999.",
+            "url": "https://www.freep.com/story/money/cars/2024/11/01/detroit-three-automakers-election-day-holiday-volunteers/75960563007/",
+            "urlToImage": "https://media.zenfs.com/en/detroit-free-press/de6e5277518fb66e69dc01bfa6b7790e",
+            "publishedAt": "2024-11-01T10:07:05Z",
+            "content": "Election Day is a negotiated day off in the UAW's 2023 national contract with the Detroit Three automakers, creating a company holiday Tuesday so employees can make it to the polls.\r\nSalaried workers… [+2499 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Who will win the U.S. presidential election? This California professor says he knows",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_5e17db5b-acd7-43fa-9bdd-b9e19927db37",
+            "urlToImage": null,
+            "publishedAt": "2024-10-31T11:55:00Z",
+            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": null,
+            "title": "Nicolle Wallace calls on her former boss, George W. Bush to break silence on 2024 Election",
+            "description": null,
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_aef3fd92-fc7c-475e-8925-41c55f2cb7fc",
+            "urlToImage": null,
+            "publishedAt": "2024-11-01T20:24:28Z",
+            "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Mainemorningstar.com"
+            },
+            "author": "Casey Quinlan",
+            "title": "Final report before presidential election shows just 12,000 jobs added after hurricanes, strikes",
+            "description": "U.S. businesses added only 12,000 jobs in October, the Labor Department announced Friday, in a weak final jobs report heading into the final days of the...",
+            "url": "https://mainemorningstar.com/2024/11/01/final-report-before-presidential-election-shows-just-12000-jobs-added-after-hurricanes-strikes/",
+            "urlToImage": "https://media.zenfs.com/en/maine_morning_star_articles_742/57751cc3f2a9969fe27ce583777ec198",
+            "publishedAt": "2024-11-01T21:32:13Z",
+            "content": "A strike sign is seen on display as Boeing workers gather on a picket line near the entrance to a Boeing facility during an ongoing strike on Thursday, Oct. 24, 2024, in Seattle. Experts say a pair o… [+5280 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Beast"
+            },
+            "author": "Harry Lambert",
+            "title": "Listen to Jeffrey Epstein Spill Intel on Donald Trump’s White House",
+            "description": "Michael Wolff, the explosive chronicler of Donald Trump’s four years in the White House, has released what he says is a recording of Jeffrey Epstein, who...",
+            "url": "https://www.thedailybeast.com/listen-to-jeffrey-epstein-spill-intel-on-donald-trumps-white-house-on-tape-released-by-author-michael-wolff/",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/nasOQBiKvdBDxW6w7Z.DYg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://media.zenfs.com/en/thedailybeast.com/5d1a51e7ca7678e503a030996cf841dc",
+            "publishedAt": "2024-10-31T22:00:09Z",
+            "content": "Michael Wolff, the explosive chronicler of Donald Trumps four years in the White House, has released what he says is a recording of Jeffrey Epstein, who died in 2019, discussing Trumps then-White Hou… [+3767 chars]"
+        },
+        {
+            "source": {
+                "id": "the-hill",
+                "name": "The Hill"
+            },
+            "author": "Ashleigh Fields",
+            "title": "CNN contributor takes back Cheney ‘firing squad’ quip: ‘I was wrong’",
+            "description": "Political analyst Jonah Goldberg retracted comments made during a Friday CNN appearance in response to former President Trump’s criticism of former Rep. Liz ...",
+            "url": "https://thehill.com/homenews/campaign/4966401-cnn-trump-cheney-firing-squad/",
+            "urlToImage": "https://media.zenfs.com/en/the_hill_articles_341/932266afa666e7e37080263f4f869537",
+            "publishedAt": "2024-11-01T19:13:09Z",
+            "content": "Yahoo is using AI to generate takeaways from this article. This means the info may not always match what's in the article. Reporting mistakes helps us improve the experience.Generate Key Takeaways\r\nP… [+2886 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Neil Johnston",
+            "title": "Iran warns it could seek nuclear weapons in face of ‘existential threat’",
+            "description": "Iran is capable of making nuclear weapons and will change its doctrine to allow their production if it faces an “existential threat,” a senior adviser to the...",
+            "url": "https://uk.news.yahoo.com/iran-warns-could-seek-nuclear-194655181.html",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/gXTJiw90x1QIrRMUxam2Pg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03NTA-/https://media.zenfs.com/en/the_telegraph_818/54915d7867475213cd304e8fd9cd2b0d",
+            "publishedAt": "2024-11-01T19:46:55Z",
+            "content": "Iran is capable of making nuclear weapons and will change its doctrine to allow their production if it faces an existential threat, a senior adviser to the supreme leader of Iran has said.\r\nKamal Kha… [+3980 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Justin Worland",
+            "title": "How Companies Should Talk About Climate Change—No Matter Who Wins the U.S. Election",
+            "description": "No matter who wins the U.S. election, companies will have greater success if they talk about the financial impact of climate change.",
+            "url": "https://time.com/7171622/companies-climate-change-messaging-us-election-2/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/solar-panels.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-11-02T14:16:21Z",
+            "content": "(To get this story in your inbox, subscribe to the TIME CO2 Leadership Report newsletter here.)\r\nKamala Harris and Donald Trump couldn't be further apart when it comes to climate change, and the elec… [+3592 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "JILL LAWLESS / AP",
+            "title": "Kemi Badenoch Becomes New Leader of the U.K. Conservatives, the First Black Woman to Head a Major British Party",
+            "description": "Britain’s Conservative Party on Saturday elected Kemi Badenoch as its new leader as it tries to rebound from a crushing election defeat.",
+            "url": "https://time.com/7171606/kemi-badenoch-new-leader-uk-conservatives/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/AP24307413014236.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-11-02T14:05:32Z",
+            "content": "LONDON Britains Conservative Party on Saturday elected Kemi Badenoch as its new leader as it tries to rebound from a crushing election defeat that ended 14 years in power.\r\nThe first Black woman to l… [+4166 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Philip Elliott",
+            "title": "Joe Biden’s ‘Garbage’ Gaffe Should Never Have Happened",
+            "description": "Biden has a long history as a gaffe factory. To many Democrats, the stakes of this election are too high to let him to speak off-the-cuff",
+            "url": "https://time.com/7160817/joe-biden-garbage-trump/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/GettyImages-2181247572.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-31T15:49:55Z",
+            "content": "This article is part of The D.C. Brief, TIMEs politics newsletter. Sign up here to get stories like this sent to your inbox.\r\nJoes Gotta Go.\r\nTalk with just about any professional Democrat in Washing… [+9167 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Rebecca Schneid",
+            "title": "Here’s What Time the Polls Close in Every State",
+            "description": "The presidential election between Republican candidate Donald Trump and Democratic nominee Kamala Harris will come to a head on Nov. 5.",
+            "url": "https://time.com/7171615/heres-what-time-the-polls-close-in-every-state/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/GettyImages-2181612592.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-11-02T14:29:11Z",
+            "content": "The presidential election between Republican candidate Donald Trump and Democratic nominee Kamala Harris will come to a head on Nov. 5 as final voters cast their ballots. Thats not the only thing tha… [+4258 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "NICHOLAS RICCARDI / AP",
+            "title": "We May Not Know the Next President on Election Day. This Arizona Swing County Could Be Why",
+            "description": "Inside a squat building ringed with a chainlink fence and concrete barriers in downtown Phoenix, election workers on Nov. 5 will begin a grindingly slow tally of every ballot cast in the vast expanse of stucco and saguaro that is Maricopa County, Arizona.",
+            "url": "https://time.com/7160008/arizona-swing-county-next-president/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/Arizona.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-30T15:55:52Z",
+            "content": "PHOENIX Inside a squat building ringed with a chainlink fence and concrete barriers in downtown Phoenix, election workers on Nov. 5 will begin a grindingly slow tally of every ballot cast in the vast… [+18303 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "MARK SHERMAN / AP",
+            "title": "Supreme Court Allows Virginia to Resume Its Purge of Voter Registrations",
+            "description": "The Supreme Court on Wednesday allowed Virginia to resume its purge of voter registrations that the state says is aimed at stopping people who are not U.S. citizens from voting.",
+            "url": "https://time.com/7157613/supreme-court-allows-virginia-resume-purge-of-voters/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/Gov.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-30T14:54:24Z",
+            "content": "WASHINGTON The Supreme Court on Wednesday allowed Virginia to resume its purge of voter registrations that the state says is aimed at stopping people who are not U.S. citizens from voting.\r\nThe justi… [+2364 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Rebecca Schneid",
+            "title": "The Republicans Crossing Party Lines and Voting For Harris Over Trump",
+            "description": "Former Governor of California Arnold Schwarzenegger joins a growing number of Republicans who are voting for Kamala Harris over Donald Trump.",
+            "url": "https://time.com/7160907/republicans-crossing-party-lines-voting-kamala-harris-over-donald-trump/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/GettyImages-2171848317.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-10-31T18:06:25Z",
+            "content": "With the general election between Vice President Kamala Harris and former President Donald Trump upon us, endorsements from high-profile figures hold much significance. Especially those that involve … [+10120 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Eric Cortellessa",
+            "title": "Why Trump Thinks He Needs Young Men to Win",
+            "description": "The Trump campaign believes it can only beat Kamala Harris by turning out a specific set of young men to the polls.",
+            "url": "https://time.com/7171535/donald-trump-harris-young-men/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/GettyImages-2181420636.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-11-01T22:17:07Z",
+            "content": "If Donald Trump reclaims the White House, he will have one voting demographic to thank for it: men. Thats the fundamental theory of the Trump campaign. In the elections final weeks, the former Presid… [+6166 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Simmone Shah",
+            "title": "The Top Five Campaign Moments on TikTok",
+            "description": "TIME spoke to an expert about the top five moments on TikTok from the presidential campaign, from the Trump McDonald's stunt to the debate.",
+            "url": "https://time.com/7160873/trump-harris-2024-campaign-tiktok-viral/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/GettyImages-2179836882.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-31T16:27:43Z",
+            "content": "TikTok has emerged as an essential part of the 2024campaign media landscape, with nearly 40% of adults under 30 regularly consuming news on the platform, according to a Pew study. \r\nWith Meta announc… [+4686 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Brian Bennett / Washington, D.C.",
+            "title": "Kamala Harris Makes Her Final Pitch for Voters to ‘Turn the Page’ on Donald Trump",
+            "description": "The Vice President made her final pitch to “turn the page” on Trump—from the same spot he rallied a mob on Jan. 6, 2021.",
+            "url": "https://time.com/7138009/kamala-harris-ellipse-speech-final-campaign-pitch-turn-page-trump/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/kamala-harris-ellipse-campaign-speech.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-30T07:15:00Z",
+            "content": "The iconic columns of the White House glowed behind her. In front of her, thousands of supporters held USA signs and wore bracelets that lit up red and blue across the grassy acres of the Ellipse. A … [+5059 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Associated Press",
+            "title": "Mauritius Suspends Access to Social Media Ahead of Parliamentary Elections",
+            "description": "The government of Mauritius on Friday banned access to social media websites ahead of parliamentary elections on Nov. 10 in which Prime Minister Pravind Jugnauth is seeking a second term in power.",
+            "url": "https://time.com/7171409/mauritius-suspends-social-media-access-parliamentary-elections/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/AP24306494516767.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-11-01T17:18:20Z",
+            "content": "JOHANNESBURG The government of Mauritius on Friday banned access to social media websites ahead of parliamentary elections on Nov. 10 in which Prime Minister Pravind Jugnauth is seeking a second term… [+1788 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "ALANNA DURKIN RICHER and CLAIRE RUSH / AP",
+            "title": "What to Know About the Suspect Behind Ballot Box Fires in the Northwest",
+            "description": "Authorities believe the man suspected of setting fires in ballot drop boxes in Oregon and Washington is an experienced metalworker and may be planning additional attacks.",
+            "url": "https://time.com/7160713/suspect-ballot-drop-box-fires-oregon-washington/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/ballot-box-fire-suspect.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-31T02:10:00Z",
+            "content": "PORTLAND, Ore. The man suspected of setting fires in ballot drop boxes in Oregon and Washington state is an experienced metalworker and may be planning additional attacks, authorities said Wednesday.… [+3641 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Elizabeth Rees / Made by History",
+            "title": "What Melania Trump’s Decision to Speak Out on Abortion Says About the GOP",
+            "description": "A changing party can create space for a Republican First Lady to support abortion rights.",
+            "url": "https://time.com/7134432/melania-trump-abortion-history-gop/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/melania-trump-betty-ford-womans-rights.jpg?quality=85&crop=0px%2C63px%2C2400px%2C1257px&resize=1200%2C628&strip",
+            "publishedAt": "2024-11-01T13:00:00Z",
+            "content": "Former First Lady Melania Trump has been conspicuously absent on the campaign trail during her husbands 2024 presidential election bid. Yet in a recent interview to promote her forthcoming memoir, Me… [+9387 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Will Weissert / AP",
+            "title": "White House Attempts Clean-Up After Joe Biden Appears to Call Trump Supporters ‘Garbage’",
+            "description": "Biden’s off-the-cuff remark—which the White House has tried to clarify referred to rhetoric not people—recalls Hillary Clinton’s “basket of deplorables” controversy.",
+            "url": "https://time.com/7134451/joe-biden-trump-supporters-garbage-white-house-apostrophe/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/joe-biden.jpg?quality=85&w=1024&h=628&crop=1",
+            "publishedAt": "2024-10-30T03:15:00Z",
+            "content": "WASHINGTON President Joe Biden took a swipe against Donald Trumps supporters on Tuesday as he reacted to the Republican presidential nominees weekend rally at Madison Square Garden, which was oversha… [+5129 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Sam Nunn",
+            "title": "Who Will Work For Our New President–and Our Nation?",
+            "description": "National security requires the top independent, top flight Presidential advisors that Donald Trump has shown he will not abide.",
+            "url": "https://time.com/7171540/sam-nunn-who-will-work-for-trump-national-security/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2018/01/trump_pentagon.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-11-02T13:00:00Z",
+            "content": "After serving in the U.S. Senate for four terms, people often ask me about how I think about this coming Presidential election. My answer:  in a troubled world with lots of moving parts including mul… [+4519 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "JON GAMBRELL / AP",
+            "title": "Iran’s Supreme Leader Threatens Israel and U.S. With ‘a Crushing Response’ Over Israeli Attack",
+            "description": "Ayatollah Ali Khamenei spoke as Iranian officials are increasingly threatening to launch yet another strike against Israel.",
+            "url": "https://time.com/7171658/iran-supreme-leader-threatens-israel-us/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/AP24307317438057.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-11-02T17:01:01Z",
+            "content": "DUBAI, United Arab Emirates Iran's supreme leader on Saturday threatened Israel and the U.S. with a crushing response over attacks on Iran and its allies.\r\nAyatollah Ali Khamenei spoke as Iranian off… [+4265 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Koh Ewe",
+            "title": "How Myanmar’s Civil War Could Actually End",
+            "description": "Here’s how the conflict has gone so far, and how it could potentially come to an end.",
+            "url": "https://time.com/7160736/myanmar-coup-civil-war-conflict-timeline-endgame-explainer/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/10/myanmar-civil-war-conflict-endgame-explainer-1.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-11-01T00:00:00Z",
+            "content": "The end may not be near, but the end is clearaccording to those who have kept a close eye on Myanmars ongoing civil war, since a military coup toppled its civilian government in 2021. While the fight… [+21570 chars]"
+        },
+        {
+            "source": {
+                "id": "time",
+                "name": "Time"
+            },
+            "author": "Keely Cat-Wells",
+            "title": "Disabled Workers Deserve More Than Subminimum Wage",
+            "description": "It's time to end a federal law that confines Disabled people to a lifetime of poverty and segregation.",
+            "url": "https://time.com/7171382/disabled-americans-section-14c-subminimum-wage/",
+            "urlToImage": "https://api.time.com/wp-content/uploads/2024/11/disabled-workers.jpg?quality=85&w=1200&h=628&crop=1",
+            "publishedAt": "2024-11-01T16:00:19Z",
+            "content": "When I became Disabled in my late teens and started searching for work, I was confronted with barriers including disability discrimination, inaccessible environments, and attitudinal biases. I lost a… [+7270 chars]"
+        },
+        {
+            "source": {
+                "id": "espn",
+                "name": "ESPN"
+            },
+            "author": "Field Level Media",
+            "title": "Coughlin, Shanahan among HOF candidates",
+            "description": "Super Bowl-winning head coaches Tom Coughlin, Mike Holmgren, Mike Shanahan and George Seifert are among the nine semifinalists from the coach category nominated for the Pro Football Hall of Fame.",
+            "url": "https://www.espn.com/nfl/story/_/id/42116715/coughlin-shanahan-9-coaching-hall-fame-candidates",
+            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F0303%2Fr186768_1296x729_16%2D9.jpg",
+            "publishedAt": "2024-10-31T21:01:50Z",
+            "content": "Oct 31, 2024, 04:48 PM ET\r\nSuper Bowl-winning head coaches Tom Coughlin, Mike Holmgren, Mike Shanahan and George Seifert are among the nine semifinalists from the coach category nominated for the Pro… [+1256 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Slate Magazine"
+            },
+            "author": "Jules Gill-Peterson",
+            "title": "Raquel Willis and Eliel Cruz talk about the intersectional approach they took to organizing the Gender Liberation March in DC earlier this year",
+            "description": "Gender Liberation March organizers Raquel Willis and Eliel Cruz talk movement building, the fight for bodily autonomy, and the election",
+            "url": "https://slate.com/podcasts/outward/2024/10/raquel-willis-and-eliel-cruz-explore-the-power-of-movement-building-in-advocating-for-bodily-autonomy-at-the-gender-liberation-march",
+            "urlToImage": "https://compote.slate.com/images/e786d76f-b6ce-458c-8a3e-8d58edba497b.jpeg?width=1560&rect=1560x1040&offset=0x0",
+            "publishedAt": "2024-10-30T09:00:00Z",
+            "content": "If you can't access your feeds, please contact customer support.Thanks! Check your phone for a link to finish setting up your feed.\r\nPlease enter a 10-digit phone number.\r\nListen on your phone:RECOMM… [+173 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Slate Magazine"
+            },
+            "author": "Mary Harris",
+            "title": "Spoiler Alert: Almighty Omaha",
+            "description": "Not so “flyover” now, is it?",
+            "url": "https://slate.com/podcasts/what-next/2024/10/how-omaha-nebraska-could-choose-the-president",
+            "urlToImage": "https://compote.slate.com/images/c85e3595-94ee-4cbd-91f0-de0de4312947.jpeg?crop=1560%2C1040%2Cx0%2Cy0&width=1560",
+            "publishedAt": "2024-10-30T09:00:00Z",
+            "content": "Its gone to Trump once and Biden once. Now, theres a slight but very real chance that the entire election will turn based on how Nebraskas second congressional districtwith its singular electoral col… [+597 chars]"
+        }
+    ]
+}
