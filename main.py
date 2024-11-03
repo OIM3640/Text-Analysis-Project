@@ -1,8 +1,12 @@
 from data_collection import fetch_wikipedia_content, clean_text
-from text_analysis import word_frequency, summary_statistics,analyze_sentiment, compute_text_similarity, find_specific_word_frequencies, unique_frequent_words
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from thefuzz import fuzz
-import nltk
+from text_analysis import (
+    word_frequency,
+    summary_statistics,
+    analyze_sentiment,
+    compute_text_similarity,
+    find_specific_word_frequencies,
+    unique_frequent_words,
+)
 
 
 def main():
@@ -23,7 +27,9 @@ def main():
     print("Top 10 Words in 'Entrepreneurship':", top_words)
 
     target_words = ["entrepreneurship", "entrepreneur", "entrepreneurial"]
-    specific_frequencies = find_specific_word_frequencies(babson_frequency, target_words)
+    specific_frequencies = find_specific_word_frequencies(
+        babson_frequency, target_words
+    )
     print("\nFrequencies of Specific Words in 'Babson College':", specific_frequencies)
 
     # Summary Statistics
@@ -34,7 +40,10 @@ def main():
     print("Summary Statistics for 'Entrepreneurship':", related_summary)
 
     unique_words = unique_frequent_words(babson_frequency, related_frequency)
-    print("\nWords Frequent in 'Babson College' but Not in 'Entrepreneurship':", unique_words)
+    print(
+        "\nWords Frequent in 'Babson College' but Not in 'Entrepreneurship':",
+        unique_words,
+    )
 
     # Sentiment Analysis
     babson_sentiment = analyze_sentiment(babson_text)
@@ -44,7 +53,10 @@ def main():
 
     # Text Similarity
     similarity_scores = compute_text_similarity(babson_text, related_text)
-    print("\nSimilarity between 'Babson College' and 'Entrepreneurship':", similarity_scores)
+    print(
+        "\nSimilarity between 'Babson College' and 'Entrepreneurship':",
+        similarity_scores,
+    )
 
 
 if __name__ == "__main__":
