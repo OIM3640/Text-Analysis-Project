@@ -11,23 +11,25 @@ For this project, I began by analyzing The Great Gatsby by F.Scott Fitzgerald us
 Initially, my goal was to create a function in which Visual Studio Code would be able to access my text file repeatedly without encountering any issues with Project Gutenberg, which is shown at the beginning of my utilities.py file. Once the text was already downloaded, I used word count techniques that we had learned in class in order for my text to show me the top words from the text as well as how many times they showed up throughout the entirety of the book. 
 
 However, as the data was still coming out messy, I built on it by creating a function to clean out the text, in which I asked ChatGPT to show me how to filter out stop words with a NLTK library already downloaded in my computer. I wanted this to be in the main function in my repository, as I wanted for every time I downloaded a text for it to be filtered and cleaned up. 
-![alt](nltk.png "Title")
-![alt](nltk2.png "Title")
+![Description of Image](images/nltk.png)
+![Description of Image](images/nltk2.png)
+
 
 Following my progress in section 2 for the assignment, I felt stuck on deciding what I wanted to do next. I found the idea of a Markov Synthesis interesting, however, while already having the function to download and analyze any text file from Gutenberg, I felt it would be more simple to compute a similarity matrix.
 I asked chat GPT for help in conducting this, in which I was able to learn how to use MDS Visualisation to plot my results. 
-![alt](mdsscaling.png "Title")
+![Description of Image](images/mdsscaling.png)
 
-![alt](mdsscaling2.png "Title")
+
+![Description of Image](images/mdsscaling2.png)
 
 Additionally, I asked chatGPT for help in structuring my docstrings and making my text look more organized.
 
-![alt](docstrings.png "Title")
-![alt](docstrings2.png "Title")
-![alt](docstrings3.png "Title")
+![Description of Image](images/docstrings.png)
+![Description of Image](images/doctstrings2.png)
+![Description of Image](images/docstrings3.png)
 
 ## Results
-![alt](code_output.png "Title")
+![Description of Image](images/code_output.png)
 From my text analysis, I was able to find the top 10 words with their counts in This Side of Paradise and The Great Gatsby, as well as a text similarity analysis which gave me a score of 44. From the top words, I did find a similarity in the use of the words “said” and “like” which both appeared in the top 10 for each book. Something interesting I found was that “Gatsby” was a common word in Gatsby, but “Paradise” wasn’t for This Side of Paradise, showing contrast in the writing styles for both books.
 
 ![alt](Text_similarities_graph.png "Title")
