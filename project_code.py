@@ -285,9 +285,9 @@ A string message with a market decision based on the sentiment score.
 
 def main():
     symbol = "SPY"
-    api_key_alpha_vantage = "EZ62YSL0CTUD8S3O"
+    api_key_alpha_vantage = "YOUR_API_KEY_HERE"
 
-    api_key_newsapi = "a81a2f3a42104f77aa29a2cdd60a0623"
+    api_key_newsapi = "YOUR_API_KEY_HERE"
     avg_sentiment = overall_market_sentiment(api_key_newsapi)
     decision = make_market_decision(avg_sentiment)
 
