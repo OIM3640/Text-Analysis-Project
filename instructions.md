@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this project, you will learn how to use computational techniques to analyze text. You will access text from a variety of sources, including websites and APIs, and run computational analyses to create some sort of deliverable, such as interesting results from a text analysis, a visualization, or even a Python program that manipulates language in some interesting way. As part of the project, you are encouraged to use GenAI tools to explore how to talk to APIs and how to use Python libraries that have not been covered in class yet. This assignment is an **individual project**.
+In this project, you will learn how to use computational techniques to analyze text. You will access text from a va riety of sources, including websites and APIs, and run computational analyses to create some sort of deliverable, such as interesting results from a text analysis, a visualization, or even a Python program that manipulates language in some interesting way. As part of the project, you are encouraged to use GenAI tools to explore how to talk to APIs and how to use Python libraries that have not been covered in class yet. This assignment is an **individual project**.
 
 **Skills Emphasized**:
 
