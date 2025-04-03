@@ -109,6 +109,19 @@ def computing_summary(histogram):
     for word, count in sorted_histogram[3:13]: # excluding the top three which are spaces and characters
         print(f"{word}: {count}")
 
+## SENTIMENT ANALYSIS ##
+from textblob import TextBlob
+
+def analyze_sentiment(text):
+    """Analyzes sentiment using TextBlob and returns average polarity. Positive sentences are
+    cloesr to 1 and negative sentences are closer to -1. The output is the average sentiment of the entire text.
+    It splits every sentence up and computes the sentiment analysis and returns the average."""
+    sentences = text.split(".")  # Split into sentences
+    polarities = [TextBlob(sentence).sentiment.polarity for sentence in sentences if sentence.strip()]
+
+    avg_polarity = sum(polarities) / len(polarities) if polarities else 0
+    return avg_polarity
+
 def main():
     # Process the text and remove the header and stopwords
     processed_text = remove_gutenberg_header(metamorphosis)
@@ -128,13 +141,17 @@ def main():
 
     # Calculate the percentage of frequency of words
     percentage = percentage_tf(histogram, total_without)
-    print(percentage)
+    # print(percentage)
 
     # Top 10 percentages 
-    top_ten_perc(percentage)
+    # top_ten_perc(percentage)
 
     # HISTOGRAM OF THE TOP 10 MOST COMMON WORDS
     # computing_summary(histogram) # must make sure that the histogram variable is not commented out
+
+    # Sentiment analysis
+    sentiment_score = analyze_sentiment(processed_text)
+    print(f"Sentiment Score: {sentiment_score:.2f}") # output = 0.03. This means that the text is fairly neutral.
 
 
 if __name__ == "__main__":
