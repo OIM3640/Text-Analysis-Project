@@ -53,7 +53,7 @@ To download the text inside Python, you can use the following code:
 ```python
 import urllib.request
 
-url = 'https://www.gutenberg.org/cache/epub/730/pg730.txt'
+url = 'https://www.gutenberg.org/cache/epub/11/pg11.txt'
 try:
     with urllib.request.urlopen(url) as f:
         text = f.read().decode('utf-8')
@@ -329,23 +329,23 @@ In addition to pickling, you can also save files using JSON format. To explore m
 
 ## Part 2: Analyzing Your Text
 
-### Characterizing by Word Frequencies
+### Characterizing by Word Frequencies -- Done
 
 (**Note**: This step is required.)
 
 One way to begin to process your text is to take each unit of text (for instance, books from Project Gutenberg, or perhaps a collection of movie reviews) and summarize it by counting the number of times a particular word appears in the text. A natural way to approach this in Python would be to use a **dictionary** where the keys are words that appear and the values are frequencies of words in the text. If you want to do something fancier, you can use [TF-IDF features](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
-### Computing Summary Statistics
+### Computing Summary Statistics -- Done
 
 (**Note**: This step is required.)
 
 Beyond calculating word frequencies, there are other methods to summarize text. For instance, you may want to identify the top 10 words in each text or determine words that appear frequently in one text but not in others. It can be helpful to remove stop words before performing these tasks. We practiced this using Jane Austen's novel in class, so I recommend starting with that example.
 
-### Removing Stop words
+### Removing Stop words -- Done
 
 Stop words are words that occur frequently in text but do not provide any useful information for analysis. Examples of stop words include "the", "and", "a", etc. Removing stop words can help to reduce the size of the text data and improve the accuracy of analysis.
 
-### Natural Language Processing
+### Natural Language Processing -- Done
 
 [NLTK](https://www.nltk.org/) - the Natural Language Toolkit - is a powerful tool for processing human language data. It provides a wide range of capabilities, such as part-of-speech tagging, sentiment analysis, and full sentence parsing.
 
@@ -379,7 +379,7 @@ You can also use [TextBlob](https://github.com/sloria/TextBlob) library, which i
 
 If you perform natural language processing, you can draw interesting insights from text data collected from the web. For instance, if you monitor a specific subreddit related to a political topic, you can gauge the sentiment of the community by analyzing the text of each post and comment. Similarly, you can analyze discussions on subreddits dedicated to movies to identify which recent movies have received the most negative reviews. There are tons of cool options here!
 
-### Text Similarity
+### Text Similarity -- Done
 
 It is potentially quite useful to be able to compute the similarity of two texts. Suppose that we have characterized some texts from Project Gutenberg using word frequency analysis. One way to compute the similarity of two texts is to test to what extent when one text has a high count for a particular word the other text also a high count for a particular word. Specifically, we can compute the cosine similarity between the two texts. This strategy involves thinking of the word counts for each text as being high-dimensional vectors where the number of dimensions is equal to the total number of unique words in your text dataset and the entry in a particular element of the vector is the count of how frequently the corresponding word appears in a specific document.  If you find this approach unclear and wish to try it, you can either reach out to the professor, or ask GenAI tools for assistance.
 
@@ -394,7 +394,7 @@ print(fuzz.ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")) # 91
 print(fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")) # 100
 ```
 
-### Text Clustering
+### Text Clustering -- Done
 
 If you can generate pairwise similarities (say using the technique above), you can Metric Multi-dimensional Scaling (MDS) to visualize the texts in a 2-dimensional space. This can help identify clusters of similar texts.
 
