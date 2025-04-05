@@ -7,7 +7,7 @@ def download_text(url):
     """Download text from a URL and return it as a string."""
     with urllib.request.urlopen(url) as f:
         text = f.read().decode("utf-8")
-    return text
+    return text 
 
 
 def clean_text(text):
@@ -128,7 +128,6 @@ def remove_stop_words(sorted_word_freq):
             "had",
             "which",
             "not",
-            
         ]
     )
     filtered_word_freq = {
@@ -185,7 +184,7 @@ def main():
     except Exception as e:
         print(
             "Error: Make sure you have the required packages installed (pip install nltk textblob) and make sure your URL is correct"
-        )
+        ) 
 
 
 if __name__ == "__main__":
