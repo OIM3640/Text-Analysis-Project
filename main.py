@@ -3,19 +3,15 @@ from analyze import get_words, remove_stopwords, count_words, analyze_sentiment
 from harvest_text import harvest_gutenberg_text
 
 def main():
-    # This is the Project Gutenberg link to Oliver Twist by Charles Dickens
+    # This is the Project Gutenberg link to Oliver Twist
     url = "https://www.gutenberg.org/cache/epub/730/pg730.txt"
     print("Downloading text from Project Gutenberg...")
-
     # Fetch the book text from the web
     raw_text = harvest_gutenberg_text(url)
-
-    # Break the text into a list of words (all lowercase, no punctuation)
+    # Break the text into a list of words
     words = get_words(raw_text)
-
-    # Remove common words like "the", "and", "is", etc.
+    # Remove common words 
     filtered_words = remove_stopwords(words)
-
     # Count how often each word appears
     word_counts = count_words(filtered_words)
 
