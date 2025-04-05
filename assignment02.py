@@ -1,6 +1,4 @@
 import urllib.request
-import random
-import string
 import sys
 from collections import Counter
 from unicodedata import category
@@ -31,6 +29,16 @@ def remove_gutenberg_header(text):
 
     raise ValueError(f"Header marker '{start_marker}' not found in text.")
 
+def remove_gutenberg_footer(text):
+    end_marker = "END OF THE PROJECT"
+    lines = text.splitlines()
+
+    for i, line in enumerate(lines):
+        if end_marker.lower() in line.lower():  # Case-insensitive search
+            return "\n".join(lines[:i])  
+
+    raise ValueError(f"Header marker '{end_marker}' not found in text.")
+
 # REMOVING STOPWORDS
 
 def loading_stopwords():
@@ -46,26 +54,14 @@ def loading_stopwords():
  
 def removing_stop_words(text):
     stop_words = loading_stopwords()
-    
     from nltk.tokenize import word_tokenize
     word_tokens = word_tokenize(text)
- 
-    filtered_sentence = []
-    filtered_sentence = [w for w in word_tokens if w.lower() not in stop_words]
     
-    for w in word_tokens:
-        if w not in stop_words:
-            filtered_sentence.append(w)
+    filtered_sentence = [w for w in word_tokens if w.lower() not in stop_words]
     return filtered_sentence
 
 
 # PART 2 - Analyzing the tezt
-def total_words(text):
-    """Finds the total words in the text"""
-    total = 0
-    for line in text:
-        total += 1
-    return total 
 
 def creates_histogram(text):
     """Creates a histogram of all the words the in the text"""
@@ -89,11 +85,26 @@ def creates_histogram(text):
 
     return histogram
 
+def total_words_without(text):
+    """Finds the total words in the text without counting stopwords"""
+    freq = 0
+    for word in text.keys():
+        freq += text[word]
+    return freq
+
+def unique_words(text):
+    words = []
+    for word in text.keys():
+        if word not in words:
+            words.append(word)
+
+    return len(words)
+
 def percentage_tf(text, total):
     """Calculates the term frequency in percentage - percentage of the text that the word makes up."""
     percentages = {}
     for word in text:
-        value = text[word]  # Retrieve the count of the word
+        value = text[word]  
         percentages[word] = value / total
     return percentages
 
@@ -124,33 +135,37 @@ def analyze_sentiment(text):
 
 def main():
     # Process the text and remove the header and stopwords
-    processed_text = remove_gutenberg_header(metamorphosis)
-    final_text = removing_stop_words(processed_text)
+    after_header = remove_gutenberg_header(metamorphosis)
+    after_header_footer = remove_gutenberg_footer(after_header)
+    final_text = removing_stop_words(after_header_footer)
+
 
     ############# Part 2 ###############
-
-    # # TOTAL WORDS IN THE TEXT W AND WITHOUT STOPWORDS
-    # number_words = total_words(processed_text)
-    # print(f"The total amount of words in this text are {number_words}.")
-    total_without = total_words(final_text)
-    # print(f"Without stopwords, the number of words in this text are {total_without}.")
 
     # # CREATES A HISTOGRAM OF FREQUENCIES
     histogram = creates_histogram(final_text)
     # print(histogram)
 
+    # # TOTAL WORDS IN THE TEXT WITHOUT STOPWORDS
+    total_words = total_words_without(histogram)
+    print(f"Without stopwords, the number of words in this text are {total_words}.")
+
+    # Number of Unique words in the histogram
+    unique = unique_words(histogram)
+    print(f"The number of unique words are {unique}.")
+
     # Calculate the percentage of frequency of words
-    percentage = percentage_tf(histogram, total_without)
-    # print(percentage)
+    percentage = percentage_tf(histogram, total_words)
+    print(percentage)
 
     # Top 10 percentages 
-    # top_ten_perc(percentage)
+    top_ten_perc(percentage)
 
     # HISTOGRAM OF THE TOP 10 MOST COMMON WORDS
-    # computing_summary(histogram) # must make sure that the histogram variable is not commented out
+    computing_summary(histogram) # must make sure that the histogram variable is not commented out
 
     # Sentiment analysis
-    sentiment_score = analyze_sentiment(processed_text)
+    sentiment_score = analyze_sentiment(after_header_footer)
     print(f"Sentiment Score: {sentiment_score:.2f}") # output = 0.03. This means that the text is fairly neutral.
 
 
