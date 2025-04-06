@@ -59,7 +59,7 @@ def find_words(text):
     return text.split()
 
 def create_markov_model(tokens, n=1):
-    """Create a Markov model."""
+    """Create a Markov model. AI helped a lot with this section because I did not know what to do"""
 
     model = defaultdict(Counter)
     for i in range(len(tokens) - n):
@@ -87,21 +87,25 @@ def generate_text(model, length=100, n=1):
 
     return ' '.join(output)
 
-all_tokens = []
+def main():
+    all_tokens = []
 
-# Process each URL in the list, clean it, and print any errors if necessary
-for url in gutenberg_urls:
-    req = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(req, context=context) as f:
-            raw_text = f.read().decode('utf-8')
-            clean_text = strip_headers(raw_text)
-            tokens = find_words(clean_text)
-            all_tokens.extend(tokens)
-    except Exception as e:
-        print(f"An error occurred with {url}: {e}")
+    # Process each URL in the list, clean it, and print any errors if necessary
+    for url in gutenberg_urls:
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, context=context) as f:
+                raw_text = f.read().decode('utf-8')
+                clean_text = strip_headers(raw_text)
+                tokens = find_words(clean_text)
+                all_tokens.extend(tokens)
+        except Exception as e:
+            print(f"An error occurred with {url}: {e}")
 
-# Create a Markov model and generate text
-markov_model = create_markov_model(all_tokens, n=5)
-generated_text = generate_text(markov_model, length=25, n=5)
-print(generated_text)
+    # Create a Markov model and generate text
+    markov_model = create_markov_model(all_tokens, n=5)
+    generated_text = generate_text(markov_model, length=25, n=5)
+    print(generated_text)
+
+if __name__ == "__main__":
+    main()

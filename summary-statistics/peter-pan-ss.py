@@ -60,24 +60,28 @@ def word_frequencies(text):
 
     return Counter(words)
     
-try:
-    # Open the URL and read the raw text
-    with urllib.request.urlopen(req, context=context) as f:
-        raw_text = f.read().decode('utf-8')
+def main():
+    try:
+        # Open the URL and read the raw text
+        with urllib.request.urlopen(req, context=context) as f:
+            raw_text = f.read().decode('utf-8')
 
-        # Remove headers and footers from the text
-        clean_text = strip_headers(raw_text)
+            # Remove headers and footers from the text
+            clean_text = strip_headers(raw_text)
 
-        # Calculate word frequencies
-        frequencies = word_frequencies(clean_text)
+            # Calculate word frequencies
+            frequencies = word_frequencies(clean_text)
 
-        # Get the top 10 most frequent words
-        top_10 = frequencies.most_common(10)
-        print(f"Length of top_10: {len(top_10)}")
-        print("Top 10 most frequent words:")
-        for word, count in top_10:
-            print(f"{word}: {count}")
+            # Get the top 10 most frequent words
+            top_10 = frequencies.most_common(10)
+            print(f"Length of top_10: {len(top_10)}")
+            print("Top 10 most frequent words:")
+            for word, count in top_10:
+                print(f"{word}: {count}")
 
-except Exception as e:
-    # Print any errors that occur
-    print("An error occurred:", e)
+    except Exception as e:
+        # Print any errors that occur
+        print("An error occurred:", e)
+
+if __name__ == "__main__":
+    main()

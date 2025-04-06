@@ -67,13 +67,14 @@ def word_frequencies(text):
 
     return word_counts
 
-try:
-    # Open the URL and read the raw text
-    with urllib.request.urlopen(req, context=context) as f:
-        raw_text = f.read().decode('utf-8')
-        # Remove headers and footers from the text
-        clean_text = strip_headers(raw_text) 
-        print(clean_text)
+def main():
+    try:
+        # Open the URL and read the raw text
+        with urllib.request.urlopen(req, context=context) as f:
+            raw_text = f.read().decode('utf-8')
+            # Remove headers and footers from the text
+            clean_text = strip_headers(raw_text) 
+            print(clean_text)
 
         # Calculate word frequencies
         frequencies = word_frequencies(clean_text)
@@ -81,8 +82,10 @@ try:
         # Print word frequencies
         print(frequencies)
 
-# Print any errors that occur
-except Exception as e:
+    # Print any errors that occur
+    except Exception as e:
 
-    print("An error occurred:", e)
+        print("An error occurred:", e)
 
+if __name__ == "__main__":
+    main()
