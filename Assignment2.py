@@ -1,214 +1,262 @@
 # Import text
-# *Frankenstein*
 import urllib.request
 
-url = 'https://www.gutenberg.org/cache/epub/42324/pg42324.txt'
-try:
-    with urllib.request.urlopen(url) as f:
-        text = f.read().decode('utf-8')
-        # print(text)  # For testing
-except Exception as e:
-    print("An error occurred:", e)
+def import_text(url):
+    """Download text from a Project Gutenberg URL and return it as a string."""
+    try:
+        with urllib.request.urlopen(url) as f:
+            text = f.read().decode('utf-8')
+            return text
+    except Exception as e:
+        print(f"An error occurred while downloading {url}:", e)
+        return ""
+
+# *Frankenstein*
+text_frank = import_text("https://www.gutenberg.org/cache/epub/42324/pg42324.txt")
 
 
-# *Wikipedia*
-from mediawiki import MediaWiki
-
-wikipedia = MediaWiki()
-fiction = wikipedia.page("Gothic fiction")
-print(fiction.title)
-print(fiction.content)
-
+# *Dracula*
+text_drac = import_text("https://www.gutenberg.org/cache/epub/45839/pg45839.txt")
 
 # —————————————————————————————————————————————————————
 # Text Cleaning and Preprocessing
-
-# *Frankenstein*
 import unicodedata
 
 # Remove the Project Gutenberg header and footer
-lines = []
-copy = False
+def extract_text_between_markers(text, start_marker, end_marker):
+    """Return only the lines between the given start and end markers."""
+    lines = []
+    copy = False
 
-for line in text.splitlines():
-    # Between the official start marker and the novel text, there is unneeded information like the novel's title page, translator's notes, publication information, etc. Keep reading lines until the last line of the description, then start storing the text. The novel starts with "INTRODUCTION."
-    if "INTRODUCTION." in line:
-        lines.append(line)
-        copy = True
-        continue
-    # Stop reading lines at the end of the novel, which ends with "THE END."
-    if "THE END." in line:
-        lines.append(line)
-        break
+    for line in text.splitlines():
+        if start_marker in line:
+            lines.append(line)
+            copy = True
+            continue
+        if end_marker in line:
+            lines.append(line)
+            break
+        if copy:
+            lines.append(line)
 
-    if copy:
-        lines.append(line)
-
+    return lines
 
 # Manage punctuation: taken from Chapter 12 Notebook
-punc_marks = {}
+def get_punctuation(lines):
+    """Return a string of all unique punctuation marks in the given text."""
+    punc_marks = {}
+    for line in lines:
+        for char in line:
+            category = unicodedata.category(char)
+            if category.startswith('P'):
+                punc_marks[char] = 1
+    return ''.join(punc_marks)
 
-for line in lines:
-    for char in line:
-        category = unicodedata.category(char)
-        if category.startswith('P'):
-            punc_marks[char] = 1
-
-# Turn dictionary keys into one string of punctuation symbols
-punctuation = ''.join(punc_marks)
-
-# Removed dashes
 def split_line(line):
-    return line.replace('--', ' ').split()
+    """Replace different dashes with spaces to avoid joining words together inaccurately."""
+    return line.replace('—', ' ').replace('–', ' ').replace('--', ' ').split()
 
-# Remove punctuation and standardize case
-def clean_word(word):
-    return word.strip(punctuation).lower()
+def clean_word(word, punctuation):
+    """Strip punctuation from the beginning and end of each word, convert to lowercase, and remove numbers."""
+    word = word.strip(punctuation).lower()
+    if any(ch.isdigit() for ch in word):
+        return ""
+    return word
+
+def clean_text(lines, punctuation):
+    """UseReturn a cleaned list of words from a list of lines."""
+    cleaned = []
+    for line in lines:
+        for word in split_line(line):
+            word = clean_word(word, punctuation)
+            if word != "":
+                cleaned.append(word)
+    return cleaned
+
+# *Frankenstein*
+# Get the main content of Frankenstein
+lines_frank = extract_text_between_markers(text_frank, "INTRODUCTION.", "THE END.")
+
+# Get punctuation marks from the text
+punctuation = get_punctuation(lines_frank)
 
 # Generate cleaned list of words
-cleaned_frank = []
-
-for line in lines:
-    for word in split_line(line):   # split each line into words
-        word = clean_word(word)
-        if word != "":              # ignore empty strings
-            cleaned_frank.append(word)
+cleaned_frank = clean_text(lines_frank, punctuation)
 
 # Check: there are 77935 words total after cleaning
 print(len(cleaned_frank))
 
 
-# *Wikipedia*
-# Similar cleaning process for Wikipedia article on Gothic fiction
-text = fiction.content
-lines = text.splitlines()
+# *Dracula*
+# Similar cleaning process for Dracula
+# Get the main content of Frankenstein
+lines_drac = extract_text_between_markers(text_drac, "How these papers", "/Jonathan Harker./")
 
-# Manage punctuation
-punc_marks = {}
-
-for line in lines:
-    for char in line:
-        category = unicodedata.category(char)
-        if category.startswith('P'):
-            punc_marks[char] = 1
-
-# Turn dictionary keys into one string of punctuation symbols
-punctuation = ''.join(punc_marks)
-
-# Remove dashes
-def split_line(line):
-    return line.replace('—', ' ').replace('–', ' ').split()
-
-# Remove punctuation, standardize case, and remove numbers
-def clean_word(word):
-    word = word.strip(punctuation).lower()
-    if word.isdigit():        # skip pure numbers
-        return ""
-    return word
+# Get punctuation marks from the text
+punctuation = get_punctuation(lines_drac)
 
 # Generate cleaned list of words
-cleaned_wiki = []
-
-for line in lines:
-    for word in split_line(line):
-        word = clean_word(word)
-        if word != "":
-            cleaned_wiki.append(word)
+cleaned_drac = clean_text(lines_drac, punctuation)
 
 # Check total word count
-print(len(cleaned_wiki))
+print(len(cleaned_drac))
 
 
 # —————————————————————————————————————————————————————
 # Removing Stop Words
 
-# *Frankenstein*
 # Create a set containing the stop words from stopwords.txt
 with open("stopwords.txt", "r", encoding="utf-8") as f:
     stopwords = set(f.read().split())
 
-# 2. Create a new list with no stop words
-final_frank = []
+def remove_stopwords(cleaned):
+    """Return a list of words with stop words removed."""
+    filtered = []
+    for word in cleaned:
+        if word not in stopwords:   # uses global variable directly
+            filtered.append(word)
+    return filtered
 
-for word in cleaned_frank:
-    if word not in stopwords:
-        final_frank.append(word)
+# *Frankenstein*
+# Remove stop words
+final_frank = remove_stopwords(cleaned_frank)
 
 # Check: there are 36015 words total after removing stop words
 print(len(final_frank))
 
 
-# *Wikipedia*
-final_wiki = []
-
-for word in cleaned_wiki:
-    if word not in stopwords:
-        final_wiki.append(word)
+# *Dracula*
+# Remove stop words
+final_drac = remove_stopwords(cleaned_drac)
 
 # Check total word count after removing stop words
-print(len(final_wiki))
+print(len(final_drac))
 
 
 # —————————————————————————————————————————————————————
 # Word Frequency Analysis
+def frequencies(word_list):
+    """Return a dictionary mapping each word to its frequency."""
+    count = {}
+    for word in word_list:
+        count[word] = count.get(word, 0) + 1
+    return count
+
 
 # *Frankenstein*
 # Use the word list with no stop words to find word frequencies
-unique_frank = set(final_frank)
-print(len(unique_frank))
+count_frank = frequencies(final_frank)
 
-# Create a dictionary that maps each word to its frequency
-word_counter = {}
-for word in final_frank:
-    word_counter[word] = word_counter.get(word, 0) + 1
-
-# print(word_counter)
+# Too long, so commented out for convenience
+# print(count_frank)
 
 
-# *Wikipedia*
-unique_wiki = set(final_wiki)
-print(len(unique_wiki))
+# *Dracula*
+# Use the word list with no stop words to find word frequencies
+count_drac = frequencies(final_drac)
 
-word_counter2 = {}
-for word in final_wiki:
-    word_counter2[word] = word_counter2.get(word, 0) + 1
-
-# print(word_counter2)
+# Too long, so commented out for convenience
+# print(word_counter_drac)
 
 
 # —————————————————————————————————————————————————————
 # Computing Summary Statistics
 
 # ***Top n Most Frequent Words***
-# Sort the (word, count) pairs by frequency, highest first
 def second_element(t):
+    """Return the second element of the word, freq tuple, which is the frequency."""
     return t[1]
 
+def print_most_common(word_counter, x, title=""):
+    """Print the n most frequent words and their counts for any text."""
+    # Sort the dictionary by frequency (highest first)
+    items = sorted(word_counter.items(), key=second_element, reverse=True)
+    
+    # Print the top x words
+    print(f"\nTop {x} most common words in {title}")
+    for word, freq in items[:x]:
+        print(word, freq, sep='\t')
+
 # *Frankenstein*
-items_frank = sorted(word_counter.items(), key=second_element, reverse=True)
+# Sort the dictionary by frequency (highest first)
+print_most_common(count_frank, 10, "Frankenstein")
 
-# Print the n most frequent words and their counts
-def print_most_common(word_counter, n):
-    items_frank = sorted(word_counter.items(), key=second_element, reverse=True)
-    for word, freq in items_frank[:n]:
+# *Dracula*
+# Sort the dictionary by frequency
+print_most_common(count_drac, 10, "Dracula")
+
+
+# ***Words that Appear Frequently in One Text but Not the Other***
+def print_unique_high_freq(source, compare, top_x_compare=20, top_x_display=10, source_title="", compare_title=""):
+    """Print the most frequent words in one text that are not among the top x words in another text."""
+    # Sort the comparison dictionary by frequency
+    sorted_compare = sorted(compare.items(), key=second_element, reverse=True)
+
+    # Take only the top x words from the comparison
+    words_compare = sorted_compare[:top_x_compare]
+
+    # Save just the words into a set, since frequency for the comparison words is not needed anymore
+    top_compare_set = {pair[0] for pair in words_compare}
+
+    # Build a dictionary of words from the source text that aren’t in the comparison text’s top x words
+    source_unique = {}
+    for word, freq in source.items():
+        if word not in top_compare_set:
+            source_unique[word] = freq
+
+    # Sort the new dictionary by frequency
+    sorted_unique = sorted(source_unique.items(), key=second_element, reverse=True)
+
+    # Print the results
+    print(f"\nTop {top_x_display} words frequent in {source_title} but not in {compare_title}'s top {top_x_compare}:")
+    for word, freq in sorted_unique[:top_x_display]:
         print(word, freq, sep='\t')
 
-print_most_common(word_counter, 10)
 
-# *Wikipedia*
-items_wiki = sorted(word_counter2.items(), key=second_element, reverse=True)
+# Words in Frankenstein but not in Dracula (not within the top 20 words)
+print_unique_high_freq(count_frank, count_drac, 20, 10, "Frankenstein", "Dracula")
 
-# Print the 10 most frequent words and their counts
-def print_most_common(word_counter2, n):
-    items_wiki = sorted(word_counter2.items(), key=second_element, reverse=True)
-    for word, freq in items_wiki[:n]:
-        print(word, freq, sep='\t')
+# Words in Dracula but not in Frankenstein (not within the top 20 words)
+print_unique_high_freq(count_drac, count_frank, 20, 10, "Dracula", "Frankenstein")
 
-print_most_common(word_counter, 10)
+# ------------------------------------------------------
+# ***Average Word Length and Sentence Length***
+def average_word_length(words):
+    """Return the average number of characters per word."""
+    total_len = sum(len(w) for w in words)
+    return total_len / len(words)
 
+def average_sentence_length(text):
+    """Return the average number of words per sentence using '.' as separator."""
+    sentences = text.split('.')
+    sentences = [s.strip() for s in sentences if s.strip() != ""]
+    sentence_count = len(sentences)
+    word_count = len(text.split())
+    return word_count / sentence_count
+
+# Frankenstein
+avg_word_len_frank = average_word_length(final_frank)
+text_frank_raw = "\n".join(lines_frank)   # new line for each sentence
+avg_sent_len_frank = average_sentence_length(text_frank_raw)
+
+print("Average word length - Frankenstein:", round(avg_word_len_frank, 2))
+print("Average words per sentence length - Frankenstein:", round(avg_sent_len_frank, 2))
+
+# Dracula
+avg_word_len_drac = average_word_length(final_drac)
+text_drac_raw = "\n".join(lines_drac)   # new line for each sentence
+avg_sent_len_drac = average_sentence_length(text_drac_raw)
+
+print("Average word length - Dracula:", round(avg_word_len_drac, 2))
+print("Average words per sentence length - Dracula:", round(avg_sent_len_drac, 2))
+
+# ------------------------------------------------------
+# ***Vocabulary Richness in Frankenstein vs Dracula***
 
 # —————————————————————————————————————————————————————
 # Data Visualization
 
 # —————————————————————————————————————————————————————
 # Natural Language Processing
+
+
