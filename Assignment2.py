@@ -41,7 +41,7 @@ def extract_text_between_markers(text, start_marker, end_marker):
 
     return lines
 
-# Manage punctuation: taken from Chapter 12 Notebook
+# Manage punctuation (code from the Chapter 12 Notebook)
 def get_punctuation(lines):
     """Return a string of all unique punctuation marks in the given text."""
     punc_marks = {}
@@ -226,7 +226,7 @@ def average_word_length(word_list):
     return total_len / len(word_list)
 
 def average_sentence_length(text):
-    """Return the average number of words per sentence using periods as separator."""
+    """Return the average number of words per sentence using periods as separator. It's an approximation, since it does not account for other end punctuation."""
     sentences = text.split('.')
     sentences = [s.strip() for s in sentences if s.strip() != ""]
     sentence_count = len(sentences)
@@ -271,7 +271,7 @@ print("TTR - Dracula:", round(ttr_drac, 2))
 
 
 # —————————————————————————————————————————————————————
-# Data Visualization (I got AI help for many parts of this section)
+# Data Visualization (I got AI help for this section)
 import matplotlib.pyplot as plt
 import wordcloud
 from wordcloud import WordCloud
@@ -284,7 +284,7 @@ def plot_barchart(word_counter, n=10, title=""):
     words, freqs = zip(*sorted_items)
 
     # Barchart with words on the x-axis and frequencies on the y-axis
-    plt.bar(words, freqs, color="skyblue")
+    plt.bar(words, freqs, color="Blue")
 
     # Add the labels and make sure the labels don't overlap
     plt.title(f"Top {n} Most Frequent Words in {title}")
@@ -344,53 +344,42 @@ plt.show()
 
 
 # —————————————————————————————————————————————————————
-# Natural Language Processing
+# Optional Technique 1: Natural Language Processing (code from the assignment instructions)
 
-# ——————————————————————————————————————————————
-# Natural Language Processing (NLP) — Sentiment Analysis using NLTK
-# ——————————————————————————————————————————————
-
+# Sentiment Analysis using NLTK
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import matplotlib.pyplot as plt
 
-# Download VADER sentiment model (only needs to run once)
-nltk.download('vader_lexicon')
-
-# Initialize sentiment analyzer
 sia = SentimentIntensityAnalyzer()
 
-# Combine cleaned text lines into full strings
-text_frank_full = "\n".join(lines_frank)
-text_drac_full  = "\n".join(lines_drac)
+def ending_sentiment(text_raw, title):
+    """Compute and print the average sentiment scores for the ending of a text, defined as the last 10 sentences."""
+    # Using periods as separators, split the text into sentences and strip extra spaces
+    sentences = [s.strip() for s in text_raw.split('.') if s.strip()]
 
-# Get sentiment scores for each novel
-sent_frank = sia.polarity_scores(text_frank_full)
-sent_drac  = sia.polarity_scores(text_drac_full)
+    # Get the last 10 sentences
+    ending_sentences = sentences[-10:]
+    
+    # Print the full ending for testing
+    # for s in ending_sentences:
+         # print("-", s.strip(), ".")
+    
+    # Compute the sentiment for each sentence
+    scores = [sia.polarity_scores(s) for s in ending_sentences]
 
-# Print sentiment scores
-print("Frankenstein sentiment scores:", sent_frank)
-print("Dracula sentiment scores:", sent_drac)
+    # For each sentiment type, average the sentiment scores across the sentences
+    avg_scores = {
+        # For each sentiment key in the first sentence's dictionary (it doesn't matter which one, make a dictionary entry where the key is sentiment_key and the value is the rounded average sentiment score for that key
+        sentiment_key: round(sum(score[sentiment_key] for score in scores) / len(scores), 4)
+        for sentiment_key in scores[0]
+    }
 
-# ——————————————————————————————————————————————
-# Visualization: Compare Sentiment Scores
-# ——————————————————————————————————————————————
+    print(f"\nAverage sentiment for the ending of {title}:")
+    print(avg_scores)
 
-labels = ["Negative", "Neutral", "Positive", "Compound"]
-frank_values = [sent_frank["neg"], sent_frank["neu"], sent_frank["pos"], sent_frank["compound"]]
-drac_values  = [sent_drac["neg"], sent_drac["neu"], sent_drac["pos"], sent_drac["compound"]]
+# Print the sentiment analysis for the endings of both texts
+# *Frankenstein*
+ending_sentiment(text_frank_raw, "Frankenstein")
 
-x = range(len(labels))
-width = 0.35
-
-plt.figure(figsize=(8, 5))
-plt.bar([i - width/2 for i in x], frank_values, width, label="Frankenstein", color="green")
-plt.bar([i + width/2 for i in x], drac_values, width, label="Dracula", color="darkred")
-
-plt.xticks(x, labels)
-plt.ylabel("Sentiment Score")
-plt.title("Sentiment Comparison: Frankenstein vs Dracula (VADER Analysis)")
-plt.legend()
-plt.tight_layout()
-plt.show()
-
+# *Dracula*
+ending_sentiment(text_drac_raw, "Dracula")
