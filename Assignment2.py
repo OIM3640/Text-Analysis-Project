@@ -162,6 +162,7 @@ count_drac = frequencies(final_drac)
 # —————————————————————————————————————————————————————
 # Computing Summary Statistics
 
+# ------------------------------------------------------
 # ***Top n Most Frequent Words***
 def second_element(t):
     """Return the second element of the word, freq tuple, which is the frequency."""
@@ -178,11 +179,9 @@ def print_most_common(word_counter, x, title=""):
         print(word, freq, sep='\t')
 
 # *Frankenstein*
-# Sort the dictionary by frequency (highest first)
 print_most_common(count_frank, 10, "Frankenstein")
 
 # *Dracula*
-# Sort the dictionary by frequency
 print_most_common(count_drac, 10, "Dracula")
 
 
@@ -221,29 +220,33 @@ print_unique_high_freq(count_drac, count_frank, 20, 10, "Dracula", "Frankenstein
 
 # ------------------------------------------------------
 # ***Average Word Length and Sentence Length***
-def average_word_length(words):
-    """Return the average number of characters per word."""
-    total_len = sum(len(w) for w in words)
-    return total_len / len(words)
+def average_word_length(word_list):
+    """Return the average number of characters per word in a list of words."""
+    total_len = sum(len(w) for w in word_list)
+    return total_len / len(word_list)
 
 def average_sentence_length(text):
-    """Return the average number of words per sentence using '.' as separator."""
+    """Return the average number of words per sentence using periods as separator."""
     sentences = text.split('.')
     sentences = [s.strip() for s in sentences if s.strip() != ""]
     sentence_count = len(sentences)
     word_count = len(text.split())
     return word_count / sentence_count
 
-# Frankenstein
+# *Frankenstein*
 avg_word_len_frank = average_word_length(final_frank)
+
+# Use lines_frank as the base, since it contains the original sentences
 text_frank_raw = "\n".join(lines_frank)   # new line for each sentence
 avg_sent_len_frank = average_sentence_length(text_frank_raw)
 
 print("Average word length - Frankenstein:", round(avg_word_len_frank, 2))
 print("Average words per sentence length - Frankenstein:", round(avg_sent_len_frank, 2))
 
-# Dracula
+# *Dracula*
 avg_word_len_drac = average_word_length(final_drac)
+
+# Use lines_drac as the bse, since it contains the original sentences
 text_drac_raw = "\n".join(lines_drac)   # new line for each sentence
 avg_sent_len_drac = average_sentence_length(text_drac_raw)
 
@@ -252,11 +255,142 @@ print("Average words per sentence length - Dracula:", round(avg_sent_len_drac, 2
 
 # ------------------------------------------------------
 # ***Vocabulary Richness in Frankenstein vs Dracula***
+def type_token_ratio(word_list):
+    """Return the type-token ratio of a list of words (unique words / total words)."""
+    if len(word_list) == 0:
+        return 0
+    return len(set(word_list)) / len(word_list)
+
+# *Frankenstein*
+ttr_frank = type_token_ratio(final_frank)
+print("TTR - Frankenstein:", round(ttr_frank, 2))
+
+# *Dracula*
+ttr_drac = type_token_ratio(final_drac)
+print("TTR - Dracula:", round(ttr_drac, 2))
+
 
 # —————————————————————————————————————————————————————
-# Data Visualization
+# Data Visualization (I got AI help for many parts of this section)
+import matplotlib.pyplot as plt
+import wordcloud
+from wordcloud import WordCloud
+
+# Barchart
+def plot_barchart(word_counter, n=10, title=""):
+    """Plot a bar chart of the top N most frequent words."""
+    sorted_items = sorted(word_counter.items(), key=lambda x: x[1], reverse=True)[:n]
+    # Zip separates the words and frequencies into two lists so we can plot them
+    words, freqs = zip(*sorted_items)
+
+    # Barchart with words on the x-axis and frequencies on the y-axis
+    plt.bar(words, freqs, color="skyblue")
+
+    # Add the labels and make sure the labels don't overlap
+    plt.title(f"Top {n} Most Frequent Words in {title}")
+    plt.xlabel("Word")
+    plt.ylabel("Frequency")
+    plt.xticks(rotation=45, ha="right")
+
+    # Make sure everything fits properly
+    plt.tight_layout()
+
+# Word Cloud
+def plot_wordcloud(word_counter, title="", color=""):
+    """Display a word cloud for a word frequency dictionary."""
+    wc = WordCloud(
+        width=800,
+        height=400,
+        background_color="white",
+        colormap=color,
+        max_words=150
+    )
+    
+    # Generate the word cloud from frequencies
+    wc.generate_from_frequencies(word_counter)
+
+    # Clean up the display by smoothening the edges of the words, hiding the axes, and creating a title
+    plt.imshow(wc, interpolation='bilinear')
+    plt.axis("off")
+    plt.title(f"Word Cloud for {title}")
+
+# Create a two-by-two plot dashboard
+# plt.subplots() builds the entire figure and its grid of subplots together, returning both "fig" (the full canvas) and "subplots" (the individual plot areas)
+fig, subplots = plt.subplots(2, 2, figsize=(14, 10))
+
+# Plot each of the four visualizations in a specific subplot area
+# Frankenstein Top Words
+plt.sca(subplots[0, 0])
+plot_barchart(count_frank, n=10, title="Frankenstein")
+
+# Frankenstein Word Cloud
+plt.sca(subplots[1, 0])
+plot_wordcloud(count_frank, "Frankenstein", color="Greens")
+
+# Dracula Top Words
+plt.sca(subplots[0, 1])
+plot_barchart(count_drac, n=10, title="Dracula")
+
+# Dracula Word Cloud
+plt.sca(subplots[1, 1])
+plot_wordcloud(count_drac, "Dracula", color="Reds")
+
+# Adjust layout to prevent overlap by adding padding
+plt.tight_layout(pad=3.0)
+plt.subplots_adjust(hspace=0.4)
+
+# Display the final dashboard
+plt.show()
+
 
 # —————————————————————————————————————————————————————
 # Natural Language Processing
 
+# ——————————————————————————————————————————————
+# Natural Language Processing (NLP) — Sentiment Analysis using NLTK
+# ——————————————————————————————————————————————
+
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import matplotlib.pyplot as plt
+
+# Download VADER sentiment model (only needs to run once)
+nltk.download('vader_lexicon')
+
+# Initialize sentiment analyzer
+sia = SentimentIntensityAnalyzer()
+
+# Combine cleaned text lines into full strings
+text_frank_full = "\n".join(lines_frank)
+text_drac_full  = "\n".join(lines_drac)
+
+# Get sentiment scores for each novel
+sent_frank = sia.polarity_scores(text_frank_full)
+sent_drac  = sia.polarity_scores(text_drac_full)
+
+# Print sentiment scores
+print("Frankenstein sentiment scores:", sent_frank)
+print("Dracula sentiment scores:", sent_drac)
+
+# ——————————————————————————————————————————————
+# Visualization: Compare Sentiment Scores
+# ——————————————————————————————————————————————
+
+labels = ["Negative", "Neutral", "Positive", "Compound"]
+frank_values = [sent_frank["neg"], sent_frank["neu"], sent_frank["pos"], sent_frank["compound"]]
+drac_values  = [sent_drac["neg"], sent_drac["neu"], sent_drac["pos"], sent_drac["compound"]]
+
+x = range(len(labels))
+width = 0.35
+
+plt.figure(figsize=(8, 5))
+plt.bar([i - width/2 for i in x], frank_values, width, label="Frankenstein", color="green")
+plt.bar([i + width/2 for i in x], drac_values, width, label="Dracula", color="darkred")
+
+plt.xticks(x, labels)
+plt.ylabel("Sentiment Score")
+plt.title("Sentiment Comparison: Frankenstein vs Dracula (VADER Analysis)")
+plt.legend()
+plt.tight_layout()
+plt.show()
 
