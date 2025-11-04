@@ -1,33 +1,48 @@
-# Import text
+import urllib.request
+import unicodedata
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+
+# —————————————————————————————————————————————————————
+# Download and Import Texts
+import os
 import urllib.request
 
-def import_text(url):
-    """Download text from a Project Gutenberg URL and return it as a string."""
+def import_text(url, filename):
+    """Download text from a Project Gutenberg URL if not already saved locally.
+    
+    Combines a local file check and URL download to return the text as a string.
+    
+    - If the file exists in the current folder, read it from disk.
+    - Otherwise, download it from the URL, save it to the file, and return the text.
+    """
+    # If file already exists, read from disk
+    if os.path.exists(filename):
+        with open(filename, "r", encoding="utf-8") as f:
+            return f.read()
+    
+    # Otherwise, download from the web
     try:
         with urllib.request.urlopen(url) as f:
-            text = f.read().decode('utf-8')
+            text = f.read().decode("utf-8")
+            # Save a copy locally for next time
+            with open(filename, "w", encoding="utf-8") as out:
+                out.write(text)
             return text
     except Exception as e:
         print(f"An error occurred while downloading {url}:", e)
         return ""
 
-# *Frankenstein*
-text_frank = import_text("https://www.gutenberg.org/cache/epub/42324/pg42324.txt")
-
-
-# *Dracula*
-text_drac = import_text("https://www.gutenberg.org/cache/epub/45839/pg45839.txt")
 
 # —————————————————————————————————————————————————————
 # Text Cleaning and Preprocessing
-import unicodedata
-
-# Remove the Project Gutenberg header and footer
 def extract_text_between_markers(text, start_marker, end_marker):
     """Return only the lines between the given start and end markers."""
     lines = []
     copy = False
-
     for line in text.splitlines():
         if start_marker in line:
             lines.append(line)
@@ -38,23 +53,23 @@ def extract_text_between_markers(text, start_marker, end_marker):
             break
         if copy:
             lines.append(line)
-
     return lines
 
-# Manage punctuation (code from the Chapter 12 Notebook)
+
 def get_punctuation(lines):
     """Return a string of all unique punctuation marks in the given text."""
     punc_marks = {}
     for line in lines:
         for char in line:
-            category = unicodedata.category(char)
-            if category.startswith('P'):
+            if unicodedata.category(char).startswith("P"):
                 punc_marks[char] = 1
-    return ''.join(punc_marks)
+    return "".join(punc_marks)
+
 
 def split_line(line):
     """Replace different dashes with spaces to avoid joining words together inaccurately."""
-    return line.replace('—', ' ').replace('–', ' ').replace('--', ' ').split()
+    return line.replace("—", " ").replace("–", " ").replace("--", " ").split()
+
 
 def clean_word(word, punctuation):
     """Strip punctuation from the beginning and end of each word, convert to lowercase, and remove numbers."""
@@ -63,8 +78,9 @@ def clean_word(word, punctuation):
         return ""
     return word
 
+
 def clean_text(lines, punctuation):
-    """UseReturn a cleaned list of words from a list of lines."""
+    """Return a cleaned list of words from a list of lines."""
     cleaned = []
     for line in lines:
         for word in split_line(line):
@@ -73,64 +89,48 @@ def clean_text(lines, punctuation):
                 cleaned.append(word)
     return cleaned
 
-# *Frankenstein*
-# Get the main content of Frankenstein
-lines_frank = extract_text_between_markers(text_frank, "INTRODUCTION.", "THE END.")
 
-# Get punctuation marks from the text
-punctuation = get_punctuation(lines_frank)
-
-# Generate cleaned list of words
-cleaned_frank = clean_text(lines_frank, punctuation)
-
-# Check: there are 77935 words total after cleaning
-print(len(cleaned_frank))
-
-
-# *Dracula*
-# Similar cleaning process for Dracula
-# Get the main content of Frankenstein
-lines_drac = extract_text_between_markers(text_drac, "How these papers", "/Jonathan Harker./")
-
-# Get punctuation marks from the text
-punctuation = get_punctuation(lines_drac)
-
-# Generate cleaned list of words
-cleaned_drac = clean_text(lines_drac, punctuation)
-
-# Check total word count
-print(len(cleaned_drac))
+def preprocess_text(text, start_marker, end_marker):
+    """Extracts, cleans, and returns (lines, cleaned_words) using existing helper functions."""
+    lines = extract_text_between_markers(text, start_marker, end_marker)
+    punctuation = get_punctuation(lines)
+    cleaned = clean_text(lines, punctuation)
+    return lines, cleaned
 
 
 # —————————————————————————————————————————————————————
-# Removing Stop Words
+# Stopword Removal
+import os
+import urllib.request
 
-# Create a set containing the stop words from stopwords.txt
-with open("stopwords.txt", "r", encoding="utf-8") as f:
-    stopwords = set(f.read().split())
+def load_stopwords(file_path="stopwords.txt", url=None):
+    """Combines local check and URL download to return a set of stopwords.
 
-def remove_stopwords(cleaned):
+    - Loads stopwords.txt locally if it exists.
+    - Otherwise, downloads from the provided GitHub raw URL and saves it for future use.
+    """
+    if os.path.exists(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            return set(f.read().split())
+
+    if url:
+        try:
+            with urllib.request.urlopen(url) as f:
+                text = f.read().decode("utf-8")
+            with open(file_path, "w", encoding="utf-8") as out:
+                out.write(text)
+            return set(text.split())
+        except Exception as e:
+            print(f"Error downloading stopwords: {e}")
+            return set()
+    else:
+        print("Stopwords file missing and no URL provided.")
+        return set()
+
+
+def remove_stopwords(cleaned, stopwords):
     """Return a list of words with stop words removed."""
-    filtered = []
-    for word in cleaned:
-        if word not in stopwords:   # uses global variable directly
-            filtered.append(word)
-    return filtered
-
-# *Frankenstein*
-# Remove stop words
-final_frank = remove_stopwords(cleaned_frank)
-
-# Check: there are 36015 words total after removing stop words
-print(len(final_frank))
-
-
-# *Dracula*
-# Remove stop words
-final_drac = remove_stopwords(cleaned_drac)
-
-# Check total word count after removing stop words
-print(len(final_drac))
+    return [w for w in cleaned if w not in stopwords]
 
 
 # —————————————————————————————————————————————————————
@@ -143,243 +143,225 @@ def frequencies(word_list):
     return count
 
 
-# *Frankenstein*
-# Use the word list with no stop words to find word frequencies
-count_frank = frequencies(final_frank)
-
-# Too long, so commented out for convenience
-# print(count_frank)
-
-
-# *Dracula*
-# Use the word list with no stop words to find word frequencies
-count_drac = frequencies(final_drac)
-
-# Too long, so commented out for convenience
-# print(word_counter_drac)
-
-
-# —————————————————————————————————————————————————————
-# Computing Summary Statistics
-
-# ------------------------------------------------------
-# ***Top n Most Frequent Words***
 def second_element(t):
-    """Return the second element of the word, freq tuple, which is the frequency."""
     return t[1]
+
 
 def print_most_common(word_counter, x, title=""):
     """Print the n most frequent words and their counts for any text."""
-    # Sort the dictionary by frequency (highest first)
     items = sorted(word_counter.items(), key=second_element, reverse=True)
-    
-    # Print the top x words
     print(f"\nTop {x} most common words in {title}")
     for word, freq in items[:x]:
-        print(word, freq, sep='\t')
-
-# *Frankenstein*
-print_most_common(count_frank, 10, "Frankenstein")
-
-# *Dracula*
-print_most_common(count_drac, 10, "Dracula")
+        print(word, freq, sep="\t")
 
 
-# ***Words that Appear Frequently in One Text but Not the Other***
-def print_unique_high_freq(source, compare, top_x_compare=20, top_x_display=10, source_title="", compare_title=""):
+def print_unique_high_freq(source, compare, top_x_compare, top_x_display, source_title, compare_title):
     """Print the most frequent words in one text that are not among the top x words in another text."""
-    # Sort the comparison dictionary by frequency
     sorted_compare = sorted(compare.items(), key=second_element, reverse=True)
-
-    # Take only the top x words from the comparison
-    words_compare = sorted_compare[:top_x_compare]
-
-    # Save just the words into a set, since frequency for the comparison words is not needed anymore
-    top_compare_set = {pair[0] for pair in words_compare}
-
-    # Build a dictionary of words from the source text that aren’t in the comparison text’s top x words
-    source_unique = {}
-    for word, freq in source.items():
-        if word not in top_compare_set:
-            source_unique[word] = freq
-
-    # Sort the new dictionary by frequency
+    top_compare_set = {pair[0] for pair in sorted_compare[:top_x_compare]}
+    source_unique = {w: f for w, f in source.items() if w not in top_compare_set}
     sorted_unique = sorted(source_unique.items(), key=second_element, reverse=True)
 
-    # Print the results
     print(f"\nTop {top_x_display} words frequent in {source_title} but not in {compare_title}'s top {top_x_compare}:")
     for word, freq in sorted_unique[:top_x_display]:
-        print(word, freq, sep='\t')
-
-
-# Words in Frankenstein but not in Dracula (not within the top 20 words)
-print_unique_high_freq(count_frank, count_drac, 20, 10, "Frankenstein", "Dracula")
-
-# Words in Dracula but not in Frankenstein (not within the top 20 words)
-print_unique_high_freq(count_drac, count_frank, 20, 10, "Dracula", "Frankenstein")
-
-# ------------------------------------------------------
-# ***Average Word Length and Sentence Length***
-def average_word_length(word_list):
-    """Return the average number of characters per word in a list of words."""
-    total_len = sum(len(w) for w in word_list)
-    return total_len / len(word_list)
-
-def average_sentence_length(text):
-    """Return the average number of words per sentence using periods as separator. It's an approximation, since it does not account for other end punctuation."""
-    sentences = text.split('.')
-    sentences = [s.strip() for s in sentences if s.strip() != ""]
-    sentence_count = len(sentences)
-    word_count = len(text.split())
-    return word_count / sentence_count
-
-# *Frankenstein*
-avg_word_len_frank = average_word_length(final_frank)
-
-# Use lines_frank as the base, since it contains the original sentences
-text_frank_raw = "\n".join(lines_frank)   # new line for each sentence
-avg_sent_len_frank = average_sentence_length(text_frank_raw)
-
-print("Average word length - Frankenstein:", round(avg_word_len_frank, 2))
-print("Average words per sentence length - Frankenstein:", round(avg_sent_len_frank, 2))
-
-# *Dracula*
-avg_word_len_drac = average_word_length(final_drac)
-
-# Use lines_drac as the bse, since it contains the original sentences
-text_drac_raw = "\n".join(lines_drac)   # new line for each sentence
-avg_sent_len_drac = average_sentence_length(text_drac_raw)
-
-print("Average word length - Dracula:", round(avg_word_len_drac, 2))
-print("Average words per sentence length - Dracula:", round(avg_sent_len_drac, 2))
-
-# ------------------------------------------------------
-# ***Vocabulary Richness in Frankenstein vs Dracula***
-def type_token_ratio(word_list):
-    """Return the type-token ratio of a list of words (unique words / total words)."""
-    if len(word_list) == 0:
-        return 0
-    return len(set(word_list)) / len(word_list)
-
-# *Frankenstein*
-ttr_frank = type_token_ratio(final_frank)
-print("TTR - Frankenstein:", round(ttr_frank, 2))
-
-# *Dracula*
-ttr_drac = type_token_ratio(final_drac)
-print("TTR - Dracula:", round(ttr_drac, 2))
+        print(word, freq, sep="\t")
 
 
 # —————————————————————————————————————————————————————
-# Data Visualization (I got AI help for this section)
-import matplotlib.pyplot as plt
-import wordcloud
-from wordcloud import WordCloud
+# Summary Statistics
+def average_word_length(word_list):
+    return sum(len(w) for w in word_list) / len(word_list)
 
-# Barchart
+
+def average_sentence_length(text):
+    sentences = [s.strip() for s in text.split(".") if s.strip()]
+    return len(text.split()) / len(sentences)
+
+
+def type_token_ratio(word_list):
+    return len(set(word_list)) / len(word_list) if word_list else 0
+
+
+# —————————————————————————————————————————————————————
+# Visualization
 def plot_barchart(word_counter, n=10, title=""):
-    """Plot a bar chart of the top N most frequent words."""
     sorted_items = sorted(word_counter.items(), key=lambda x: x[1], reverse=True)[:n]
-    # Zip separates the words and frequencies into two lists so we can plot them
     words, freqs = zip(*sorted_items)
-
-    # Barchart with words on the x-axis and frequencies on the y-axis
     plt.bar(words, freqs, color="Blue")
-
-    # Add the labels and make sure the labels don't overlap
     plt.title(f"Top {n} Most Frequent Words in {title}")
     plt.xlabel("Word")
     plt.ylabel("Frequency")
     plt.xticks(rotation=45, ha="right")
-
-    # Make sure everything fits properly
     plt.tight_layout()
 
-# Word Cloud
-def plot_wordcloud(word_counter, title="", color=""):
-    """Display a word cloud for a word frequency dictionary."""
-    wc = WordCloud(
-        width=800,
-        height=400,
-        background_color="white",
-        colormap=color,
-        max_words=150
-    )
-    
-    # Generate the word cloud from frequencies
-    wc.generate_from_frequencies(word_counter)
 
-    # Clean up the display by smoothening the edges of the words, hiding the axes, and creating a title
-    plt.imshow(wc, interpolation='bilinear')
+def plot_wordcloud(word_counter, title="", color=""):
+    wc = WordCloud(width=800, height=400, background_color="white", colormap=color, max_words=150)
+    wc.generate_from_frequencies(word_counter)
+    plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
     plt.title(f"Word Cloud for {title}")
 
-# Create a two-by-two plot dashboard
-# plt.subplots() builds the entire figure and its grid of subplots together, returning both "fig" (the full canvas) and "subplots" (the individual plot areas)
-fig, subplots = plt.subplots(2, 2, figsize=(14, 10))
 
-# Plot each of the four visualizations in a specific subplot area
-# Frankenstein Top Words
-plt.sca(subplots[0, 0])
-plot_barchart(count_frank, n=10, title="Frankenstein")
+# Add parameters to increase reusability
+def plot_dashboard(count_frank, count_drac, save_path="images/dashboard.png"):
+    """Create and display a two-by-two dashboard comparing Frankenstein and Dracula word frequencies.
 
-# Frankenstein Word Cloud
-plt.sca(subplots[1, 0])
-plot_wordcloud(count_frank, "Frankenstein", color="Greens")
+    Combines plot_barchart and plot_wordcloud, then saves the figure to the images folder.
+    """
+    # Create a two-by-two plot dashboard
+    fig, subplots = plt.subplots(2, 2, figsize=(14, 10))
 
-# Dracula Top Words
-plt.sca(subplots[0, 1])
-plot_barchart(count_drac, n=10, title="Dracula")
+    # Frankenstein Top Words
+    plt.sca(subplots[0, 0])
+    plot_barchart(count_frank, n=10, title="Frankenstein")
 
-# Dracula Word Cloud
-plt.sca(subplots[1, 1])
-plot_wordcloud(count_drac, "Dracula", color="Reds")
+    # Frankenstein Word Cloud
+    plt.sca(subplots[1, 0])
+    plot_wordcloud(count_frank, "Frankenstein", color="Greens")
 
-# Adjust layout to prevent overlap by adding padding
-plt.tight_layout(pad=3.0)
-plt.subplots_adjust(hspace=0.4)
+    # Dracula Top Words
+    plt.sca(subplots[0, 1])
+    plot_barchart(count_drac, n=10, title="Dracula")
 
-# Display the final dashboard
-plt.show()
+    # Dracula Word Cloud
+    plt.sca(subplots[1, 1])
+    plot_wordcloud(count_drac, "Dracula", color="Reds")
+
+    # Adjust layout to prevent overlap
+    plt.tight_layout(pad=3.0)
+    plt.subplots_adjust(hspace=0.4)
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
+    # Save the figure if it doesn't exist yet
+    plt.savefig(save_path, dpi=300, bbox_inches="tight")
+
+    # Display it for testing
+    # plt.show()
 
 
 # —————————————————————————————————————————————————————
-# Optional Technique 1: Natural Language Processing (code from the assignment instructions)
-
-# Sentiment Analysis using NLTK
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
-sia = SentimentIntensityAnalyzer()
-
-def ending_sentiment(text_raw, title):
-    """Compute and print the average sentiment scores for the ending of a text, defined as the last 10 sentences."""
-    # Using periods as separators, split the text into sentences and strip extra spaces
-    sentences = [s.strip() for s in text_raw.split('.') if s.strip()]
-
-    # Get the last 10 sentences
+# Natural Language Processing
+# Sentiment Analysis of Novel Endings
+def ending_sentiment(text_raw, title, sia):
+    sentences = [s.strip() for s in text_raw.split(".") if s.strip()]
     ending_sentences = sentences[-10:]
-    
-    # Print the full ending for testing
-    # for s in ending_sentences:
-         # print("-", s.strip(), ".")
-    
-    # Compute the sentiment for each sentence
     scores = [sia.polarity_scores(s) for s in ending_sentences]
-
-    # For each sentiment type, average the sentiment scores across the sentences
     avg_scores = {
-        # For each sentiment key in the first sentence's dictionary (it doesn't matter which one, make a dictionary entry where the key is sentiment_key and the value is the rounded average sentiment score for that key
-        sentiment_key: round(sum(score[sentiment_key] for score in scores) / len(scores), 4)
-        for sentiment_key in scores[0]
+        k: round(sum(score[k] for score in scores) / len(scores), 4)
+        for k in scores[0]
     }
-
     print(f"\nAverage sentiment for the ending of {title}:")
     print(avg_scores)
 
-# Print the sentiment analysis for the endings of both texts
-# *Frankenstein*
-ending_sentiment(text_frank_raw, "Frankenstein")
 
-# *Dracula*
-ending_sentiment(text_drac_raw, "Dracula")
+# —————————————————————————————————————————————————————
+# Main Function
+def main():
+    # *Frankenstein*
+    text_frank = import_text("https://www.gutenberg.org/cache/epub/42324/pg42324.txt", "pg42324.txt")
+
+    # *Dracula*
+    text_drac = import_text("https://www.gutenberg.org/cache/epub/45839/pg45839.txt", "pg45839.txt")
+
+    # —————————————————————————————————————————————————————
+    # Text Cleaning and Preprocessing
+    # Frankenstein
+    lines_frank, cleaned_frank = preprocess_text(text_frank, "INTRODUCTION.", "THE END.")
+    
+    # Too long, commented out for convenience
+    # print(len(cleaned_frank))
+    
+    # Dracula
+    lines_drac, cleaned_drac = preprocess_text(text_drac, "How these papers", "/Jonathan Harker./")
+
+    # Too long, co mmented out for convenience
+    # print(len(cleaned_drac))
+
+    # —————————————————————————————————————————————————————
+    # Removing Stop Words
+    # Load stopwords (downloads if missing)
+    stopwords = load_stopwords(
+        "stopwords.txt",
+        url="https://raw.githubusercontent.com/OIM3640/resources/main/code/data/stopwords.txt"
+    )
+
+    # Add custom stopwords
+    custom_stopwords = {
+        "one", "now", "upon", "every",
+        "must", "might", "shall", "us",
+        "yet", "will", "can"
+    }
+    stopwords.update(custom_stopwords)
+
+
+    # Frankenstein
+    final_frank = remove_stopwords(cleaned_frank, stopwords)
+    print(len(final_frank))
+
+    # Dracula
+    final_drac = remove_stopwords(cleaned_drac, stopwords)
+    print(len(final_drac))
+
+    # —————————————————————————————————————————————————————
+    # Word Frequency Analysis
+    count_frank = frequencies(final_frank)
+    count_drac = frequencies(final_drac)
+
+    # —————————————————————————————————————————————————————
+    # Computing Summary Statistics
+
+    # ***Top n Most Frequent Words***
+    print_most_common(count_frank, 10, "Frankenstein")
+    print_most_common(count_drac, 10, "Dracula")
+
+    # ***Words that Appear Frequently in One Text but Not the Other***
+    print_unique_high_freq(count_frank, count_drac, 20, 10, "Frankenstein", "Dracula")
+    print_unique_high_freq(count_drac, count_frank, 20, 10, "Dracula", "Frankenstein")
+
+    # ***Average Word and Sentence Length***
+    text_frank_raw = "\n".join(lines_frank)
+    text_drac_raw = "\n".join(lines_drac)
+
+    # Frankenstein
+    avg_word_len_frank = average_word_length(final_frank)
+    avg_sent_len_frank = average_sentence_length(text_frank_raw)
+
+    print("Average word length - Frankenstein:", round(avg_word_len_frank, 2))
+    print("Average words per sentence length - Frankenstein:", round(avg_sent_len_frank, 2))
+
+    # Dracula
+    avg_word_len_drac = average_word_length(final_drac)
+    avg_sent_len_drac = average_sentence_length(text_drac_raw)
+    
+    print("Average word length - Dracula:", round(avg_word_len_drac, 2))
+    print("Average words per sentence length - Dracula:", round(avg_sent_len_drac, 2))
+
+    # ***Vocabulary Richness***
+    # Frankenstein
+    ttr_frank = type_token_ratio(final_frank)
+    print("TTR - Frankenstein:", round(ttr_frank, 2))
+
+    # Dracula
+    ttr_drac = type_token_ratio(final_drac)
+    print("TTR - Dracula:", round(ttr_drac, 2))
+
+    # —————————————————————————————————————————————————————
+    # Visualization Dashboard
+    plot_dashboard(count_frank, count_drac)
+
+    # —————————————————————————————————————————————————————
+    # Sentiment Analysis
+    sia = SentimentIntensityAnalyzer()
+
+    # Frankenstein
+    ending_sentiment(text_frank_raw, "Frankenstein", sia)
+
+    # Dracula
+    ending_sentiment(text_drac_raw, "Dracula", sia)
+
+
+if __name__ == "__main__":
+    main()
