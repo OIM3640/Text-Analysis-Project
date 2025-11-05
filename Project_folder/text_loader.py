@@ -9,7 +9,7 @@ def load_text(url):
         print("Error downloading text:", e)
         return ""
 
-   
+    # Remove Project Gutenberg header/footer
     start_match = re.search(r"\*\*\* START OF.*?\*\*\*", text)
     end_match = re.search(r"\*\*\* END OF.*?\*\*\*", text)
 
@@ -18,7 +18,7 @@ def load_text(url):
         end = end_match.start()
         text = text[start:end]
 
-  
+    # Lowercase and remove punctuation
     text = text.lower()
     text = re.sub(r'[^a-z\s]', '', text)
 
