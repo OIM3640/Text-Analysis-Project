@@ -34,12 +34,12 @@ def word_frequency(words):
 
 def get_top_words(freq_dict, n=20):
     """Get top N most frequent words"""
-    # Convert dictionary to list of tuples
+
     word_list = []
     for word, count in freq_dict.items():
         word_list.append((word, count))
     
-    # Sort by count (highest first)
+
     for i in range(len(word_list)):
         for j in range(len(word_list) - 1):
             if word_list[j][1] < word_list[j + 1][1]:
@@ -48,7 +48,7 @@ def get_top_words(freq_dict, n=20):
                 word_list[j] = word_list[j + 1]
                 word_list[j + 1] = temp
     
-    # Return top n words
+   
     return word_list[:n]
 
 def calculate_average_word_length(words):
@@ -69,14 +69,14 @@ def calculate_vocabulary_richness(words):
 
 def get_longest_words(words, n=10):
     """Get the n longest words"""
-    # Create list of (word, length) tuples
+
     word_lengths = []
-    unique_words = set(words)  # Remove duplicates
+    unique_words = set(words)  #gets rid of duplicates
     
     for word in unique_words:
         word_lengths.append((word, len(word)))
     
-    # Sort by length (longest first)
+    # Sorted by length
     for i in range(len(word_lengths)):
         for j in range(len(word_lengths) - 1):
             if word_lengths[j][1] < word_lengths[j + 1][1]:
@@ -86,12 +86,53 @@ def get_longest_words(words, n=10):
     
     return word_lengths[:n]
 
+def sentiment_analysis(text):
+    """Analyze sentiment of text using VADER"""
+    try:
+        import nltk
+        from nltk.sentiment.vader import SentimentIntensityAnalyzer
+        
+        # Download required data
+        try:
+            nltk.data.find('vader_lexicon')
+        except:
+            print("Downloading VADER lexicon...")
+            nltk.download('vader_lexicon', quiet=True)
+        
+        sia = SentimentIntensityAnalyzer()
+        
+        sentences = text.split('.')
+       
+        overall_score = sia.polarity_scores(text)
+        
+        # Find most positive and negative sentences
+        sentence_scores = []
+        for sentence in sentences[:100]:  # Analyze first 100 sentences
+            if len(sentence.strip()) > 10:  # Skip very short sentences
+                score = sia.polarity_scores(sentence)
+                sentence_scores.append((sentence.strip()[:80], score['compound']))
+        
+        #  sentiment technique(ADDED)
+        sentence_scores.sort(key=lambda x: x[1])
+        most_negative = sentence_scores[:3]
+        most_positive = sentence_scores[-3:]
+        most_positive.reverse()
+        
+        return {
+            'overall': overall_score,
+            'most_positive': most_positive,
+            'most_negative': most_negative
+        }
+    except ImportError:
+        print("NLTK not installed. Run: pip install nltk")
+        return None
+
 def text_similarity(text1, text2):
     """Compare similarity between two texts using Levenshtein Distance"""
     try:
         from thefuzz import fuzz
         
-        # Only use the fastest method
+      
         token_sort_ratio = fuzz.token_sort_ratio(text1, text2)
         
         return {
@@ -103,11 +144,11 @@ def text_similarity(text1, text2):
 
 def compare_book_sections(text, section_length=500):
     """Compare different sections of the same book"""
-    # Splits text into sections
+    # Split text into sections
     words = text.split()
     total_words = len(words)
     
-    # Create 3 sections: beginning, middle, end (SMALLER SIZE)
+    
     section_size = min(section_length, total_words // 3)
     
     beginning = ' '.join(words[:section_size])
