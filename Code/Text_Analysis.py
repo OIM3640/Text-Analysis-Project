@@ -87,16 +87,19 @@ def bar(x, scale=20):
 # 1. Build bag of words for each document 
 # 2. Print two words from each document 
 # 3. Print words that are freqeunt in Season but not in the WCF
+# 4. Print cosine for three pairs
+# 5. Print top proper names 
 
+#1
 def analyze(docs):
     bows = {t: bow(txt) for t, txt in docs.items()}
-
+#2
     print("\n=== Top Words per Document ===")
     for t, c in bows.items():
         print(f"\n{t}")
         for w, n in top_n(c, 15):
             print(f"  {w:<18} {n}")
-
+#3
     if SEASON in bows and WCF in bows:
         print("\n=== Frequent in SEASON but not WCF (thr=5) ===")
         for w, n in unique_freq(bows[SEASON], bows[WCF], 5)[:20]:
@@ -105,21 +108,21 @@ def analyze(docs):
         print("\n=== Frequent in WCF but not SEASON (thr=5) ===")
         for w, n in unique_freq(bows[WCF], bows[SEASON], 5)[:20]:
             print(f"  {w:<18} {n}")
-
+#4
     print("\n=== Cosine Similarity ===")
     pairs = [("James Harden", SEASON), ("James Harden", WCF), (SEASON, WCF)]
     for a, b in pairs:
         if a in bows and b in bows:
             s = cosine(bows[a], bows[b])
             print(f"  {a} ↔ {b}\n    {s:.3f} {bar(s)}")
-
+#5
     print("\n=== Proper Names (top 15) ===")
     for t, txt in docs.items():
         print(f"\n{t}")
         for name, n in proper_names(txt, 15):
             print(f"  {name:<18} {n}")
 
-# ---------- run directly ----------
+# The code below will run the code diretly without having to connect to other py documents
 def main():
     if not os.path.exists(JSONL):
         print("[error] JSONL not found. Run Part 1 first.")

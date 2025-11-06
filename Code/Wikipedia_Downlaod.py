@@ -1,6 +1,9 @@
 # Within my Macbook Terminal, I have already downloaded "conda install -c conda-forge pymediawiki"
 
-from mediawiki import MediaWiki     
+from mediawiki import MediaWiki
+w = MediaWiki()
+p = w.page("James Harden")
+print(p.title, " — chars:", len(p.content))  
 
 #"re" for (remove [1] style citations + newlines) (Chatgpt suggested)
 import re
