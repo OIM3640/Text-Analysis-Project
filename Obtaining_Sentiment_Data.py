@@ -1,3 +1,4 @@
+# yfiance API (to obtain live market Data
 print("Running script...")
 import os
 import requests
