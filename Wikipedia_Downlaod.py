@@ -1,37 +1,52 @@
-# Wikipedia_Download.py
-# Part 1: Fetch Harden season vs playoff pages from Wikipedia and save to JSONL.
+# Within my Macbook Terminal, I have already downloaded "conda install -c conda-forge pymediawiki"
 
-from mediawiki import MediaWiki          # <-- you accidentally removed this import
-import re, json
+from mediawiki import MediaWiki     
+
+#"re" for (remove [1] style citations + newlines) (Chatgpt suggested)
+import re
+
+# "json" to write our results to a .jsonl file (one JSON object per line)(Chatgpt suggested)
+import json
+
+
 from typing import Dict, List
 
-# --- cleaner ---
+# _CIT will find anything inside square brackets (prompted by chatgpt)
+#_NL will find one or more newline characters (prompted by chatgpt)
 _CIT = re.compile(r"\[.*?\]")
 _NL  = re.compile(r"\n+")
 
+#The following function cleans the text by removing citations and replacing newlines with spaces.
 def clean_text(text: str) -> str:
     if not text:
         return ""
-    text = _CIT.sub("", text)
-    text = _NL.sub(" ", text)
+    text = _CIT.sub("", text) #Remoove bracketed citations
+    text = _NL.sub(" ", text) # Turn multiple newlines into one single space
     return text.strip()
 
-# --- fetchers ---
+#The following funtion searches for a Wikipedia page by its title and returns the page object.
+#Page.Title is the title of the page and the page.content is the full text of the article
+#Fetch is also suggested by Chatg
 def fetch_page(title: str):
     wikipedia = MediaWiki()
-    return wikipedia.page(title)
+    page = wikipedia.page(title)
+    return page
 
+#From what we learned in class, I will be using a dictionary to store the titles and their corresponding cleaned text.
+#Multiple pages will be downloaded at a time in a loop and stored in a dictionary.
+#The output should be {"title" : "cleaned article text"}
 def harvest_titles(titles: List[str], preview_chars: int = 600) -> Dict[str, str]:
     """Returns dict[title -> cleaned_text] and prints title + preview (per the doc)."""
     docs: Dict[str, str] = {}
     for t in titles:
         page = fetch_page(t)
-        # EXACT behavior from the course example:
         print(page.title)
         print(page.content[:preview_chars], "...\n")
+        #Following line of code stores the cleaned text in the dictionary
         docs[page.title] = clean_text(page.content)
     return docs
 
+#Save the documents to a JSONL file, where each line is a JSON object with "title" and "content" fields.
 def save_jsonl(docs: Dict[str, str], path: str) -> None:
     with open(path, "w", encoding="utf-8") as f:
         for title, content in docs.items():
