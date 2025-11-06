@@ -1,6 +1,6 @@
 # Within my Macbook Terminal, I have already downloaded "conda install -c conda-forge pymediawiki"
 
-from mediawiki import MediaWiki
+from mediawiki import MediaWiki # type: ignore
 w = MediaWiki()
 p = w.page("James Harden")
 print(p.title, " — chars:", len(p.content))  
