@@ -26,9 +26,14 @@ One design decision I made was how to handle stop words. For other texts, I woul
 #### Frankenstein’s Top 10 Words:
 man, life, first, father, time, eyes, said, may, saw, even 
 
-
 #### Dracula’s Top 10 Words:
 said, may, know, see, time, come, van, came, went, helsing
+
+#### Top 10 words frequent in Frankenstein but not in Dracula’s top 20:
+man, life, first, father, eyes, saw, towards, mind, night, found 
+
+#### Top 10 words frequent in Dracula but not in Frankenstein’s top 20:
+know, see, come, van, came, went, helsing, go, like, back 
 
 ![dashboard](images/dashboard.png)
 
@@ -38,14 +43,14 @@ Dracula uses more dialogue-based and action-based words like “said,” “come
 
 ### Summary Statistics
 #### Frankenstein
-- Total words after stop word removal: 34,477
-- Average word length: 6.49
-- Average words per sentence: 25.56
+- Total words after stop word removal: 34,514
+- Average word length: 6.48
+- Average words per sentence: 25.5
 - Type–Token Ratio (vocabulary richness): 0.21
 
 #### Dracula
-- Total words after stop word removal: 68,243
-- Average word length: 5.60
+- Total words after stop word removal: 68,495
+- Average word length: 5.59
 - Average words per sentence: 19.81
 - Type–Token Ratio (vocabulary richness): 0.14
 
@@ -62,7 +67,7 @@ These numbers suggest Frankenstein uses longer words and more varied vocabulary,
 - Negative: 0.0302
 - Neutral: 0.7572
 - Positive: 0.1126
-- Compound: +0.2832
+- Compound: 0.2832
 
 Frankenstein ends with the tragic death of Victor Frankenstein and the Creature’s declaration that he will end his own life. Unsurprisingly, sentiment analysis found that the novel’s tone leaned negatively. On the other hand, Dracula ends with the defeat of the vampires, leading to a more positive tone.
 
@@ -71,4 +76,4 @@ Frankenstein ends with the tragic death of Victor Frankenstein and the Creature�
 ## Reflection
 From a process point of view, the project mostly went smoothly. I started by only analyzing Frankenstein, and I did not run into any major issues. The biggest challenge came when I decided to add Dracula halfway through the Computing Summary Statistics section. With just one text, I didn’t need to use the code more than once, so my program ran linearly. When I added Dracula, I just copied and pasted my Frankenstein code and changed the text to Dracula. This meant my program had a lot of repeated code, and I was constantly overwriting variables. I fixed this by converting most of my code into functions. Something I can improve is my sentence detection function. I only use periods as separators, so it does not account for sentences that end with exclamation or question marks. I think the project was appropriately scoped. The novels were diverse enough to have substantial differences to analyze, but they are still related under the genre of “1800s European Gothic novels,” and therefore contained interesting similarities. My testing plan was simple but effective. In addition to printing my results at the end, I ran print checks in the middle of each major stage to make sure the outputs looked correct before moving to the next section. This includes the number of cleaned words, full frequency list, and the extracted novel endings. Doing so helped me catch mistakes early and confirm that each function worked as intended. I also ended up keeping the number of cleaned words in my insights, since I thought it added some value. 
 
-From a learning perspective, my biggest takeaway was how important it is to stay organized and break the project into smaller, more manageable pieces. At first, I just wrote everything in one section, but it became hard to keep track of once I added a second text. Turning repeated code into functions made the program easier to manage and reuse. I mostly used AI to help me debug my work and generate functional code. Then, I would ask it to explain its output until I understood it enough to be able to summarize it in a comment. I needed the most help for the visualization section, since I was unfamiliar with matplotlib. I wish I had known how much time it takes to edit and debug code after changing my project focus. Going forward, I will make more detailed outlines for each section of my program before I start coding instead of trying to figure it out along the way.
+From a learning perspective, my biggest takeaway was how important it is to stay organized and break the project into smaller, more manageable pieces. At first, I just wrote everything in one section, but it became hard to keep track of once I added a second text. Turning repeated code into functions made the program easier to manage and reuse. I mostly used AI to help me debug my work and generate functional code. Then, I would ask it to explain its output until I understood it enough to be able to summarize it in a comment. I needed the most help for the visualization section, since I was unfamiliar with matplotlib. I wish I had known how much time it takes to edit and debug code after changing my project focus. Going forward, I will make more detailed outlines for each section of my program before I start coding instead of trying to figure it out along the way. Overall, I did not have many major obstacles and I learned a lot about how to analyze text with Python.

@@ -1,3 +1,4 @@
+import os
 import urllib.request
 import unicodedata
 import matplotlib.pyplot as plt
@@ -8,23 +9,19 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # —————————————————————————————————————————————————————
 # Download and Import Texts
-import os
-import urllib.request
-
 def import_text(url, filename):
-    """Download text from a Project Gutenberg URL if not already saved locally.
+    """
+    Use text from Project Gutenberg.
     
-    Combines a local file check and URL download to return the text as a string.
-    
-    - If the file exists in the current folder, read it from disk.
-    - Otherwise, download it from the URL, save it to the file, and return the text.
+    If the file exists in the folder, read it from disk.
+    Otherwise, download it from the URL, save it to the file, and return the text as a string.
     """
     # If file already exists, read from disk
     if os.path.exists(filename):
         with open(filename, "r", encoding="utf-8") as f:
             return f.read()
     
-    # Otherwise, download from the web
+    # Otherwise, download from the link
     try:
         with urllib.request.urlopen(url) as f:
             text = f.read().decode("utf-8")
@@ -32,6 +29,8 @@ def import_text(url, filename):
             with open(filename, "w", encoding="utf-8") as out:
                 out.write(text)
             return text
+        
+    # Print an error message if download fails
     except Exception as e:
         print(f"An error occurred while downloading {url}:", e)
         return ""
@@ -40,17 +39,23 @@ def import_text(url, filename):
 # —————————————————————————————————————————————————————
 # Text Cleaning and Preprocessing
 def extract_text_between_markers(text, start_marker, end_marker):
-    """Return only the lines between the given start and end markers."""
+    """Return only the lines between the given start and end markers, which are the first and last line of the novel, excluding the title page and any transcriber's notes."""
     lines = []
     copy = False
     for line in text.splitlines():
+        
+        # After finding and appending the first line, start copying
         if start_marker in line:
             lines.append(line)
             copy = True
             continue
-        if end_marker in line:
+        
+        # After finding the last line, append it and stop reading lines
+        if end_marker in line:    
             lines.append(line)
             break
+
+        # If copy is True, append the line
         if copy:
             lines.append(line)
     return lines
@@ -67,31 +72,38 @@ def get_punctuation(lines):
 
 
 def split_line(line):
-    """Replace different dashes with spaces to avoid joining words together inaccurately."""
+    """
+    Replace em, en, and double dashes with spaces to avoid joining words together when they should not be.
+    
+    Returns a list of words.
+    """
     return line.replace("—", " ").replace("–", " ").replace("--", " ").split()
 
 
 def clean_word(word, punctuation):
-    """Strip punctuation from the beginning and end of each word, convert to lowercase, and remove numbers."""
+    """Strip punctuation from the beginning and end of each word and convert to lowercase.
+    
+    Returns the cleaned word.
+    """
     word = word.strip(punctuation).lower()
-    if any(ch.isdigit() for ch in word):
-        return ""
     return word
 
 
 def clean_text(lines, punctuation):
-    """Return a cleaned list of words from a list of lines."""
+    """Returns a cleaned list of words."""
     cleaned = []
     for line in lines:
         for word in split_line(line):
             word = clean_word(word, punctuation)
+
+            # Don't append empty strings
             if word != "":
                 cleaned.append(word)
     return cleaned
 
 
 def preprocess_text(text, start_marker, end_marker):
-    """Extracts, cleans, and returns (lines, cleaned_words) using existing helper functions."""
+    """Extracts, cleans, and returns a list of sentences and a cleaned list of words."""
     lines = extract_text_between_markers(text, start_marker, end_marker)
     punctuation = get_punctuation(lines)
     cleaned = clean_text(lines, punctuation)
@@ -99,15 +111,14 @@ def preprocess_text(text, start_marker, end_marker):
 
 
 # —————————————————————————————————————————————————————
-# Stopword Removal
+# Removing Stop Words
 import os
 import urllib.request
 
 def load_stopwords(file_path="stopwords.txt", url=None):
-    """Combines local check and URL download to return a set of stopwords.
-
-    - Loads stopwords.txt locally if it exists.
-    - Otherwise, downloads from the provided GitHub raw URL and saves it for future use.
+    """
+    Loads stopwords.txt locally if it exists.
+    Otherwise, downloads it from the provided URL and saves it.
     """
     if os.path.exists(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
@@ -120,71 +131,162 @@ def load_stopwords(file_path="stopwords.txt", url=None):
             with open(file_path, "w", encoding="utf-8") as out:
                 out.write(text)
             return set(text.split())
+        
+        # Print an error message if download fails
         except Exception as e:
             print(f"Error downloading stopwords: {e}")
             return set()
+        
+    # Print a message if no URL is provided
     else:
         print("Stopwords file missing and no URL provided.")
         return set()
 
 
 def remove_stopwords(cleaned, stopwords):
-    """Return a list of words with stop words removed."""
-    return [w for w in cleaned if w not in stopwords]
+    """
+    Return a list of words with stop words removed.
+    """
+
+    # For each word in cleaned, include it only if it's not in stopwords
+    filtered = []
+    for word in cleaned:
+        if word not in stopwords:
+            filtered.append(word)
+    return filtered
 
 
 # —————————————————————————————————————————————————————
 # Word Frequency Analysis
 def frequencies(word_list):
-    """Return a dictionary mapping each word to its frequency."""
+    """
+    Return a dictionary with the words as keys and their frequencies as values.
+    """
     count = {}
     for word in word_list:
-        count[word] = count.get(word, 0) + 1
+        if word in count:
+            count[word] += 1
+        else:
+            count[word] = 1
+    # print(count) # Long output, commented out for convenience
     return count
-
-
-def second_element(t):
-    return t[1]
-
-
-def print_most_common(word_counter, x, title=""):
-    """Print the n most frequent words and their counts for any text."""
-    items = sorted(word_counter.items(), key=second_element, reverse=True)
-    print(f"\nTop {x} most common words in {title}")
-    for word, freq in items[:x]:
-        print(word, freq, sep="\t")
-
-
-def print_unique_high_freq(source, compare, top_x_compare, top_x_display, source_title, compare_title):
-    """Print the most frequent words in one text that are not among the top x words in another text."""
-    sorted_compare = sorted(compare.items(), key=second_element, reverse=True)
-    top_compare_set = {pair[0] for pair in sorted_compare[:top_x_compare]}
-    source_unique = {w: f for w, f in source.items() if w not in top_compare_set}
-    sorted_unique = sorted(source_unique.items(), key=second_element, reverse=True)
-
-    print(f"\nTop {top_x_display} words frequent in {source_title} but not in {compare_title}'s top {top_x_compare}:")
-    for word, freq in sorted_unique[:top_x_display]:
-        print(word, freq, sep="\t")
 
 
 # —————————————————————————————————————————————————————
 # Summary Statistics
+
+# -----------------------------------------------------
+# Top X Most Frequent Words
+def second_element(item):
+    """
+    Return the second element in a list.
+    Will be used to sort words by frequency.
+    """
+    return item[1]
+
+
+def print_most_common(word_counter, x, title=""):
+    """
+    Print the x most frequent words and their counts for a text.
+    """
+    # Sort the items in word_counter (word-frequency pairs) by frequency (second element) in descending order
+    items = sorted(word_counter.items(), key=second_element, reverse=True)
+    print(f"\nTop {x} most common words in {title}")
+    
+    # For the top x items, print the word and its frequency
+    for word, freq in items[:x]:
+
+        # Add a tab between the word and its freq for clarity
+        print(word, freq, sep="\t")
+
+# -----------------------------------------------------
+# Words that Appear Frequently in One Text but Not the Other (Not Within the Top X Words)
+def print_unique_high_freq(source, compare, top_x_compare, top_x_display, source_title, compare_title):
+    """
+    Print the most frequent words in one text (source) that are not among the top x words in another text (compare).
+    """
+    # Sort the compared text's words by frequency
+    sorted_compare = sorted(compare.items(), key=second_element, reverse=True)
+
+    # Take only the word part of the top x word-frequency pairs in the compared text, since frequency will not be needed any further
+    top_compare_set = set()
+    for pair in sorted_compare[:top_x_compare]:
+        top_compare_set.add(pair[0])
+
+    # If the word is not in the compared text, add it to a new dictionary that has the words as keys and frequencies as values
+    source_unique = {}
+    for word, freq in source.items():
+        if word not in top_compare_set:
+            source_unique[word] = freq
+    
+    # Sort the source text's words by frequency
+    sorted_unique = sorted(source_unique.items(), key=second_element, reverse=True)
+
+    # Print the results
+    print(f"\nTop {top_x_display} words frequent in {source_title} but not in {compare_title}'s top {top_x_compare}:")
+    for word, freq in sorted_unique[:top_x_display]:
+        print(word, freq, sep="\t")
+
+# -----------------------------------------------------
+# Average Word Length and Words per Sentence
 def average_word_length(word_list):
-    return sum(len(w) for w in word_list) / len(word_list)
+    """
+    Return the average number of characters per word in the text.
+    """
+    # Divide the total number of characters by the number of words
+    total_length = 0
+    for word in word_list:
+        total_length += len(word)
+    return total_length / len(word_list)
 
 
 def average_sentence_length(text):
-    sentences = [s.strip() for s in text.split(".") if s.strip()]
+    """
+    Return the average number of words per sentence.
+    """
+    sentences = []
+
+    # For this program, sentences will be considered the text between two periods also how doe sthe follllwoing code work
+    for s in text.split("."):
+
+        # Clean the sentences and store them in a list
+        if s.strip():
+            sentences.append(s.strip())
+
+    # Divide the total number of words by the total number of sentences
+    # len(text.split()) gives the total number of words, len(sentences) gives the total number of sentences
     return len(text.split()) / len(sentences)
 
 
+# -----------------------------------------------------
+# Vocabulary Richness (TTR)
 def type_token_ratio(word_list):
-    return len(set(word_list)) / len(word_list) if word_list else 0
+    """
+    Return the type-token ratio (TTR) for the text.
+
+    The TTR is a measure of vocabulary richness.
+    It is calculated by dividing the number of unique words
+    by the total number of words in the text.
+    """
+    # If the list is empty, return 0 to avoid division by zero
+    if len(word_list) == 0:
+        return 0
+
+    # Find the number of unique words by converting the list to a set
+    unique_words = set(word_list)
+
+    # Divide the number of unique words by the total number of words
+    return len(unique_words) / len(word_list)
 
 
 # —————————————————————————————————————————————————————
-# Visualization
+# Visualization (I had a lot of AI help for this section)
 def plot_barchart(word_counter, n=10, title=""):
+    """
+    Plot a vertical bar chart showing the most frequent words in a text using matplotlib.
+
+    word_counter: A dictionary where each key is a word and each value is its frequency count.
+    """
     sorted_items = sorted(word_counter.items(), key=lambda x: x[1], reverse=True)[:n]
     words, freqs = zip(*sorted_items)
     plt.bar(words, freqs, color="Blue")
@@ -196,6 +298,9 @@ def plot_barchart(word_counter, n=10, title=""):
 
 
 def plot_wordcloud(word_counter, title="", color=""):
+    """
+    Display a word cloud visualization for a given word frequency dictionary.
+    """
     wc = WordCloud(width=800, height=400, background_color="white", colormap=color, max_words=150)
     wc.generate_from_frequencies(word_counter)
     plt.imshow(wc, interpolation="bilinear")
@@ -238,21 +343,33 @@ def plot_dashboard(count_frank, count_drac, save_path="images/dashboard.png"):
     # Save the figure if it doesn't exist yet
     plt.savefig(save_path, dpi=300, bbox_inches="tight")
 
-    # Display it for testing
+    # Display the full dashboard for testing
     # plt.show()
 
 
 # —————————————————————————————————————————————————————
 # Natural Language Processing
-# Sentiment Analysis of Novel Endings
 def ending_sentiment(text_raw, title, sia):
+    """
+    Conduct sentiment analysis for the text's ending, defined as the last 10 sentences.
+    """
+    # Split the full text into individual sentences by periods, removing any empty strings or extra spaces
     sentences = [s.strip() for s in text_raw.split(".") if s.strip()]
+
+    # Only use the last 10 sentences for the analysis
+    # The sentiment analyzer performs better on shorter text samples
     ending_sentences = sentences[-10:]
+
+    # Get the sentiment scores for each of the last 10 sentences
     scores = [sia.polarity_scores(s) for s in ending_sentences]
+
+    # Calculate the average sentiment for each category across the 10 sentences
     avg_scores = {
         k: round(sum(score[k] for score in scores) / len(scores), 4)
         for k in scores[0]
     }
+
+    # Print the average sentiment results for the text's ending
     print(f"\nAverage sentiment for the ending of {title}:")
     print(avg_scores)
 
@@ -271,14 +388,8 @@ def main():
     # Frankenstein
     lines_frank, cleaned_frank = preprocess_text(text_frank, "INTRODUCTION.", "THE END.")
     
-    # Too long, commented out for convenience
-    # print(len(cleaned_frank))
-    
     # Dracula
     lines_drac, cleaned_drac = preprocess_text(text_drac, "How these papers", "/Jonathan Harker./")
-
-    # Too long, co mmented out for convenience
-    # print(len(cleaned_drac))
 
     # —————————————————————————————————————————————————————
     # Removing Stop Words
