@@ -13,5 +13,19 @@ At the same time, I have gave my code for the two documents and asked Chatgpt to
 
 # Results 
 ![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+With the help of Chatgpt, I was able to create a lot of the plots however, I was unable to find the statistical differences of James Harden but shows more of the textual differences. For example, the cosine similarity heatmap allows me to se that the words within the wikipedia page 2017-2018 rockets season and the playoffs are more similiar to each other compared to the page directly about James Harden. With this skill, we are able to compare documents in the futher and determine their similarity. Although the harden page was still related to the seasons page, the harden page focused more on his personal statistics. 
+The bar chart for the top 15 shows us that the most popular words are like "harden", "point", "assist", etc. This also shows us the article is more surrounded the specific matchups rather than the specific player. However, I noticed that it included "=" and "==" within the bar chart and realized the limiation of my data cleaning where I was unable to merely tokenize the basketball related insights where I believe a longer stop list would be better. 
+On the proper names chart, I am able to identify the opponents of the Housten Rockets of that year which is the Warriors and Cavaliers, which where all teams that the Rockets have faced in that season.
 
 # Reflection
+I feel like what went well of the project is that I was able to data clean and successfully draw data from the files and I was also able to use Chatgpt to create plots that were very interesting for me. It showed me a more advanced version of my data and it really allowed me to explore my project even more. However, I believe there is room for improvement for data cleaning where a lot of the common words within the charts are punctuation or words that is not really related to basketball. I would imagine a longer stop list will help this and clean the data and only include the data I want. At the same time, my code and the extent of the data I am pulling is unable to tell me the differences between the lanaguge used in the 2017-2018 season compared to the playoffs. I would imagine that I should probably get the data from social media like reddit rather than wikipedia because wikipedia is all unbiased facts where reddit has more personal bias and emotions where I can analye people's comments on James Harden and the difference of their attitude towards James Harden during the playoffs. If I could do this again, I would focus more on statistics where I can compare the statistics of James Harden and analyze how much worse of a player he becomes when he played the playoffs throughout his career. 
+
+Other than that, I feel like I had a lot of fun doing this project and definetly was able to explore more skills and strengthen my textbook knowledge of python.
