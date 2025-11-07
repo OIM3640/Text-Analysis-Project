@@ -1,10 +1,18 @@
-# visual_analysis.py
-# ------------------------------------------------------------
-# 1) load JSONL (from here or from ..)
-# 2) if missing -> download via mediawiki
-# 3) run your text analysis
-# 4) make charts in ./figures
-# ------------------------------------------------------------
+#The following code is assited by Chatgpt to create a text analysis of James Harden's 2018 season and playoff performance
+#Prompt 
+
+########
+#  I’m doing a text-analysis assignment and I need code that matches the instructions. Please generate two Python 
+# files. First, download_wiki.py that uses the mediawiki Python package to download exactly these Wikipedia pages: “James Harden”,
+# “2017–18 Houston Rockets season”, and “2018 Western Conference Finals”; clean the text by removing bracketed citations like [1] 
+# and extra newlines; then save them to a JSONL file called harden_2018_season_vs_playoff.jsonl, one JSON object per line with "title"
+#  and "content". Second, text_analysis.py that loads that JSONL, tokenizes with a custom stopword list, builds bag-of-words per document,
+#  prints top 15 words per document, finds words frequent in the season page but not the WCF page (and vice versa), computes cosine similarity
+#  between the three page pairs, showing a text bar for the score, and extracts top 15 proper names (capitalized words) per document. Both files 
+# must end with if __name__ == "__main__": main() so they can be run directly. Don’t use pandas or numpy. Add brief comments noting that some functions 
+# (like cosine and JSONL saving) were learned from AI/online sources.
+
+
 
 import os
 import json
@@ -13,10 +21,10 @@ from collections import Counter
 from math import sqrt
 from typing import Dict, List
 
-from mediawiki import MediaWiki     # pyright: ignore[reportMissingImports] # pip install mediawiki
-import matplotlib.pyplot as plt     # pyright: ignore[reportMissingModuleSource] # pip install matplotlib
+from mediawiki import MediaWiki     # type: ignore
+import matplotlib.pyplot as plt     # type: ignore
 
-# --------- CONFIG -------------------------------------------------
+
 JSONL_NAME = "harden_2018_season_vs_playoff.jsonl"
 TITLES = [
     "James Harden",
@@ -37,7 +45,7 @@ STOP = {
 _CIT = re.compile(r"\[.*?\]")
 _NL  = re.compile(r"\n+")
 
-# --------- PATH HELPERS -------------------------------------------
+#Follwing gets the current directory of this file
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -54,7 +62,7 @@ def find_jsonl() -> str:
     # default to current folder if not found
     return os.path.join(HERE, JSONL_NAME)
 
-# --------- PART 1: DOWNLOAD (only if missing) ---------------------
+# Following function cleans the text by removing citations and replacing newlines with spaces.
 
 def clean_text(text: str) -> str:
     if not text:
@@ -90,7 +98,7 @@ def ensure_jsonl(path: str):
     save_jsonl(docs, path)
     print(f"[info] saved {path} with {len(docs)} docs.")
 
-# --------- PART 2: YOUR TEXT FUNCTIONS ----------------------------
+#Following function loads JSON lines from a file and returns a dictionary of titles and their corresponding content
 
 def load_jsonl(path: str):
     docs = {}
@@ -140,7 +148,7 @@ def proper_names(text, k=15):
 def bar(x, scale=20):
     return "█" * int(round(x * scale))
 
-# --------- PART 3: PLOTTING ---------------------------------------
+# Following function ensures that the figures directory exists
 
 def ensure_fig_dir():
     figdir = os.path.join(HERE, "figures")
@@ -252,7 +260,7 @@ def plot_proper_names_all(docs):
         plt.savefig(os.path.join(figdir, f"names_{slugify(title)}.png"), dpi=150)
         plt.close()
 
-# --------- MAIN ---------------------------------------------------
+#Following is the main function that runs the entire analysis
 
 def main():
     # 1) find / make JSONL
@@ -265,7 +273,7 @@ def main():
         print("[error] Loaded 0 documents.")
         return
 
-    # 3) text analysis (your style)
+    # 3) text analysis 
     bows = {t: bow(txt) for t, txt in docs.items()}
 
     print("\n=== Top Words per Document ===")
