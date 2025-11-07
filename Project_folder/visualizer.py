@@ -1,5 +1,5 @@
 def create_word_frequency_chart(top_words):
-    """Create a simple ASCII bar chart of word frequencies"""
+    
     print("\n" + "="*60)
     print("Word Frequency Visualization")
     print("="*60)
