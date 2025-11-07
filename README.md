@@ -13,13 +13,14 @@ At the same time, I have gave my code for the two documents and asked Chatgpt to
 
 # Results 
 ![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](Code/figures/names_2017-18_houston_rockets_season.png)
+![alt text](Code/figures/names_2018_nba_playoffs.png)
+![alt text](Code/figures/names_james_harden.png)
+![alt text](Code/figures/text_clustering.png)
+![alt text](Code/figures/topwords_2017-18_houston_rockets_season.png)
+![alt text](Code/figures/topwords_2018_nba_playoffs.png)
+![alt text](Code/figures/topwords_james_harden.png)
+
 
 With the help of Chatgpt, I was able to create a lot of the plots however, I was unable to find the statistical differences of James Harden but shows more of the textual differences. For example, the cosine similarity heatmap allows me to se that the words within the wikipedia page 2017-2018 rockets season and the playoffs are more similiar to each other compared to the page directly about James Harden. With this skill, we are able to compare documents in the futher and determine their similarity. Although the harden page was still related to the seasons page, the harden page focused more on his personal statistics. 
 The bar chart for the top 15 shows us that the most popular words are like "harden", "point", "assist", etc. This also shows us the article is more surrounded the specific matchups rather than the specific player. However, I noticed that it included "=" and "==" within the bar chart and realized the limiation of my data cleaning where I was unable to merely tokenize the basketball related insights where I believe a longer stop list would be better. 
