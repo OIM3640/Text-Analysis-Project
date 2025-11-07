@@ -1,3 +1,12 @@
-# Text-Analysis-Project
+### Text-Analysis-Project
 
-Please read the [instructions](instructions.md).
+# Project Overview 
+For this specific Python project, I decided to use one of the data sources suggested by the project instructions, which is Wikipedia. I decided to explore about specifically “James Harden,” “2017–18 Houston Rockets season,” and “2018 Western Conference Finals.” The reason why I am choose this is because I have been a basketball fan for over 10 years and I have also played varsity basketball in my highschool team. My favorite player inside of the National Basketball League is James Harden and he has been someone that I really look up to. Something that has been in my mind for a long time is how James Harden despite having a lot of achievements like MVP and Allstar, people would not put him on par as other greatest of all time player because he has never won a championship team. The closest he has ever gone in the playoffs is the 2018 Western Conference Finals and for me everytime I have flashbacks watching the playoffs in 2018 I get very sad because it was a perfect oppurtunity for James Harden to prove himself to be one of the best playser in the League. Without the championship, also James Harden is considered a great player during regular season, he will be labeled as a playoff choker who never really proved himself when things really mattered.
+
+For this Python project, I want to download the articles on Wikipedia using the mediawiki python package and clean the text by removing citation brackets in order for it to be easier processed. From my machine learning class QTM3635 we learned a lot of data cleaning and tokenization, so I want to perform a tokenization process with a stopword list simialr to my QTM class. However, rather than having a URL for the stoplist, I have used Chatgpt to create a tiny stoplist for my project. I am also performing bag of words representation, comparing which words are the most frequent within the season and which words are most frequent within the playoffs. From this project, I really want to see how different do people think James Harden performs during the playoffs compared to the regular season. I will do so by changing the raw data from the web text into structured data.
+
+# Implementationm 
+
+# Results 
+
+# Reflection
