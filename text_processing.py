@@ -10,37 +10,62 @@ def Testing_Code():
     print("Changed directory to:", os.getcwd())
 
 #def api_access(api_key: str):
+
     #url = [('https://newsapi.org/v2/everything?q=NFL&sortBy=popularity&apiKey=fd772e4022f1491994dc98392a019790')]
     #response = requests.get(url)
     #print(response)
-def Load_Txt(folder:str):
-    """ In the following section we will be gathering and processing the Data,
-In the case of this project the Data will be based on txt files from Project Guttenberg"""
+import os
+
+def read_gutenberg(path: str, skip_header: bool = True, encoding_primary="utf-8", encoding_fallback="latin-1") -> str:
+    """
+    Read a Project Gutenberg .txt file, optionally skipping the boilerplate
+    header and footer. Returns the file's main content as a single string.
+    """
+    def read_with_encoding(enc: str) -> str:
+        lines = []
+        with open(path, "r", encoding=enc, errors="strict") as f:
+            # --- Skip the header (until we hit the START marker) ---
+            if skip_header:
+                for line in f:
+                    up = line.upper()
+                    if up.startswith("*** START OF") or "START OF THE PROJECT" in up:
+                        break
+            # --- Read main content; stop at END marker if skipping header ---
+            for line in f:
+                up = line.upper()
+                if skip_header and (up.startswith("*** END OF") or "END OF THE PROJECT" in up):
+                    break
+                lines.append(line)
+        return "".join(lines)
+
+    # Try primary encoding, then fallback if needed
+    try:
+        return read_with_encoding(encoding_primary)
+    except UnicodeDecodeError:
+        return read_with_encoding(encoding_fallback)
+
+def Load_Txt(folder: str, skip_header: bool = True):
+    """
+    Load all .txt files in a folder.
+    Returns: list of (filename, text) with Gutenberg boilerplate removed if requested.
+    """
     out = []
     if not os.path.isdir(folder):
         print(f"[!] Folder '{folder}' not found.")
         return out
+
     for fn in os.listdir(folder):
         if fn.lower().endswith(".txt"):
             path = os.path.join(folder, fn)
             try:
-                with open(path, "r", encoding="utf-8") as f:
-                    out.append((fn, f.read()))
-            except UnicodeDecodeError:
-                # fallback if file is not utf-8
-                with open(path, "r", encoding="latin-1") as f:
-                     out.append((fn, f.read()))
-    print("You have loaded", len(out), "Text files into the Processor")
+                text = read_gutenberg(path, skip_header=skip_header, encoding_primary="utf-8", encoding_fallback="latin-1")
+                out.append((fn, text))
+            except Exception as e:
+                print(f"[!] Could not read '{fn}': {e}")
+
+    print(f"You have loaded {len(out)} Text files into the Processor")
     return out
 
-def clean_text(text: str) -> str:
-    """Lowercase and remove punctuation using basic Python only."""
-    text = text.lower()
-    clean = ""
-    for ch in text:
-        if ch.isalpha() or ch.isspace():  # keep letters/spaces only
-            clean += ch
-    return clean
 
 def clean_and_filter(text: str) -> str:
     """Lowercase, keep only letters, and remove stopwords/pronouns."""
@@ -60,11 +85,14 @@ def clean_and_filter(text: str) -> str:
     'someone','something','such'}
     text = text.lower()
     cleaned = ""
-    for ch in text:
-        if ch.isalpha() or ch.isspace():
-            cleaned += ch
+    filtered= []
+    for i in text:
+        if i.isalpha() or i.isspace():
+            cleaned += i
     words = cleaned.split()
-    filtered = [w for w in words if w not in Filter_Words]
+    for i in words:
+        if i not in Filter_Words:
+            filtered.append(i)
     return " ".join(filtered)
 
 def count_words(text: str) -> dict:
@@ -76,7 +104,11 @@ def count_words(text: str) -> dict:
 def summary_stats(text: str) -> dict:
     words = text.split()
     unique = set(words)
-    avg_word_len = sum(len(w) for w in words) / max(len(words), 1)
+    total= 0
+    for i in words:
+        total+= len(i)
+    Longest_lenght = max
+    avg_word_len = total / max(len(words), 1) # 
     print("This is an overview of the files!")
     return{"words": len(words),
         "unique_words": len(unique),
