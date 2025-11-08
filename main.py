@@ -1,6 +1,6 @@
 from text_processing import Load_Txt, clean_and_filter,count_words,summary_stats
 from sentiment import Pos_or_Neg, sentiment_score
-from visualization import plot_sentiment, top_n_counts_per_file
+from visualization import plot_sentiment #, top_n_counts_per_file
 
 def main():
     # Folder and Text Loader
@@ -11,7 +11,7 @@ def main():
     for name, raw in files:
         cleaned = clean_and_filter(raw)         # clean the text
         counts  = count_words(cleaned)          # dict: word -> freq
-        stats   = summary_stats(cleaned)        # your words/unique/TTR/avg len
+        stats   = summary_stats(cleaned)        # your words/unique/TTR/avg len stats
         items = counts.items()
         sorted_items = sorted(items, key=lambda x: x[1], reverse=True)
         top5 = sorted_items[:5] # top 5 words for a quick glance
@@ -24,7 +24,7 @@ def main():
         print(f"  avg_word_len: {stats['avg_word_len']:.2f}")
         print("  top5:", ", ".join(f"{w}({c})" for w, c in top5))
 
-    #Sentiment Analysis
+    # (simple) Sentiment Analysis
     lexicon_folder = "Text_Words"
     POS, NEG = Pos_or_Neg(lexicon_folder)
 
@@ -37,7 +37,7 @@ def main():
 
     # Visualization
     plot_sentiment(scores)
-    top_n_counts_per_file(files, n=15, cleaner=None)
+    # top_n_counts_per_file(files, n=15, cleaner=None)
 
 if __name__ == "__main__":
     main()

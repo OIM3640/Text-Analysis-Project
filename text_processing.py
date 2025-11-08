@@ -3,12 +3,6 @@ import os
 import re
 from collections import Counter
 from math import floor
-def Testing_Code():
-    print("Running script...")
-    print("Current directory:", os.getcwd())
-    os.chdir(r"C:\Users\drodriguez1\Documents\GitHub\Text-Analysis-Project")
-    print("Changed directory to:", os.getcwd())
-
 #def api_access(api_key: str):
 
     #url = [('https://newsapi.org/v2/everything?q=NFL&sortBy=popularity&apiKey=fd772e4022f1491994dc98392a019790')]
@@ -112,7 +106,6 @@ def summary_stats(text: str) -> dict:
     print("This is an overview of the files!")
     return{"words": len(words),
         "unique_words": len(unique),
-        "type_token_ratio": len(unique)/max(len(words),1),
         "avg_word_len": avg_word_len,}       
 
 def main():

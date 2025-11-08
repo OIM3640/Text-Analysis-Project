@@ -1,11 +1,4 @@
 import os
-""" Used to make sure I had the Correct Directory, used google an AI to understand the os package,
-and how to properly switch the directory my file was in"""
-def Testing_Code():
-    print("Running script...")
-    print("Current directory:", os.getcwd())
-    os.chdir(r"C:\Users\drodriguez1\Documents\GitHub\Text-Analysis-Project")
-    print("Changed directory to:", os.getcwd())
 
 def Pos_or_Neg(folder: str):
     """Load positive and negative word lists from a folder."""

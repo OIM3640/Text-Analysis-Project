@@ -30,10 +30,10 @@ def plot_sentiment(scores: dict):
     plt.tight_layout()
     plt.show()
 
-def top_n_counts_per_file(files, n=15, cleaner=None):
-    result = {}
-    for name, raw in files:
-        text = cleaner(raw) if cleaner else raw
-        counts = Counter(text.split())
-        result[name] = counts.most_common(n)
-    return result
+#def top_n_counts_per_file(files, n=15, cleaner=None):
+#    result = {}
+#    for name, raw in files:
+#        text = cleaner(raw) if cleaner else raw
+#        counts = Counter(text.split())
+#        result[name] = counts.most_common(n)
+#    return result
