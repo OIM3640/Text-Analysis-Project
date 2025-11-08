@@ -1,0 +1,7 @@
+total_chars: 911965
+total_words: 87097
+unique_words: 10053
+avg_word_len: 5.582
+type_token_ratio: 0.1154
+num_sentences: 10578
+avg_sentence_len_words: 8.234
