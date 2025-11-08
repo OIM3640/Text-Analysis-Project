@@ -1,11 +1,11 @@
 # Text-Analysis-Project
 Project Title: Text Analysis Project – Alice in Wonderland and Frankenstein
 
-1. Project Overview
+# Project Overview
 
 For this project, I used two books from Project Gutenberg — Alice’s Adventures in Wonderland by Lewis Carroll and Frankenstein by Mary Shelley. The goal was to explore how Python can be used to analyze, compare, and visualize text data. I applied techniques such as text cleaning, stopword removal, word frequency analysis, and summary statistics. Through this I aimed to learn how language, tone and theme differ between these 2 distinct genres and allowed me to explore the deeper qualitative insights such as emotional tone.
 
-2. Implementation
+# Implementation
 
 The system is built with Python and Utilizes several libraries for different analysis techniques: 
 
@@ -21,7 +21,7 @@ Design Decision: Instead of heavy plotting libraries, I used an ASCII bar chart 
 
 GenAI (chatgpt) has helped and guided me in optimizing the code 
 
-3. Results
+# Results
 The project acheived the following results:
 
 Word Frequency:
@@ -39,5 +39,5 @@ Visualization:
 The ASCII bar chart clearly highlighted differences — Alice is dominated by character dialogue, while Frankenstein emphasizes abstract and emotional words.
 ![alt text](image.png)
 
-4. Reflection
+# Reflection
 This project was both challenging and insightful. From a learning perspective, I realized the versatility of text analysis in understanding themes, sentiment, and content generation. Alice in Wonderland used simple, lively language with lots of dialogue, while Frankenstein had a heavier tone and more emotional depth. The low similarity score proved how different their writing styles really are. Cleaning the text, removing stopwords, and looking at word frequencies made me see how much detail is hidden in plain text. I also learned how sentiment analysis can capture the overall mood of a story without needing to read every line.
