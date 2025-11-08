@@ -1,0 +1,235 @@
+ABHOR - disdain 
+
+ABSOLUTE - perfect 
+
+ADDICTION - proneness 
+
+BALK - dispute 
+
+BRAVE - Handsome 
+
+CHARACTER - Letter
+
+COIL - Distress 
+
+COUCH - sleep 
+
+CUNNING - Clever
+
+DELATION - Accusation 
+
+DESERVING - Merit 
+
+DRAW - near
+
+EGAL - Equal 
+
+EMBOSS - kill 
+
+EXPEDIENCE - Quickness 
+
+FANCY - desire 
+
+FEAR -  frighten 
+
+FRONT - object 
+
+GAST - Scared 
+
+GRAVE - bury 
+
+HEAVY - Sad
+
+HONEST - Pure 
+
+INHERIT - Given
+
+JUDICIOUS - Fair 
+
+KNAP - strike 
+
+KNAVE - servant 
+
+LAND - Yard 
+
+LAPSED - Shocked 
+
+MAD - Crazy 
+
+MATE - confuse
+
+NOTE - list 
+
+O'ER WROUGHT - Overcome 
+
+OUGHT - promised 
+
+PAINFUL - Difficult 
+
+PALL - wrapup 
+
+PARTICOAT - colorful
+
+PERPEND - consider 
+
+QUAINT - Beautiful 
+
+QUAKE - tremble 
+
+QUICKEN - lifen
+
+RAPTURE - ecstasy 
+
+RAVIN - destroy
+
+RESPECT - Forethought 
+
+RETIRE - retreat 
+
+SHRIFT -  admit
+
+SIMULAR - Counterfeit 
+
+STILL - Always 
+
+SUBSCRIPTION - Acquiescence 
+
+TAKE - enthrall 
+
+TAX - Blame 
+
+TESTY - Worrisome 
+
+TRIGON -  triangle 
+
+UNDERGO -  take on 
+
+UNPREGNANT - Idiotic 
+
+VILE - Disgusting 
+
+VINDICTIVE - Vengeful 
+
+WALL-EYED - angry
+
+WANT -  lack 
+
+WHEREFORE - Why 
+
+YARE - Prepared 
+
+YOUNG - Recent 
+
+ZANY - Idiotic 
+
+thou-you
+
+art-are
+
+thy-your
+
+thee-you
+
+thine-yours
+
+ye-you
+
+hast-have
+
+hath-has
+
+dost-do
+
+doth-does
+
+wilt-will
+
+wouldst-would
+
+shouldst-should
+
+couldst-could
+
+shalt-shall
+
+mayst-may
+
+mightst-might
+
+canst-can
+
+wast-were
+
+wert-were
+
+whence-from where
+
+hence-from here
+
+thither-to there
+
+hither-to here
+
+ere-before
+
+nay-no
+
+aye-yes
+
+oft-often
+
+naught-nothing
+
+o’er-over
+
+e’en-even
+
+’tis-it is
+
+’twas-it was
+
+thou’rt-you are
+
+hark-listen
+
+prithee-please
+
+anon-soon
+
+fie-shame
+
+marry-indeed
+
+betwixt-between
+
+oftentimes-often
+
+forsooth-truly
+
+methinks-I think
+
+methought-I thought
+
+yonder-over there
+
+whither-where (to)
+
+goest-go
+
+comest-come
+
+sayest-say
+
+speakest-speak
+
+lovest-love
+
+thinkest-think
+
+knowest-know
+
+seest-see
+
+call’st-call
+
+mak’st-make
