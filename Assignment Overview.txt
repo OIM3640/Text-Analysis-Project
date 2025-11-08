@@ -1,0 +1,37 @@
+# text_analysis_project
+├── fetch_text.py         # Fetches Wikipedia article
+├── clean_text.py         # Cleans and normalizes text
+├── analyze_text.py       # Filters stopwords, counts word frequency, plots results
+├── main.py               # Entry point to run the full pipeline
+├── README.md             # Project overview and documentation
+## Overview
+This project analyzes the Wikipedia article on eBay using Python. It demonstrates how to:
+- Fetch text from the internet using the MediaWiki API
+- Clean and preprocess the text
+- Filter out common stopwords
+- Analyze word frequency
+- Visualize the top 10 most frequent words
+## File Structure
+- `fetch_text.py`: Downloads Wikipedia content
+- `clean_text.py`: Cleans and normalizes text
+- `analyze_text.py`: Filters stopwords, counts word frequency, and plots results
+- `main.py`: Entry point that runs the full pipeline
+## How to Run
+1. Install required packages:
+```bash
+python -m pip install requests matplotlib nltk would this go in a seperate python file or in the text analysis project file 
+
+#Part 4
+# Project Overview 
+ I used Wikipedia as a data source since I always used it as a kid and it would help me in a pinch. I'm also most familar with it out of the 4 possible choices. I used def and webscrapping technique using N= for frequency to find the most common words. I used a technique to remove the filler words to make the graph more accurate and capture the idea that Wikipedia was going for. I hoped to learn about webscrapping to hopefully being apply to apply towards my final project idea and make it possible. Also, I wanted to see how far my skills have come from the beginning of the year. 
+# Implementation
+I used def to help make sure everything would go through and be recongonized by the code and not be undefined. Import was to get the information into the file. N for the frequency and added code with the help of AI to not count the filler words, troubleshoot, import requests, and make the bar graph show in real time with accurate data as it's being updated on wikipedia. Also, I recieved help for fetching the data and making it show up. I choose to have it show up in real time as I felt it would help make the project better and since I was using AI for help I should try to make something that was usually out of my reach. Also, this helps keep the model up to date and be allowed for future use even as wikipedia changes with time. 
+
+# Results
+Thee top words on the Ebay Wikipedia site makes sense as it's also most likely what's important to ebays as a company. It's their buisness model.These are the most important words that make up ebay and what people see it as. If someone were to just see the word and these 10 words. They would most likely be able to have the foundatoin of what Ebay is and does. 
+Coming from someone that does know ebay and is even a seller on the platform, it shows Ebay's focus of buisness is e-commerence and one of their main selling points is an international marketplace. However, it's possible that the data could be misskewed since the code is unable to detcet sentiment and tone of the wikipedia page. For example, it could be the article could be pointing out common flaws and consumer sentiment with Ebay. This would make the red herrings of the added word frequency paint the wrong story of ebay and the wikipedia page. There's potential for missing context, but I do feel like it's accurate. 
+All of the words seem popular in the marketplace space. These words also tell me that the article is informational and trying to paint a picture of What Ebay does and functions as a buisness. Based on the word frequency, I think the tone is meant to be informative which makes sense give it's wikipedia. 
+I used AI to help me understand the instructions and help me whenever I got stuck which was a lot. The tutor I had also helped me with general case and troubleshooting and helping me stay on track. 
+
+# Reflection
+The idea was great; I think it was a great choice considering it tied into my final project and will help me in the future with my card shop and some of the processes needed. My biggest challenge was troubleshhoting and the more complex concepts like the webscrapping and canceling the filler words. I used AI to help me solve the issue. I think i could try improving doing this more by myself and making it do not just words but phrases which would remove some of the flaws and bias with htis project.Yes, i think it was appropriated scoped and I aimed for something slightly more than I could chew which is ok. I didn't have a good testing plan and would test certain parts of it and bull-eye the rest. AI tools helped me have a chance at the harder material and gave me insipiration and made sure I didn't make as many mistakes with their reminders to make sure the code runs smoothly. I use what is going forward to help scrape data from ebay as a platform and use this in my career as a stepping point for importing and getting graphs and models into Python. I wished I knew how the code structure would be and what I was getting into, I had only a rough idea.  
