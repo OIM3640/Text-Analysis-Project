@@ -76,9 +76,9 @@ def sentiment_sample(text: str, take: int = 10):
 def tfidf_similarity(text1: str, text2: str) -> float:
     vec = TfidfVectorizer(
         stop_words='english',
-        token_pattern=r'(?u)\b[a-zA-Z]{2,}\b',  # ignore 1-letter tokens
+        token_pattern=r'(?u)\b[a-zA-Z]{2,}\b',  
         min_df=1,                               
-        max_df=1.0                               # allow terms that appear in both documents
+        max_df=1.0                              
     )
     X = vec.fit_transform([text1, text2])
     S = cosine_similarity(X)
