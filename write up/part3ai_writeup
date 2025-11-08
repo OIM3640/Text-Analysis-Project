@@ -1,0 +1,51 @@
+How I Used AI Tools
+
+Throughout this text-analysis project, I used ChatGPT to help me brainstorm how to approach this homework and to clarify program concepts, debug errors, and explore advanced code.
+
+Main topics and PART OF questions I asked:
+
+Brainstorm steps to do
+I pasted the instruction in the chat and asked, “brainstorm the steps for me, I am currently learning ThinkPython and how can I approach this homework.”
+
+Data cleaning and preprocessing
+“How can I clean raw text by removing control characters, punctuation, and special symbols using unicodedata?”
+
+Learning outcome: I learned to identify non-letter characters with unicodedata.category(), replace them with spaces, and remove empty lines using strip() and conditional checks.
+
+Stop-word removal
+“How do I build a stop-word filter using only loops and lists, similar to Think Python examples?”
+
+Learning outcome: I practiced writing a remove_stopwords() function with a simple for loop and if word not in stoplist, reinforcing list processing concepts without relying on external libraries.
+
+Word-frequency analysis and ASCII visualization
+“Why did my ASCII bar-chart show nothing, and how can I fix it?”
+
+Learning outcome: I discovered how to verify that the frequency dictionary isn’t empty, handle normalization so bars have visible length, and print ranked results correctly.
+
+Markov text synthesis (advanced technique)
+“What does each part of the Markov-chain code do, and how can I integrate it into my own project?”
+
+Learning outcome: I learned how a Markov model stores word transitions in a dictionary of tuples, how to randomly generate realistic text using those probabilities, and why sliding windows and random seeds are used.
+
+Code explanation and verification
+“Please explain what each function and loop does so I fully understand the logic.”
+
+Learning outcome: I reviewed every function line-by-line, confirming my comprehension before testing, which aligns with the instruction to verify and validate all AI-generated code.
+
+Testing and validation
+After each interaction, I copied the suggested code into my environment, executed it, and observed the output to confirm correctness.
+For example:
+
+I printed sample dictionary entries from the Markov table to check that successors looked reasonable.
+
+I compared cleaned text previews and word-frequency counts before and after applying each new function.
+
+This testing ensured that every piece of AI-assisted code met my project requirements and that I fully understood its operation.
+
+Sentiment analysis
+“How can I design a simple sentiment analysis without external libraries, using only regex and dictionary logic?”
+
+Learning outcome: I learned to build a small custom sentiment lexicon with positive and negative word values, create a negation list, and calculate sentiment scores by summing word values within each sentence. ChatGPT also guided me to split sentences using regular expressions, tokenize words, and apply a rolling mean function to smooth sentiment trends. Through this, I practiced dictionary lookups, loops, and conditionals from ThinkPython in a real text-analysis context, and I understood how my sentiment output (showing slight positivity in Jane Eyre) connects to the book’s emotional tone.
+
+#https://chatgpt.com/share/690e2452-6088-8013-81c5-a30cefefaab2
+
